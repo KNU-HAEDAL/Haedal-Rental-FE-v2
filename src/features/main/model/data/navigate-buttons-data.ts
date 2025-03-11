@@ -1,0 +1,31 @@
+import RentIcon from '@/features/_assets/main/rent-icon.png';
+import searchIcon from '@/features/_assets/main/search-icon.png';
+import SettingIcon from '@/features/_assets/main/setting-icon.png';
+import WriteIcon from '@/features/_assets/main/write-icon.png';
+
+export const NAVIGATE_BUTTONS_DATA = [
+  {
+    title: '대여가능 물품 목록',
+    icon: searchIcon,
+    navigateTo: '/item-list',
+    key: 'search',
+  },
+  {
+    title: '물품 대여 장부 작성',
+    icon: WriteIcon,
+    navigateTo: '/apply-form',
+    key: 'write',
+  },
+  {
+    title: '나의 물품 대여 확인',
+    icon: RentIcon,
+    navigateTo: '/my-item',
+    key: 'my-rent',
+  },
+  {
+    title: '관리자 페이지',
+    icon: SettingIcon,
+    navigateTo: '/admin',
+    key: 'admin',
+  },
+] as const;
