@@ -3,13 +3,13 @@ type TableHeader = {
   value: string;
 };
 
-type TableProps<T> = {
+type TableProps<T extends Record<string, unknown>> = {
   headers: TableHeader[];
   items: T[];
   renderCell?: (key: keyof T, item: T) => React.ReactNode;
 };
 
-export const ItemTable = <T extends Record<string, any>>({
+export const ItemTable = <T extends Record<string, unknown>>({
   headers,
   items,
   renderCell,
@@ -34,7 +34,9 @@ export const ItemTable = <T extends Record<string, any>>({
           <tr key={index} className='border-b'>
             {headers.map(({ value }) => (
               <td key={value + index} className='px-3 py-2 text-center'>
-                {renderCell ? renderCell(value as keyof T, item) : item[value]}
+                {renderCell
+                  ? renderCell(value as keyof T, item)
+                  : (item[value] as React.ReactNode)}
               </td>
             ))}
           </tr>
