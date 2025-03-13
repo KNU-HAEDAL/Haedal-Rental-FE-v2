@@ -4,10 +4,12 @@ import {
   AdminPage,
   ApplyFormPage,
   ItemListPage,
+  RentItemInfoPage,
   LoginPage,
   MainPage,
   MyItemPage,
   SignupPage,
+  AddItemPage,
 } from '@/pages';
 
 import { RouterPath } from '@/shared';
@@ -40,7 +42,20 @@ const router = createBrowserRouter(
     },
     {
       path: RouterPath.ADMIN,
-      element: <AdminPage />,
+      children: [
+        {
+          index: true,
+          element: <AdminPage />,
+        },
+        {
+          path: RouterPath.ADMIN_INFO,
+          element: <RentItemInfoPage />,
+        },
+        {
+          path: RouterPath.ADMIN_ADD_ITEM,
+          element: <AddItemPage />,
+        },
+      ],
     },
   ],
   {
