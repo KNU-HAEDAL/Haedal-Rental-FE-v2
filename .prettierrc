@@ -18,6 +18,7 @@
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
 
+  "tailwindConfig": "./tailwind.config.js",
   "plugins": [
     "@trivago/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss"
