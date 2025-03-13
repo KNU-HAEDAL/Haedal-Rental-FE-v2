@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { Button, ItemTable } from '@/shared';
+import { Button, ItemTable, RouterPath } from '@/shared';
 
 import { ITEM_BODY, ITEM_HEADERS } from '../model';
 
 export const TableContainer = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());
 
+  const navigate = useNavigate();
+
+  const onClick = () => {
+    navigate(RouterPath.ADMIN_ADD_ITEM);
+  };
   useEffect(() => {
     console.log(Array.from(selection));
   }, [selection]);
@@ -23,7 +29,7 @@ export const TableContainer = () => {
             </Button>
           </div>
           <div className='flex gap-2'>
-            <Button>물품추가</Button>
+            <Button onClick={onClick}>물품추가</Button>
             <Button variant='ghost' className='text-sun'>
               물품 삭제
             </Button>
