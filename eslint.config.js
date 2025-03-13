@@ -12,6 +12,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 // TypeScript 관련 플러그인 및 설정
 import tseslint from 'typescript-eslint';
+import tailwindcss from 'eslint-plugin-tailwindcss';
 
 import js from '@eslint/js';
 
@@ -52,6 +53,7 @@ export default tseslint.config(
       'react-hooks': reactHooks, // React Hooks 관련 규칙
       'react-refresh': reactRefresh, // React Refresh 관련 규칙
       'jsx-a11y': jsxA11y, // 웹 접근성 관련 규칙
+      'tailwindcss': tailwindcss,
       prettier: prettier, // Prettier 규칙
     },
 
@@ -66,6 +68,8 @@ export default tseslint.config(
       'jsx-a11y/alt-text': 'warn', // 접근성: alt 속성 검사
       'prettier/prettier': 'warn', // Prettier 관련 규칙 적용
       'react/react-in-jsx-scope': 'off',
+      "tailwindcss/no-custom-classname": "off",
+      "tailwindcss/classnames-order": "off",
     },
 
     // 설정 추가 (예: import-resolver)
