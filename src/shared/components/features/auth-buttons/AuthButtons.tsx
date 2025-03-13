@@ -27,17 +27,13 @@ export const AuthButtons = () => {
   };
 
   return (
-    <section className='flex w-[550px] justify-end gap-2'>
+    <section className='flex w-[550px] justify-end gap-2 py-3'>
       {isLogin ? (
-        <div className='flex w-full items-center justify-between'>
+        <div className='flex items-center justify-between w-full'>
           <p className='font-bold'>김해달님 반갑습니다.</p>
           <Button variant='sun' onClick={onClickLogout}>
             로그아웃
           </Button>
-          <Button>test</Button>
-          <Button variant='outline'>test</Button>
-          <Button variant='link'>test</Button>
-          <Button variant='moon'>test</Button>
         </div>
       ) : (
         <>
