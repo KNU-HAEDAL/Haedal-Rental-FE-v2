@@ -11,13 +11,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-haedal text-white font-bold hover:bg-haedal/90',
-        sun: 'bg-sun text-white font-bold hover:bg-sun/90',
+        default:
+          'bg-haedal text-white font-bold hover:bg-haedal/90 cursor-pointer',
+        sun: 'bg-sun text-white font-bold hover:bg-sun/90 cursor-pointer',
         outline:
-          'border border-input bg-background font-bold hover:bg-accent hover:text-accent-foreground shadow-sm',
-        moon: 'bg-moon text-haedal font-bold hover:bg-moon/80',
-        ghost: 'hover:bg-accent font-bold hover:text-accent-foreground',
-        link: 'text-haedal font-bold underline-offset-4 hover:underline',
+          'border border-input bg-background font-bold hover:bg-accent cursor-pointer hover:text-accent-foreground shadow-sm',
+        moon: 'bg-moon text-haedal font-bold hover:bg-moon/80 cursor-pointer',
+        ghost:
+          'hover:bg-accent font-bold hover:text-accent-foreground cursor-pointer',
+        link: 'text-haedal font-bold underline-offset-4 hover:underline cursor-pointer',
       },
       size: {
         default: 'h-full px-4 py-1',
