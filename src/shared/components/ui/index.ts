@@ -7,3 +7,5 @@ export * from './form';
 export * from './label';
 export * from './progress';
 export * from './skeleton';
+export * from './badge';
+export * from './sonner';
