@@ -1,13 +1,12 @@
-import { MainContainer } from '@/features';
+import { ButtonContainer, DescriptionSection } from '@/features';
 
-import { AuthButtons, SymbolLogo } from '@/shared';
+import { LogoContainer } from '@/widgets';
 
 export const MainPage = () => {
   return (
-    <div className='flex h-dvh flex-col items-center justify-center gap-3 text-center'>
-      <SymbolLogo />
-      <AuthButtons />
-      <MainContainer />
-    </div>
+    <LogoContainer title='물품 대여 장부 서비스'>
+      <DescriptionSection />
+      <ButtonContainer />
+    </LogoContainer>
   );
 };

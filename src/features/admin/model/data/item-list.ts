@@ -28,6 +28,7 @@ export const ITEM_BODY = [
     status: '대여가능',
     date: '-',
     borrower: '-',
+    itemId: '1',
   },
   {
     type: '책',
@@ -35,6 +36,7 @@ export const ITEM_BODY = [
     status: '대여가능',
     date: '-',
     borrower: '-',
+    itemId: '2',
   },
   {
     type: '책',
@@ -42,6 +44,7 @@ export const ITEM_BODY = [
     status: '대여가능',
     date: '-',
     borrower: '-',
+    itemId: '3',
   },
   {
     type: '책',
@@ -49,6 +52,7 @@ export const ITEM_BODY = [
     status: '대여가능',
     date: '-',
     borrower: '-',
+    itemId: '4',
   },
   {
     type: '책',
@@ -56,6 +60,7 @@ export const ITEM_BODY = [
     status: '대여가능',
     date: '-',
     borrower: '-',
+    itemId: '5',
   },
   {
     type: '책',
@@ -63,6 +68,7 @@ export const ITEM_BODY = [
     status: '대여중',
     date: '12/20',
     borrower: '김해달',
+    itemId: '6',
   },
   {
     type: '책',
@@ -70,6 +76,7 @@ export const ITEM_BODY = [
     status: '대여중',
     date: '12/20',
     borrower: '김해달',
+    itemId: '7',
   },
   {
     type: '책',
@@ -77,6 +84,7 @@ export const ITEM_BODY = [
     status: '대여중',
     date: '12/20',
     borrower: '김해달',
+    itemId: '8',
   },
   {
     type: '책',
@@ -84,6 +92,7 @@ export const ITEM_BODY = [
     status: '대여중',
     date: '12/20',
     borrower: '김해달',
+    itemId: '9',
   },
   {
     type: '책',
@@ -91,5 +100,6 @@ export const ITEM_BODY = [
     status: '대여중',
     date: '12/20',
     borrower: '김해달',
+    itemId: '10',
   },
 ];
