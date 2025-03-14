@@ -12,6 +12,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 // TypeScript 관련 플러그인 및 설정
 import tseslint from 'typescript-eslint';
+
 import tailwindcss from 'eslint-plugin-tailwindcss';
 
 import js from '@eslint/js';

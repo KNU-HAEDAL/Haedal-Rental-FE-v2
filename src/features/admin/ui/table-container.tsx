@@ -21,7 +21,7 @@ export const TableContainer = () => {
     <>
       <p>해달 동아리 물품 대여 상태입니다.</p>
       <div className='w-full px-3'>
-        <div className='flex justify-between w-full'>
+        <div className='flex w-full justify-between'>
           <div className='flex gap-2'>
             <Button variant='moon'>대여가능</Button>
             <Button variant='outline' className='border-sun text-sun'>
@@ -35,7 +35,7 @@ export const TableContainer = () => {
             </Button>
           </div>
         </div>
-        <div className='pt-5 overflow-hidden'>
+        <div className='overflow-hidden pt-5'>
           <ItemTable
             headers={ITEM_HEADERS}
             items={ITEM_BODY}
