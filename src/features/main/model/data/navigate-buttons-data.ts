@@ -3,29 +3,31 @@ import searchIcon from '@/features/_assets/main/search-icon.png';
 import SettingIcon from '@/features/_assets/main/setting-icon.png';
 import WriteIcon from '@/features/_assets/main/write-icon.png';
 
+import { RouterPath } from '@/shared';
+
 export const NAVIGATE_BUTTONS_DATA = [
   {
     title: '대여가능 물품 목록',
     icon: searchIcon,
-    navigateTo: '/item-list',
+    navigateTo: RouterPath.ITEM_LIST,
     key: 'search',
   },
   {
     title: '물품 대여 장부 작성',
     icon: WriteIcon,
-    navigateTo: '/apply-form',
+    navigateTo: RouterPath.APPLY_FORM,
     key: 'write',
   },
   {
     title: '나의 물품 대여 확인',
     icon: RentIcon,
-    navigateTo: '/my-item',
+    navigateTo: RouterPath.MY_ITEMS,
     key: 'my-rent',
   },
   {
     title: '관리자 페이지',
     icon: SettingIcon,
-    navigateTo: '/admin',
+    navigateTo: RouterPath.ADMIN,
     key: 'admin',
   },
 ] as const;
