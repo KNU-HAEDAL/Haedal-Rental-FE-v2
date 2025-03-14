@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { getDynamicPath } from '@/shared/utils';
 
 type TableHeader = {
   text: string;
@@ -16,7 +19,7 @@ type TableProps<T extends Record<string, unknown>> = {
 
 export const ItemTable = <T extends Record<string, unknown>>({
   headers,
-  items = [],
+  items,
   renderCell,
   selectable = false,
   itemKey,
@@ -25,6 +28,8 @@ export const ItemTable = <T extends Record<string, unknown>>({
   const effectiveItemKey = itemKey ?? (headers[0]?.value as keyof T);
 
   const [selection, setSelection] = useState<Set<T[keyof T]>>(new Set());
+
+  const navigate = useNavigate();
 
   if (!headers || headers.length === 0) {
     throw new Error('<ItemTable /> headers는 필수 요소입니다.');
@@ -91,6 +96,9 @@ export const ItemTable = <T extends Record<string, unknown>>({
           return (
             <tr
               key={index}
+              onClick={() => {
+                navigate(getDynamicPath.rentItemDetail(String(item.itemId)));
+              }}
               className={`border-b ${isSelected ? 'bg-gray-200' : ''} ${isDisabled ? 'opacity-50' : ''}`}
             >
               {selectable && (
@@ -106,7 +114,7 @@ export const ItemTable = <T extends Record<string, unknown>>({
               {headers.map(({ value }) => (
                 <td
                   key={value + index}
-                  className='px-3 py-2 text-center cursor-pointer'
+                  className='cursor-pointer px-3 py-2 text-center'
                 >
                   {renderCell
                     ? renderCell(value as keyof T, item)
