@@ -48,7 +48,7 @@ const router = createBrowserRouter(
           element: <AdminPage />,
         },
         {
-          path: RouterPath.ADMIN_INFO,
+          path: RouterPath.ADMIN_ITEM_INFO,
           element: <RentItemInfoPage />,
         },
         {
