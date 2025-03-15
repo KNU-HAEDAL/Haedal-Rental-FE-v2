@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form';
 
+import { signupFormSchema, type SignupFormData } from '@/features';
+
 import {
   Button,
   cn,
@@ -10,45 +12,48 @@ import {
   FormMessage,
 } from '@/shared';
 
-type FormData = {
-  id: string;
-  password: string;
-  passwordConfirm: string;
-  name: string;
-  phone: number;
-};
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const inputFields = [
+  {
+    name: 'id',
+    label: '아이디',
+    type: 'text',
+    button: '중복 확인',
+    onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      console.log('아이디 중복 확인'); // Todo: API 요청
+    },
+    guide: '영문과 숫자를 조합하여 6~12자리로 입력해주세요.',
+  },
+  {
+    name: 'password',
+    label: '비밀번호',
+    type: 'password',
+    guide: '영문, 숫자, 특수문자를 조합하여 8~20자리로 입력해주세요.',
+  },
+  { name: 'passwordConfirm', label: '비밀번호 확인', type: 'password' },
+  { name: 'name', label: '이름', type: 'text' },
+  {
+    name: 'phone',
+    label: '휴대폰 번호',
+    type: 'number',
+    button: '중복 확인',
+    onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      console.log('핸드폰 번호 중복 확인'); // Todo: API 요청
+    },
+  },
+];
 
 export const SignupContainer = () => {
-  const form = useForm<FormData>({ mode: 'onChange' });
+  const form = useForm<SignupFormData>({
+    resolver: zodResolver(signupFormSchema),
+    mode: 'onChange',
+  });
   const { control, handleSubmit, formState } = form;
 
-  const inputFields = [
-    {
-      name: 'id',
-      label: '아이디',
-      type: 'text',
-      button: '중복 확인',
-      onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        console.log('아이디 중복 확인'); // Todo: API 요청
-      },
-    },
-    { name: 'password', label: '비밀번호', type: 'password' },
-    { name: 'passwordConfirm', label: '비밀번호 확인', type: 'password' },
-    { name: 'name', label: '이름', type: 'text' },
-    {
-      name: 'phone',
-      label: '휴대폰 번호',
-      type: 'number',
-      button: '중복 확인',
-      onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        console.log('핸드폰 번호 중복 확인'); // Todo: API 요청
-      },
-    },
-  ];
-
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: SignupFormData) => {
     // Todo: API 요청
     console.log(data);
   };
@@ -59,42 +64,47 @@ export const SignupContainer = () => {
       <Form {...form}>
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-8'>
           <ul className='flex flex-col gap-3 px-8'>
-            {inputFields.map(({ name, label, type, button, onClick }) => (
-              <FormField
-                key={name}
-                control={control}
-                name={name as keyof FormData}
-                rules={{ required: `${label}을(를) 입력해주세요.` }}
-                render={({ field }) => (
-                  <FormItem className='flex flex-col items-start'>
-                    <label className='text-sm font-semibold'>{label}</label>
-                    <div className='flex w-full flex-row gap-3'>
-                      <FormControl>
-                        <input
-                          type={type}
-                          className='w-full rounded-md border px-3 py-2 text-sm [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
-                          {...field}
-                          value={field.value}
-                        />
-                      </FormControl>
-                      {button && (
-                        <Button
-                          variant='outline'
-                          className='rounded-md shadow-none'
-                          onClick={onClick}
-                        >
-                          {button}
-                        </Button>
-                      )}
-                    </div>
-                    <FormMessage className='text-xs' />
-                  </FormItem>
-                )}
-              />
-            ))}
+            {inputFields.map(
+              ({ name, label, type, button, onClick, guide }) => (
+                <FormField
+                  key={name}
+                  control={control}
+                  name={name as keyof SignupFormData}
+                  render={({ field }) => (
+                    <FormItem className='flex flex-col items-start'>
+                      <label className='text-sm font-semibold'>{label}</label>
+                      <div className='flex w-full flex-row gap-3'>
+                        <FormControl>
+                          <input
+                            type={type}
+                            className='w-full rounded-md border px-3 py-2 text-sm [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
+                            {...field}
+                          />
+                        </FormControl>
+                        {button && (
+                          <Button
+                            variant='outline'
+                            className='rounded-md shadow-none'
+                            onClick={onClick}
+                          >
+                            {button}
+                          </Button>
+                        )}
+                      </div>
+                      <div className='flex flex-col items-start gap-1'>
+                        {guide && (
+                          <p className='text-xs text-gray-500'>{guide}</p>
+                        )}
+                        <FormMessage className='text-xs' />
+                      </div>
+                    </FormItem>
+                  )}
+                />
+              ),
+            )}
           </ul>
           <div className='w-full px-8'>
-            <button
+            <Button
               type='submit'
               disabled={!formState.isValid}
               className={cn(
@@ -105,7 +115,7 @@ export const SignupContainer = () => {
               )}
             >
               회원가입
-            </button>
+            </Button>
           </div>
         </form>
       </Form>
