@@ -64,7 +64,7 @@ export const SignupContainer = () => {
                 key={name}
                 control={control}
                 name={name as keyof FormData}
-                rules={{ required: `${label}을 입력해주세요.` }}
+                rules={{ required: `${label}을(를) 입력해주세요.` }}
                 render={({ field }) => (
                   <FormItem className='flex flex-col items-start'>
                     <label className='text-sm font-semibold'>{label}</label>
