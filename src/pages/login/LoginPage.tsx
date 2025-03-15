@@ -6,7 +6,7 @@ import { RouterPath, SimpleLogo } from '@/shared';
 
 export const LoginPage = () => {
   return (
-    <main className='flex h-dvh w-full flex-col items-center justify-center gap-3 bg-[#0F1729] text-center text-white'>
+    <main className='bg-haedal flex h-dvh w-full flex-col items-center justify-center gap-3 text-center text-white'>
       <SimpleLogo />
       <LoginContainer />
       <Link to={RouterPath.SIGNUP}>
