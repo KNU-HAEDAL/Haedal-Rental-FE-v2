@@ -17,6 +17,8 @@ type FormData = {
 export const LoginContainer = () => {
   const form = useForm<FormData>({ mode: 'onChange' });
 
+  const { handleSubmit, formState } = form;
+
   const onSubmit = (data: FormData) => {
     // Todo: API 요청
     console.log(data);
@@ -31,10 +33,7 @@ export const LoginContainer = () => {
     <div className='flex w-96 flex-col gap-8 rounded-xl bg-white py-6 text-black'>
       <h1 className='px-8 text-xl font-semibold'>로그인</h1>
       <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className='flex flex-col gap-8'
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-8'>
           <ul className='flex flex-col gap-3 px-8'>
             {/* {inputFields.map(({ name, label, type }) => ( */}
             <FormField
@@ -74,10 +73,10 @@ export const LoginContainer = () => {
           <div className='w-full px-8'>
             <button
               type='submit'
-              disabled={!form.formState.isValid}
+              disabled={!formState.isValid}
               className={cn(
                 `w-full rounded-lg border px-4 py-2 text-sm font-semibold`,
-                !form.formState.isValid
+                !formState.isValid
                   ? 'cursor-not-allowed bg-gray-200 text-gray-500'
                   : 'bg-[#0F1729] text-white',
               )}
