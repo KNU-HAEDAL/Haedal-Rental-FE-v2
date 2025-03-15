@@ -1,6 +1,13 @@
 import { useForm } from 'react-hook-form';
 
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/shared';
+import {
+  cn,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from '@/shared';
 
 type FormData = {
   id: string;
@@ -68,11 +75,12 @@ export const LoginContainer = () => {
             <button
               type='submit'
               disabled={!form.formState.isValid}
-              className={`w-full rounded-lg border px-4 py-2 text-sm font-semibold ${
+              className={cn(
+                `w-full rounded-lg border px-4 py-2 text-sm font-semibold`,
                 !form.formState.isValid
                   ? 'cursor-not-allowed bg-gray-200 text-gray-500'
-                  : 'bg-[#0F1729] text-white'
-              }`}
+                  : 'bg-[#0F1729] text-white',
+              )}
             >
               로그인
             </button>
