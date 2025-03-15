@@ -30,7 +30,7 @@ export const SignupContainer = () => {
       button: '중복 확인',
       onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        console.log('아이디 중복 확인');
+        console.log('아이디 중복 확인'); // Todo: API 요청
       },
     },
     { name: 'password', label: '비밀번호', type: 'password' },
@@ -43,7 +43,7 @@ export const SignupContainer = () => {
       button: '중복 확인',
       onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        console.log('핸드폰 번호 중복 확인');
+        console.log('핸드폰 번호 중복 확인'); // Todo: API 요청
       },
     },
   ];
