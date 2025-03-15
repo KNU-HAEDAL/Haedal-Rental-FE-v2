@@ -22,13 +22,31 @@ export const SignupContainer = () => {
   const form = useForm<FormData>({ mode: 'onChange' });
   const { control, handleSubmit, formState } = form;
 
-  // const inputFields = [
-  //   { name: 'id', label: '아이디', type: 'text' },
-  //   { name: 'password', label: '비밀번호', type: 'password' },
-  //   { name: 'password confirm', label: '비밀번호 확인', type: 'password' },
-  //   { name: 'name', label: '이름', type: 'text' },
-  //   { name: 'phone', label: '휴대폰 번호', type: 'number' },
-  // ];
+  const inputFields = [
+    {
+      name: 'id',
+      label: '아이디',
+      type: 'text',
+      button: '중복 확인',
+      onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        console.log('아이디 중복 확인');
+      },
+    },
+    { name: 'password', label: '비밀번호', type: 'password' },
+    { name: 'passwordConfirm', label: '비밀번호 확인', type: 'password' },
+    { name: 'name', label: '이름', type: 'text' },
+    {
+      name: 'phone',
+      label: '휴대폰 번호',
+      type: 'number',
+      button: '중복 확인',
+      onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        console.log('핸드폰 번호 중복 확인');
+      },
+    },
+  ];
 
   const onSubmit = (data: FormData) => {
     // Todo: API 요청
@@ -41,133 +59,39 @@ export const SignupContainer = () => {
       <Form {...form}>
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-8'>
           <ul className='flex flex-col gap-3 px-8'>
-            {/* 아이디 필드 */}
-            <FormField
-              control={control}
-              name='id'
-              rules={{
-                required: '아이디를 입력해주세요.',
-                // '영문과 숫자를 조합하여 6~12자로 입력해주세요.'
-              }}
-              render={({ field }) => (
-                <FormItem className='flex flex-col items-start'>
-                  <label className='text-sm font-semibold'>아이디</label>
-                  <div className='flex w-full flex-row gap-3'>
-                    <FormControl>
-                      <input
-                        type='text'
-                        className='w-full rounded-md border px-3 py-2 text-sm'
-                        {...field}
-                      />
-                    </FormControl>
-                    <Button
-                      variant='outline'
-                      className='rounded-md shadow-none'
-                    >
-                      중복 확인
-                    </Button>
-                    {/* // Todo: 중복 확인 요청 */}
-                  </div>
-                  <FormMessage className='text-xs' />
-                </FormItem>
-              )}
-            />
-            {/* 비밀번호 필드 */}
-            <FormField
-              control={control}
-              name='password'
-              rules={{
-                required: '비밀번호를 입력해주세요.',
-                // '영문, 숫자, 특수문자를 조합하여 8~20자로 입력해주세요.',
-              }}
-              render={({ field }) => (
-                <FormItem className='flex flex-col items-start'>
-                  <label className='text-sm font-semibold'>비밀번호</label>
-                  <FormControl>
-                    <input
-                      type='password'
-                      className='w-full rounded-md border px-3 py-2 text-sm'
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className='text-xs' />
-                </FormItem>
-              )}
-            />
-            {/* 비밀번호 확인 필드 */}
-            <FormField
-              control={control}
-              name='passwordConfirm'
-              rules={{
-                required: '비밀번호를 입력해주세요.',
-                // '비밀번호가 일치하지 않습니다.',
-              }}
-              render={({ field }) => (
-                <FormItem className='flex flex-col items-start'>
-                  <label className='text-sm font-semibold'>비밀번호 확인</label>
-                  <FormControl>
-                    <input
-                      type='password'
-                      className='w-full rounded-md border px-3 py-2 text-sm'
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className='text-xs' />
-                </FormItem>
-              )}
-            />
-            {/* 이름 필드 */}
-            <FormField
-              control={control}
-              name='name'
-              rules={{
-                required: '이름을 입력해주세요.',
-              }}
-              render={({ field }) => (
-                <FormItem className='flex flex-col items-start'>
-                  <label className='text-sm font-semibold'>이름</label>
-                  <FormControl>
-                    <input
-                      type='text'
-                      className='w-full rounded-md border px-3 py-2 text-sm'
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className='text-xs' />
-                </FormItem>
-              )}
-            />
-            {/* 휴대폰 번호 필드 */}
-            <FormField
-              control={control}
-              name='phone'
-              rules={{
-                required: '휴대폰 번호를 입력해주세요.',
-                // '숫자만 입력해주세요.',
-              }}
-              render={({ field }) => (
-                <FormItem className='flex flex-col items-start'>
-                  <label className='text-sm font-semibold'>휴대폰 번호</label>
-                  <div className='flex w-full flex-row gap-3'>
-                    <FormControl>
-                      <input
-                        type='number'
-                        className='w-full rounded-md border px-3 py-2 text-sm [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
-                        {...field}
-                      />
-                    </FormControl>
-                    <Button
-                      variant='outline'
-                      className='rounded-md shadow-none'
-                    >
-                      중복 확인
-                    </Button>
-                    {/* // Todo: 중복 확인 요청 */}
-                  </div>
-                  <FormMessage className='text-xs' />
-                </FormItem>
-              )}
-            />
+            {inputFields.map(({ name, label, type, button, onClick }) => (
+              <FormField
+                key={name}
+                control={control}
+                name={name as keyof FormData}
+                rules={{ required: `${label}을 입력해주세요.` }}
+                render={({ field }) => (
+                  <FormItem className='flex flex-col items-start'>
+                    <label className='text-sm font-semibold'>{label}</label>
+                    <div className='flex w-full flex-row gap-3'>
+                      <FormControl>
+                        <input
+                          type={type}
+                          className='w-full rounded-md border px-3 py-2 text-sm [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
+                          {...field}
+                          value={field.value}
+                        />
+                      </FormControl>
+                      {button && (
+                        <Button
+                          variant='outline'
+                          className='rounded-md shadow-none'
+                          onClick={onClick}
+                        >
+                          {button}
+                        </Button>
+                      )}
+                    </div>
+                    <FormMessage className='text-xs' />
+                  </FormItem>
+                )}
+              />
+            ))}
           </ul>
           <div className='w-full px-8'>
             <button
