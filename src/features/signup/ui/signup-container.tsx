@@ -30,7 +30,7 @@ const inputFields = [
     name: 'password',
     label: '비밀번호',
     type: 'password',
-    guide: '영문(소문자), 숫자, 특수문자 8~20자리로 입력해주세요.',
+    guide: '영문, 숫자, 특수문자 8~20자리로 입력해주세요.',
   },
   { name: 'passwordConfirm', label: '비밀번호 확인', type: 'password' },
   { name: 'name', label: '이름', type: 'text' },

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 const idRegex = /^[a-z0-9]+$/;
-const passwordRegex = /^(?=.*[a-z])(?=.*[0-9])(?=.*[^a-z0-9]).+$/;
+const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).+$/;
 const phoneRegex = /^\d{10,11}$/;
 
 export const signupFormSchema = z
@@ -20,7 +20,7 @@ export const signupFormSchema = z
       .max(20, '비밀번호는 최대 20자까지 입력 가능합니다.')
       .refine(
         (value) => passwordRegex.test(value),
-        '비밀번호는 영문(소문자), 숫자, 특수문자를 모두 포함해야 합니다.',
+        '비밀번호는 영문, 숫자, 특수문자를 모두 포함해야 합니다.',
       ),
     passwordConfirm: z.string().min(1, '비밀번호 확인을 입력해주세요.'),
     name: z.string().min(2, '이름은 최소 2자 이상 입력해주세요.'),
