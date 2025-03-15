@@ -24,13 +24,13 @@ const inputFields = [
       e.preventDefault();
       console.log('아이디 중복 확인'); // Todo: API 요청
     },
-    guide: '영문과 숫자를 조합하여 6~12자리로 입력해주세요.',
+    guide: '영문(소문자)와 숫자 6~12자리로 입력해주세요.',
   },
   {
     name: 'password',
     label: '비밀번호',
     type: 'password',
-    guide: '영문, 숫자, 특수문자를 조합하여 8~20자리로 입력해주세요.',
+    guide: '영문(소문자), 숫자, 특수문자 8~20자리로 입력해주세요.',
   },
   { name: 'passwordConfirm', label: '비밀번호 확인', type: 'password' },
   { name: 'name', label: '이름', type: 'text' },
