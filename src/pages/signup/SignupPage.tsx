@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { SignupContainer } from '@/features';
 
-import { SimpleLogo } from '@/shared';
+import { RouterPath, SimpleLogo } from '@/shared';
 
 export const SignupPage = () => {
   return (
@@ -11,7 +11,7 @@ export const SignupPage = () => {
       <SignupContainer />
       <div className='flex flex-row items-center gap-3'>
         <span className='text-xs font-medium'>계정이 이미 있으신가요?</span>
-        <Link to='/login'>
+        <Link to={RouterPath.LOGIN}>
           <span className='text-sm font-semibold'>로그인</span>
         </Link>
       </div>
