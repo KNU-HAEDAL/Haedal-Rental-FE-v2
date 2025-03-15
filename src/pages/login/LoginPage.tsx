@@ -1,3 +1,17 @@
+import { Link } from 'react-router-dom';
+
+import { LoginContainer } from '@/features';
+
+import { RouterPath, SimpleLogo } from '@/shared';
+
 export const LoginPage = () => {
-  return <div>LoginPage</div>;
+  return (
+    <main className='flex h-dvh w-full flex-col items-center justify-center gap-3 bg-[#0F1729] text-center text-white'>
+      <SimpleLogo />
+      <LoginContainer />
+      <Link to={RouterPath.SIGNUP}>
+        <p className='text-sm font-semibold'>회원가입</p>
+      </Link>
+    </main>
+  );
 };
