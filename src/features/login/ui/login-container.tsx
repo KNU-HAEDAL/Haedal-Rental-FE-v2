@@ -47,7 +47,7 @@ export const LoginContainer = () => {
                       <input
                         type={type}
                         {...field}
-                        className='w-full rounded-lg border px-3 py-2 text-sm'
+                        className='w-full rounded-md border px-3 py-2 text-sm'
                       />
                     </FormControl>
                     <FormMessage className='text-xs' />
@@ -61,7 +61,7 @@ export const LoginContainer = () => {
               type='submit'
               disabled={!formState.isValid}
               className={cn(
-                `w-full rounded-lg border px-4 py-2 text-sm font-semibold`,
+                `w-full rounded-md border px-4 py-2 text-sm font-semibold`,
                 !formState.isValid
                   ? 'cursor-not-allowed bg-gray-200 text-gray-500'
                   : 'bg-haedal text-white',
