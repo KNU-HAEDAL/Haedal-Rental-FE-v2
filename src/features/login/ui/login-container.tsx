@@ -64,7 +64,7 @@ export const LoginContainer = () => {
                 `w-full rounded-lg border px-4 py-2 text-sm font-semibold`,
                 !formState.isValid
                   ? 'cursor-not-allowed bg-gray-200 text-gray-500'
-                  : 'bg-[#0F1729] text-white',
+                  : 'bg-haedal text-white',
               )}
             >
               로그인

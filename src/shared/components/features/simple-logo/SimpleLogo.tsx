@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 
+import { RouterPath } from '@/shared';
+
 export const SimpleLogo = () => {
   return (
-    <Link to='/' className='absolute top-6'>
+    <Link to={RouterPath.MAIN} className='absolute top-6'>
       <img
         src='/src/shared/_assets/logo/simple-logo.svg'
         alt='haedal'
