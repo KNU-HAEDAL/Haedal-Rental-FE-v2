@@ -29,9 +29,9 @@ export const SignupContainer = () => {
             <div className='flex w-full flex-row gap-3'>
               <input
                 type='text'
-                className='w-full rounded-lg border px-3 py-2 text-sm'
+                className='w-full rounded-md border px-3 py-2 text-sm'
               />
-              <Button variant='outline' className='rounded-lg'>
+              <Button variant='outline' className='rounded-md'>
                 중복 확인
               </Button>
             </div>
@@ -44,7 +44,7 @@ export const SignupContainer = () => {
             <label className='text-sm font-semibold'>비밀번호</label>
             <input
               type='password'
-              className='w-full rounded-lg border px-3 py-2 text-sm'
+              className='w-full rounded-md border px-3 py-2 text-sm'
             />
             <p className='text-xs text-gray-500'>
               영문, 숫자, 특수문자를 조합하여 8~20자로 입력해주세요.
@@ -55,7 +55,7 @@ export const SignupContainer = () => {
             <label className='text-sm font-semibold'>비밀번호 확인</label>
             <input
               type='password'
-              className='w-full rounded-lg border px-3 py-2 text-sm'
+              className='w-full rounded-md border px-3 py-2 text-sm'
             />
             {/* <p className='text-xs text-red-500 text-red-500'> 
               비밀번호가 일치하지 않습니다.
@@ -66,7 +66,7 @@ export const SignupContainer = () => {
             <label className='text-sm font-semibold'>이름</label>
             <input
               type='password'
-              className='w-full rounded-lg border px-3 py-2 text-sm'
+              className='w-full rounded-md border px-3 py-2 text-sm'
             />
           </li>
           {/* 휴대폰 번호 필드 */}
@@ -75,9 +75,9 @@ export const SignupContainer = () => {
             <div className='flex w-full flex-row gap-3'>
               <input
                 type='password'
-                className='w-full rounded-lg border px-3 py-2 text-sm'
+                className='w-full rounded-md border px-3 py-2 text-sm'
               />
-              <Button variant='outline' className='rounded-lg'>
+              <Button variant='outline' className='rounded-md'>
                 중복 확인
               </Button>
             </div>
@@ -87,7 +87,7 @@ export const SignupContainer = () => {
         <div className='w-full px-8'>
           <button
             type='submit'
-            className={`w-full rounded-lg border px-4 py-2 text-sm font-semibold`}
+            className={`w-full rounded-md border px-4 py-2 text-sm font-semibold`}
           >
             회원가입
           </button>
