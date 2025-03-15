@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 
 import { SignupContainer } from '@/features';
 
+import { SimpleLogo } from '@/shared';
+
 export const SignupPage = () => {
   return (
     <main className='flex h-dvh w-full flex-col items-center justify-center gap-3 bg-[#0F1729] text-center text-white'>
-      {/* <SimpleLogo /> */}
+      <SimpleLogo />
       <SignupContainer />
       <div className='flex flex-row items-center gap-3'>
         <span className='text-xs font-medium'>계정이 이미 있으신가요?</span>
