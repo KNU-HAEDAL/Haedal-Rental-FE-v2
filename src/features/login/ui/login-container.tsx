@@ -16,7 +16,6 @@ type FormData = {
 
 export const LoginContainer = () => {
   const form = useForm<FormData>({ mode: 'onChange' });
-
   const { control, handleSubmit, formState } = form;
 
   const inputFields = [
