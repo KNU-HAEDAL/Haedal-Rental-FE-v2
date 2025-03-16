@@ -10,7 +10,12 @@ import { Button, ItemTable } from '@/shared';
 
 export const ItemListSection = () => {
   //   const navigate = useNavigate();
-  const [isSelectedType, setIsSelectedType] = useState<string>('책');
+  const [isSelectedType, setIsSelectedType] = useState<string | null>();
+
+  const filteredItems = AVAILABLE_ITEM_BODIES.filter(
+    (item) => item.type === isSelectedType,
+    // 선택된 타입의 아이템만 ItemTable에 보이게
+  );
 
   const handleSelectType = (type: string) => {
     setIsSelectedType(type);
@@ -40,7 +45,7 @@ export const ItemListSection = () => {
       <div className='overflow-hidden px-3'>
         <ItemTable
           headers={AVAILABLE_ITEM_HEADERS}
-          items={AVAILABLE_ITEM_BODIES}
+          items={!isSelectedType ? AVAILABLE_ITEM_BODIES : filteredItems}
           itemKey='name'
           renderCell={(key, item) => {
             if (key === 'status') {
