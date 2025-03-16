@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { cn } from '@/shared';
+
 type TableHeader = {
   text: string;
   value: string;
@@ -94,7 +96,11 @@ export const ItemTable = <T extends Record<string, unknown>>({
             <tr
               key={index}
               onClick={() => onItemClick?.(item)}
-              className={`border-b ${isSelected ? 'bg-gray-200' : ''} ${isDisabled ? 'opacity-50' : ''}`}
+              className={cn(
+                `${index !== items.length - 1 ? 'border-b' : ''}`,
+                `${isSelected ? 'bg-gray-200' : ''}`,
+                `${isDisabled ? 'opacity-50' : ''}`,
+              )}
             >
               {selectable && (
                 <td>
