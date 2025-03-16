@@ -11,14 +11,24 @@ import { Button, ItemTable } from '@/shared';
 export const ItemListSection = () => {
   //   const navigate = useNavigate();
   const [isSelectedType, setIsSelectedType] = useState<string | null>();
+  const [isAvailableSelected, setIsAvailableSelected] =
+    useState<boolean>(false);
 
-  const filteredItems = AVAILABLE_ITEM_BODIES.filter(
-    (item) => item.type === isSelectedType,
-    // 선택된 타입의 아이템만 ItemTable에 보이게
-  );
+  const filteredItems = AVAILABLE_ITEM_BODIES.filter((item) => {
+    const matchType = isSelectedType ? item.type === isSelectedType : true;
+    const matchAvailability = isAvailableSelected
+      ? item.status === '대여가능'
+      : true;
+
+    return matchType && matchAvailability;
+  });
 
   const handleSelectType = (type: string) => {
     setIsSelectedType((prev) => (prev === type ? null : type));
+  };
+
+  const handleAvailableSelect = () => {
+    setIsAvailableSelected((prev) => !prev);
   };
 
   const handleClickItem = (itemId: string) => {
@@ -41,6 +51,13 @@ export const ItemListSection = () => {
             </Button>
           ))}
         </div>
+        <Button
+          type='button'
+          variant={isAvailableSelected === true ? 'moon' : 'outline'}
+          onClick={handleAvailableSelect}
+        >
+          대여가능
+        </Button>
       </div>
       <div className='overflow-hidden px-3'>
         <ItemTable
