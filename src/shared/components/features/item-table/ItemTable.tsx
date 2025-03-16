@@ -68,64 +68,69 @@ export const ItemTable = <T extends Record<string, unknown>>({
   };
 
   return (
-    <table className='w-full border-collapse'>
-      <thead>
-        <tr className='border-b-2'>
-          {selectable && (
-            <th>
-              <input
-                type='checkbox'
-                checked={isSelectedAll()}
-                onChange={onChangeSelectAll}
-              />
-            </th>
-          )}
-          {headers.map(({ text, value }) => (
-            <th key={value} className='px-5 py-2'>
-              {text}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {items.map((item, index) => {
-          const isDisabled = (item as { disabled?: boolean }).disabled;
-          const isSelected = selection.has(item[effectiveItemKey]);
+    <>
+      <table className='w-full border-collapse'>
+        <thead>
+          <tr className='border-b-2'>
+            {selectable && (
+              <th>
+                <input
+                  type='checkbox'
+                  checked={isSelectedAll()}
+                  onChange={onChangeSelectAll}
+                />
+              </th>
+            )}
+            {headers.map(({ text, value }) => (
+              <th key={value} className='px-5 py-2'>
+                {text}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {items.map((item, index) => {
+            const isDisabled = (item as { disabled?: boolean }).disabled;
+            const isSelected = selection.has(item[effectiveItemKey]);
 
-          return (
-            <tr
-              key={index}
-              onClick={() => onItemClick?.(item)}
-              className={cn(
-                `${index !== items.length - 1 ? 'border-b' : ''}`,
-                `${isSelected ? 'bg-gray-200' : ''}`,
-                `${isDisabled ? 'opacity-50' : ''}`,
-              )}
-            >
-              {selectable && (
-                <td>
-                  <input
-                    type='checkbox'
-                    disabled={isDisabled}
-                    checked={isSelected}
-                    onChange={() => onChangeSelect(item[effectiveItemKey])}
-                  />
-                </td>
-              )}
-              {headers.map(({ value }) => (
-                <td
-                  key={value + index}
-                  className='cursor-pointer px-3 py-2 text-center'
-                >
-                  {renderCell
-                    ? renderCell(value as keyof T, item)
-                    : (item[value] as React.ReactNode)}
-                </td>
-              ))}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+            return (
+              <tr
+                key={index}
+                onClick={() => onItemClick?.(item)}
+                className={cn(
+                  `${index !== items.length - 1 ? 'border-b' : ''}`,
+                  `${isSelected ? 'bg-gray-200' : ''}`,
+                  `${isDisabled ? 'opacity-50' : ''}`,
+                )}
+              >
+                {selectable && (
+                  <td>
+                    <input
+                      type='checkbox'
+                      disabled={isDisabled}
+                      checked={isSelected}
+                      onChange={() => onChangeSelect(item[effectiveItemKey])}
+                    />
+                  </td>
+                )}
+                {headers.map(({ value }) => (
+                  <td
+                    key={value + index}
+                    className='cursor-pointer px-3 py-2 text-center'
+                  >
+                    {renderCell
+                      ? renderCell(value as keyof T, item)
+                      : (item[value] as React.ReactNode)}
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      {items.length === 0 && (
+        <p className='px-3 py-2 text-center text-base'>물품이 없습니다.</p>
+      )}
+    </>
   );
 };
