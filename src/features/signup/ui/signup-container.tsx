@@ -106,10 +106,9 @@ export const SignupContainer = () => {
               type='submit'
               disabled={!formState.isValid}
               className={cn(
-                `w-full rounded-md border px-4 py-2 text-sm font-semibold`,
-                !formState.isValid
-                  ? 'cursor-not-allowed bg-gray-200 text-gray-500'
-                  : 'bg-haedal text-white',
+                `w-full rounded-md border px-4 py-2 text-sm`,
+                !formState.isValid &&
+                  'cursor-not-allowed bg-gray-200 text-gray-500',
               )}
             >
               회원가입
