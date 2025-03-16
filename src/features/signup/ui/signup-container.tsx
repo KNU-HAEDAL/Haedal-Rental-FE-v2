@@ -77,11 +77,7 @@ export const SignupContainer = () => {
                       <Label className='text-sm font-semibold'>{label}</Label>
                       <div className='flex w-full flex-row gap-3'>
                         <FormControl>
-                          <Input
-                            type={type}
-                            className='text-sm [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
-                            {...field}
-                          />
+                          <Input type={type} className='text-sm' {...field} />
                         </FormControl>
                         {button && (
                           <Button
