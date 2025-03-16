@@ -13,7 +13,7 @@ export const ItemListPage = () => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <main className='flex h-full flex-col items-center justify-center gap-3 text-center'>
       <LogoContainer title='대여 가능 물품 목록'>
         <ItemListDescriptionSection />
         <ItemListSection />
@@ -27,6 +27,6 @@ export const ItemListPage = () => {
           뒤로
         </Button>
       </div>
-    </>
+    </main>
   );
 };
