@@ -7,6 +7,8 @@ import {
   FormField,
   FormItem,
   FormMessage,
+  Input,
+  Label,
 } from '@/shared';
 
 type FormData = {
@@ -42,13 +44,9 @@ export const LoginContainer = () => {
                 rules={{ required: `${label}를 입력해주세요.` }}
                 render={({ field }) => (
                   <FormItem className='flex flex-col items-start'>
-                    <label className='text-sm font-semibold'>{label}</label>
+                    <Label className='text-sm font-semibold'>{label}</Label>
                     <FormControl>
-                      <input
-                        type={type}
-                        {...field}
-                        className='w-full rounded-md border px-3 py-2 text-sm'
-                      />
+                      <Input type={type} {...field} className='text-sm' />
                     </FormControl>
                     <FormMessage className='text-xs' />
                   </FormItem>

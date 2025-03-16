@@ -10,6 +10,8 @@ import {
   FormField,
   FormItem,
   FormMessage,
+  Input,
+  Label,
 } from '@/shared';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -72,12 +74,12 @@ export const SignupContainer = () => {
                   name={name as keyof SignupFormData}
                   render={({ field }) => (
                     <FormItem className='flex flex-col items-start'>
-                      <label className='text-sm font-semibold'>{label}</label>
+                      <Label className='text-sm font-semibold'>{label}</Label>
                       <div className='flex w-full flex-row gap-3'>
                         <FormControl>
-                          <input
+                          <Input
                             type={type}
-                            className='w-full rounded-md border px-3 py-2 text-sm [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
+                            className='text-sm [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
                             {...field}
                           />
                         </FormControl>
