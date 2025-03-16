@@ -1,7 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-import { getDynamicPath } from '@/shared/utils';
 
 type TableHeader = {
   text: string;
@@ -15,6 +12,7 @@ type TableProps<T extends Record<string, unknown>> = {
   itemKey?: keyof T;
   updateSelection: (selection: T[keyof T][]) => void;
   renderCell?: (key: keyof T, item: T) => React.ReactNode;
+  onItemClick?: (item: T) => void;
 };
 
 export const ItemTable = <T extends Record<string, unknown>>({
@@ -24,12 +22,11 @@ export const ItemTable = <T extends Record<string, unknown>>({
   selectable = false,
   itemKey,
   updateSelection,
+  onItemClick,
 }: TableProps<T>) => {
   const effectiveItemKey = itemKey ?? (headers[0]?.value as keyof T);
 
   const [selection, setSelection] = useState<Set<T[keyof T]>>(new Set());
-
-  const navigate = useNavigate();
 
   if (!headers || headers.length === 0) {
     throw new Error('<ItemTable /> headers는 필수 요소입니다.');
@@ -96,9 +93,7 @@ export const ItemTable = <T extends Record<string, unknown>>({
           return (
             <tr
               key={index}
-              onClick={() => {
-                navigate(getDynamicPath.rentItemDetail(String(item.itemId)));
-              }}
+              onClick={() => onItemClick?.(item)}
               className={`border-b ${isSelected ? 'bg-gray-200' : ''} ${isDisabled ? 'opacity-50' : ''}`}
             >
               {selectable && (

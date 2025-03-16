@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Button, ItemTable, RouterPath } from '@/shared';
+import { Button, getDynamicPath, ItemTable, RouterPath } from '@/shared';
 
 import { ITEM_BODY, ITEM_HEADERS } from '../model';
 
@@ -10,9 +10,14 @@ export const TableContainer = () => {
 
   const navigate = useNavigate();
 
-  const onClick = () => {
+  const handleClickAdd = () => {
     navigate(RouterPath.ADMIN_ADD_ITEM);
   };
+
+  const handleClickItem = (itemId: string) => {
+    navigate(getDynamicPath.rentItemDetail(String(itemId)));
+  };
+
   useEffect(() => {
     console.log(Array.from(selection));
   }, [selection]);
@@ -29,7 +34,7 @@ export const TableContainer = () => {
             </Button>
           </div>
           <div className='flex gap-2'>
-            <Button onClick={onClick}>물품추가</Button>
+            <Button onClick={handleClickAdd}>물품 추가</Button>
             <Button variant='ghost' className='text-sun'>
               물품 삭제
             </Button>
@@ -60,6 +65,7 @@ export const TableContainer = () => {
               }
               return item[key];
             }}
+            onItemClick={(item) => handleClickItem(item.itemId)}
           />
         </div>
       </div>
