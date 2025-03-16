@@ -10,21 +10,23 @@ import { Button, ItemTable } from '@/shared';
 
 export const ItemListSection = () => {
   //   const navigate = useNavigate();
-  const [isSelectedType, setIsSelectedType] = useState<string | null>();
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [isAvailableSelected, setIsAvailableSelected] =
     useState<boolean>(false);
 
   const filteredItems = AVAILABLE_ITEM_BODIES.filter((item) => {
-    const matchType = isSelectedType ? item.type === isSelectedType : true;
-    const matchAvailability = isAvailableSelected
-      ? item.status === '대여가능'
-      : true;
+    const matchType =
+      selectedTypes.length === 0 || selectedTypes.includes(item.type);
+    const matchAvailability =
+      !isAvailableSelected || item.status === '대여가능';
 
     return matchType && matchAvailability;
   });
 
   const handleSelectType = (type: string) => {
-    setIsSelectedType((prev) => (prev === type ? null : type));
+    setSelectedTypes((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type],
+    );
   };
 
   const handleAvailableSelect = () => {
@@ -44,7 +46,7 @@ export const ItemListSection = () => {
           {ITEM_TYPE.map((item) => (
             <Button
               key={item.type}
-              variant={isSelectedType === `${item.type}` ? 'moon' : 'outline'}
+              variant={selectedTypes.includes(item.type) ? 'moon' : 'outline'}
               onClick={() => handleSelectType(item.type)}
             >
               {item.type}
