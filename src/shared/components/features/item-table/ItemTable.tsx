@@ -10,7 +10,7 @@ type TableProps<T extends Record<string, unknown>> = {
   items: T[];
   selectable?: boolean;
   itemKey?: keyof T;
-  updateSelection: (selection: T[keyof T][]) => void;
+  updateSelection?: (selection: T[keyof T][]) => void;
   renderCell?: (key: keyof T, item: T) => React.ReactNode;
   onItemClick?: (item: T) => void;
 };
@@ -41,7 +41,7 @@ export const ItemTable = <T extends Record<string, unknown>>({
       newSelection.add(value);
     }
     setSelection(newSelection);
-    updateSelection([...newSelection]);
+    updateSelection?.([...newSelection]);
   };
 
   const getAbledItems = (items: T[]): T[] => {
@@ -54,10 +54,10 @@ export const ItemTable = <T extends Record<string, unknown>>({
         getAbledItems(items).map((item) => item[effectiveItemKey]),
       );
       setSelection(allCheckedSelection);
-      updateSelection([...allCheckedSelection]);
+      updateSelection?.([...allCheckedSelection]);
     } else {
       setSelection(new Set());
-      updateSelection([]);
+      updateSelection?.([]);
     }
   };
 

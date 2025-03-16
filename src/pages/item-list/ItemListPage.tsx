@@ -56,9 +56,6 @@ export const ItemListPage = () => {
               headers={AVAILABLE_ITEM_HEADERS}
               items={AVAILABLE_ITEM_BODIES}
               itemKey='name'
-              updateSelection={(newSelection) =>
-                setSelection(new Set(newSelection))
-              }
               renderCell={(key, item) => {
                 if (key === 'status') {
                   return (
