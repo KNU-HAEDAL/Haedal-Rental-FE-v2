@@ -1,12 +1,15 @@
 import { useForm } from 'react-hook-form';
 
 import {
+  Button,
   cn,
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
+  Input,
+  Label,
 } from '@/shared';
 
 type FormData = {
@@ -42,13 +45,9 @@ export const LoginContainer = () => {
                 rules={{ required: `${label}를 입력해주세요.` }}
                 render={({ field }) => (
                   <FormItem className='flex flex-col items-start'>
-                    <label className='text-sm font-semibold'>{label}</label>
+                    <Label className='text-sm font-semibold'>{label}</Label>
                     <FormControl>
-                      <input
-                        type={type}
-                        {...field}
-                        className='w-full rounded-md border px-3 py-2 text-sm'
-                      />
+                      <Input type={type} {...field} className='text-sm' />
                     </FormControl>
                     <FormMessage className='text-xs' />
                   </FormItem>
@@ -57,18 +56,17 @@ export const LoginContainer = () => {
             ))}
           </ul>
           <div className='w-full px-8'>
-            <button
+            <Button
               type='submit'
               disabled={!formState.isValid}
               className={cn(
-                `w-full rounded-md border px-4 py-2 text-sm font-semibold`,
-                !formState.isValid
-                  ? 'cursor-not-allowed bg-gray-200 text-gray-500'
-                  : 'bg-haedal text-white',
+                `w-full rounded-md border px-4 py-2 text-sm`,
+                !formState.isValid &&
+                  'cursor-not-allowed bg-gray-200 text-gray-500',
               )}
             >
               로그인
-            </button>
+            </Button>
           </div>
         </form>
       </Form>
