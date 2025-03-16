@@ -18,7 +18,7 @@ export const ItemListSection = () => {
   );
 
   const handleSelectType = (type: string) => {
-    setIsSelectedType(type);
+    setIsSelectedType((prev) => (prev === type ? null : type));
   };
 
   const handleClickItem = (itemId: string) => {
