@@ -62,7 +62,7 @@ export const ItemListSection = () => {
       <div className='overflow-hidden px-3'>
         <ItemTable
           headers={AVAILABLE_ITEM_HEADERS}
-          items={!isSelectedType ? AVAILABLE_ITEM_BODIES : filteredItems}
+          items={filteredItems}
           itemKey='name'
           renderCell={(key, item) => {
             if (key === 'status') {
