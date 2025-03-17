@@ -10,11 +10,11 @@ export const TableContainer = () => {
 
   const navigate = useNavigate();
 
-  const handleClickAdd = () => {
+  const goToAddItem = () => {
     navigate(RouterPath.ADMIN_ADD_ITEM);
   };
 
-  const handleClickItem = (itemId: string) => {
+  const goToRentedItemDetail = (itemId: string) => {
     navigate(getDynamicPath.rentItemDetail(String(itemId)));
   };
 
@@ -34,7 +34,7 @@ export const TableContainer = () => {
             </Button>
           </div>
           <div className='flex gap-2'>
-            <Button onClick={handleClickAdd}>물품 추가</Button>
+            <Button onClick={goToAddItem}>물품 추가</Button>
             <Button variant='ghost' className='text-sun'>
               물품 삭제
             </Button>
@@ -65,7 +65,7 @@ export const TableContainer = () => {
               }
               return item[key];
             }}
-            onClickItem={(item) => handleClickItem(item.itemId)}
+            onClickItem={(item) => goToRentedItemDetail(item.itemId)}
           />
         </div>
       </div>

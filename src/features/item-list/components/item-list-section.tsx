@@ -33,7 +33,7 @@ export const ItemListSection = () => {
     setIsAvailableSelected((prev) => !prev);
   };
 
-  const handleClickItem = (itemId: string) => {
+  const goToItemDetail = (itemId: string) => {
     // navigate(getDynamicPath.rentItemDetail(String(itemId)));
     // Todo: 물품 대여 정보 페이지로 이동 -> 대여 신청 폼으로 이동 (현재는 딱히 UI가 없음)
     console.log(itemId);
@@ -82,7 +82,7 @@ export const ItemListSection = () => {
             }
             return item[key];
           }}
-          onClickItem={(item) => handleClickItem(item.itemId)}
+          onClickItem={(item) => goToItemDetail(item.itemId)}
         />
       </div>
     </div>
