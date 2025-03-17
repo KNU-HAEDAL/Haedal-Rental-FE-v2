@@ -65,7 +65,7 @@ export const TableContainer = () => {
               }
               return item[key];
             }}
-            onItemClick={(item) => handleClickItem(item.itemId)}
+            onClickItem={(item) => handleClickItem(item.itemId)}
           />
         </div>
       </div>

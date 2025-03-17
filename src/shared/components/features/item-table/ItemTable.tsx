@@ -14,7 +14,7 @@ type TableProps<T extends Record<string, unknown>> = {
   itemKey?: keyof T;
   updateSelection?: (selection: T[keyof T][]) => void;
   renderCell?: (key: keyof T, item: T) => React.ReactNode;
-  onItemClick?: (item: T) => void;
+  onClickItem?: (item: T) => void;
 };
 
 export const ItemTable = <T extends Record<string, unknown>>({
@@ -24,7 +24,7 @@ export const ItemTable = <T extends Record<string, unknown>>({
   selectable = false,
   itemKey,
   updateSelection,
-  onItemClick,
+  onClickItem,
 }: TableProps<T>) => {
   const effectiveItemKey = itemKey ?? (headers[0]?.value as keyof T);
 
@@ -96,7 +96,7 @@ export const ItemTable = <T extends Record<string, unknown>>({
             return (
               <tr
                 key={index}
-                onClick={() => onItemClick?.(item)}
+                onClick={() => onClickItem?.(item)}
                 className={cn(
                   `${index !== items.length - 1 ? 'border-b' : ''}`,
                   `${isSelected ? 'bg-gray-200' : ''}`,

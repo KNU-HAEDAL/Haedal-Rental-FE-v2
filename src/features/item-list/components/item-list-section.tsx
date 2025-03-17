@@ -82,7 +82,7 @@ export const ItemListSection = () => {
             }
             return item[key];
           }}
-          onItemClick={(item) => handleClickItem(item.itemId)}
+          onClickItem={(item) => handleClickItem(item.itemId)}
         />
       </div>
     </div>
