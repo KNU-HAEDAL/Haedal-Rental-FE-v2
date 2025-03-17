@@ -34,7 +34,7 @@ export const ItemListSection = () => {
   };
 
   const goToItemDetail = (itemId: string) => {
-    // navigate(getDynamicPath.rentItemDetail(String(itemId)));
+    // navigate(getDynamicPath.rentedItemDetail(String(itemId)));
     // Todo: 물품 대여 정보 페이지로 이동 -> 대여 신청 폼으로 이동 (현재는 딱히 UI가 없음)
     console.log(itemId);
   };

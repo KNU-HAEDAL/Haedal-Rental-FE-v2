@@ -1,3 +1,3 @@
-export * from './AdminPage';
-export * from './RentItemInfoPage';
 export * from './AddItemPage';
+export * from './AdminPage';
+export * from './RentedItemDetailPage';

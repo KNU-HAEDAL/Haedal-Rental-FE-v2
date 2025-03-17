@@ -15,7 +15,7 @@ export const TableContainer = () => {
   };
 
   const goToRentedItemDetail = (itemId: string) => {
-    navigate(getDynamicPath.rentItemDetail(String(itemId)));
+    navigate(getDynamicPath.rentedItemDetail(String(itemId)));
   };
 
   useEffect(() => {
