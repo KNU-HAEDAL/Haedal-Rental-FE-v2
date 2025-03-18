@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import {
+  AddItemPage,
   AdminPage,
   ApplyFormPage,
   ItemListPage,
-  RentItemInfoPage,
   LoginPage,
   MainPage,
   MyItemPage,
+  RentedItemDetailPage,
   SignupPage,
-  AddItemPage,
 } from '@/pages';
 
 import { RouterPath } from '@/shared';
@@ -48,8 +48,8 @@ const router = createBrowserRouter(
           element: <AdminPage />,
         },
         {
-          path: RouterPath.ADMIN_ITEM_INFO,
-          element: <RentItemInfoPage />,
+          path: RouterPath.ADMIN_RENTED_ITEM_DETAIL,
+          element: <RentedItemDetailPage />,
         },
         {
           path: RouterPath.ADMIN_ADD_ITEM,
