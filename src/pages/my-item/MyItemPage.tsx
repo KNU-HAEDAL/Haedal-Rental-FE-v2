@@ -5,7 +5,7 @@ import {
   TableSection,
 } from '@/features';
 
-import { BackButtons, DESCRIPTION_DATA, useGetMockData } from '@/shared';
+import { BackButtons, NAVIGATE_BUTTONS_DATA, useGetMockData } from '@/shared';
 
 import { DescriptionSection, LogoContainer } from '@/widgets';
 
@@ -17,10 +17,10 @@ export const MyItemPage = () => {
 
   return (
     <div className='flex h-full flex-col items-center justify-center gap-3 text-center'>
-      <LogoContainer title='나의 물품 대여 확인'>
+      <LogoContainer title={NAVIGATE_BUTTONS_DATA[2].title}>
         <DescriptionSection
           name={name}
-          description={DESCRIPTION_DATA[2].description}
+          description={NAVIGATE_BUTTONS_DATA[2].description}
         />
         <PenaltySection penaltyData={penaltyData} />
         <TableSection
