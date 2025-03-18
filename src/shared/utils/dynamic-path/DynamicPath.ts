@@ -1,6 +1,6 @@
 import { RouterPath } from '@/shared';
 
 export const getDynamicPath = {
-  rentItemDetail: (itemId: string) =>
-    RouterPath.ADMIN_ITEM_INFO.replace(':itemId', itemId),
+  rentedItemDetail: (itemId: string) =>
+    RouterPath.ADMIN_RENTED_ITEM_DETAIL.replace(':itemId', itemId),
 };
