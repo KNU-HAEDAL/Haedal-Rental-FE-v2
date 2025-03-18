@@ -54,7 +54,6 @@ export const ItemListSection = () => {
           ))}
         </div>
         <Button
-          type='button'
           variant={isAvailableSelected === true ? 'moon' : 'outline'}
           onClick={handleAvailableSelect}
         >

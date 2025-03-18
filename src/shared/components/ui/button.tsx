@@ -15,20 +15,21 @@ const buttonVariants = cva(
         primary: 'border bg-haedal text-white hover:bg-haedal/90',
         secondary: 'border bg-background text-haedal hover:bg-background/90',
         // 상태
-        danger: 'border bg-danger text-white hover:bg-danger/90', // 삭제, 로그아웃
+        danger:
+          'border border-destructive bg-background text-destructive hover:bg-accent', // 삭제, 로그아웃
         // 스타일만 제공
-        sun: 'border bg-sun text-white hover:bg-sun/90', // Badge
-        moon: 'border bg-moon text-haedal hover:bg-moon/80', // Badge
+        moon: 'border bg-moon text-foreground hover:bg-moon/80',
+        sun: 'border bg-sun text-white hover:bg-sun/90',
         outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+          'border bg-background text-gray-500 hover:bg-accent hover:text-accent-foreground',
         ghost:
-          'border-haedal-500 hover:bg-accent hover:text-accent-foreground text-haedal',
-        link: 'text-haedal underline-offset-4 hover:underline',
+          'border border-haedal text-haedal hover:bg-accent hover:text-accent-foreground',
+        link: 'text-haedal underline underline-offset-4 hover:text-accent-foreground',
       },
       size: {
-        default: 'h-full px-4 py-1',
-        sm: 'h-9 rounded-md px-3',
-        lg: 'h-11 rounded-md px-8',
+        default: 'h-full px-4 py-1 rounded-xs',
+        sm: 'h-9 px-3 rounded-sm',
+        lg: 'h-11 px-8 rounded-md',
         icon: 'h-10 w-10',
       },
     },
