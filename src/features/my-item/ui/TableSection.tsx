@@ -1,13 +1,13 @@
 import { Spinner } from '@/shared';
 
 import { MyItemListTable } from '../components';
-import { IHeaderData, IBodyData } from '../model';
+import { HeaderData, BodyData } from '../model';
 
 type Props = {
   isPending: boolean;
-  columnData: IBodyData[];
-  headerData: IHeaderData[];
-  bodyData: IBodyData[];
+  columnData: BodyData[];
+  headerData: HeaderData[];
+  bodyData: BodyData[];
 };
 
 export const TableSection = ({

@@ -1,9 +1,9 @@
-export type IHeaderData = {
+export type HeaderData = {
   text: string;
   value: string;
 };
 
-export const MY_ITEM_HEADERS: IHeaderData[] = [
+export const MY_ITEM_HEADERS: HeaderData[] = [
   {
     text: '종류',
     value: 'type',
@@ -18,14 +18,14 @@ export const MY_ITEM_HEADERS: IHeaderData[] = [
   },
 ];
 
-export type IBodyData = {
+export type BodyData = {
   type: string;
   name: string;
   status: string;
   itemId: string;
 };
 
-export const MY_ITEM_BODY: IBodyData[] = [
+export const MY_ITEM_BODY: BodyData[] = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',

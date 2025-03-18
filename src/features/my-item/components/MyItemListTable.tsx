@@ -1,17 +1,17 @@
 import { Badge } from '@/shared';
 
-import { IBodyData, IHeaderData } from '../model';
+import { BodyData, HeaderData } from '../model';
 
 type Props = {
-  headerData: IHeaderData[];
-  bodyData: IBodyData[];
+  headerData: HeaderData[];
+  bodyData: BodyData[];
 };
 
 export const MyItemListTable = ({ headerData, bodyData }: Props) => {
   return (
     <table className='w-full border-collapse justify-center'>
       <thead>
-        <tr className='border-b border-gray-400'>
+        <tr className='border-b-2'>
           {headerData.map((header) => (
             <th key={header.value} className='py-2'>
               {header.text}
@@ -21,10 +21,7 @@ export const MyItemListTable = ({ headerData, bodyData }: Props) => {
       </thead>
       <tbody>
         {bodyData.map((item) => (
-          <tr
-            key={item.name}
-            className='cursor-pointer border-b-1 border-gray-300'
-          >
+          <tr key={item.name} className='cursor-pointer border-b-1'>
             <td className='py-2'>{item.type}</td>
             <td>{item.name}</td>
             <td>
