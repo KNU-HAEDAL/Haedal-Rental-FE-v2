@@ -17,9 +17,10 @@ const buttonVariants = cva(
         // 상태
         danger:
           'border border-destructive bg-background text-destructive hover:bg-accent', // 삭제, 로그아웃
+        // 태그
+        moonTag: 'border bg-moon text-foreground hover:bg-moon/80',
+        sunTag: 'border bg-sun text-white hover:bg-sun/90',
         // 스타일만 제공
-        moon: 'border bg-moon text-foreground hover:bg-moon/80',
-        sun: 'border bg-sun text-white hover:bg-sun/90',
         outline:
           'border bg-background text-gray-500 hover:bg-accent hover:text-accent-foreground',
         ghost:

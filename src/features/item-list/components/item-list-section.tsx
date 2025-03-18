@@ -46,7 +46,9 @@ export const ItemListSection = () => {
           {ITEM_TYPE.map((item) => (
             <Button
               key={item.type}
-              variant={selectedTypes.includes(item.type) ? 'moon' : 'outline'}
+              variant={
+                selectedTypes.includes(item.type) ? 'moonTag' : 'outline'
+              }
               onClick={() => handleSelectType(item.type)}
             >
               {item.type}
@@ -54,7 +56,7 @@ export const ItemListSection = () => {
           ))}
         </div>
         <Button
-          variant={isAvailableSelected === true ? 'moon' : 'outline'}
+          variant={isAvailableSelected === true ? 'moonTag' : 'outline'}
           onClick={handleAvailableSelect}
         >
           대여가능
