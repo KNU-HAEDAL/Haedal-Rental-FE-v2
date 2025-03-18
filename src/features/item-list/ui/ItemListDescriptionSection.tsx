@@ -1,4 +1,4 @@
-import { NAVIGATE_BUTTONS_DATA } from '@/features/main/model';
+import { NAVIGATE_BUTTONS_DATA } from '@/shared';
 
 export const ItemListDescriptionSection = () => {
   return (
