@@ -21,7 +21,7 @@ export const MyItemListTable = ({ headerData, bodyData }: Props) => {
       </thead>
       <tbody>
         {bodyData.map((item) => (
-          <tr key={item.name} className='cursor-pointer border-b-1'>
+          <tr key={item.itemId} className='cursor-pointer border-b-1'>
             <td className='py-2'>{item.type}</td>
             <td>{item.name}</td>
             <td>
