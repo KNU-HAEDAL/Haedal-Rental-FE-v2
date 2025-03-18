@@ -15,8 +15,7 @@ export const ItemTypeSection = ({ itemType }: Props) => {
         {ITEM_TYPE.map((item) => (
           <Badge
             key={item.value}
-            variant={itemType === item.type ? 'moon' : 'outline'}
-            className='font-medium'
+            variant={itemType === item.type ? 'available' : 'outline'}
           >
             {item.type}
           </Badge>

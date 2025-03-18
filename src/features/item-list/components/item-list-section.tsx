@@ -6,7 +6,7 @@ import {
   ITEM_TYPE,
 } from '@/features';
 
-import { Button, ItemTable } from '@/shared';
+import { Badge, Button, ItemTable } from '@/shared';
 
 export const ItemListSection = () => {
   //   const navigate = useNavigate();
@@ -18,7 +18,7 @@ export const ItemListSection = () => {
     const matchType =
       selectedTypes.length === 0 || selectedTypes.includes(item.type);
     const matchAvailability =
-      !isAvailableSelected || item.status === '대여가능';
+      !isAvailableSelected || item.status === '대여 가능';
 
     return matchType && matchAvailability;
   });
@@ -59,7 +59,7 @@ export const ItemListSection = () => {
           variant={isAvailableSelected === true ? 'moonTag' : 'outline'}
           onClick={handleAvailableSelect}
         >
-          대여가능
+          대여 가능
         </Button>
       </div>
       <div className='overflow-hidden px-3'>
@@ -70,15 +70,13 @@ export const ItemListSection = () => {
           renderCell={(key, item) => {
             if (key === 'status') {
               return (
-                <span
-                  className={`flex justify-center px-1 py-1 text-sm font-bold ${
-                    item.status === '대여가능'
-                      ? 'bg-moon text-haedal'
-                      : 'bg-sun text-white'
-                  }`}
+                <Badge
+                  variant={
+                    item.status === '대여 가능' ? 'available' : 'unavailable'
+                  }
                 >
                   {item.status}
-                </span>
+                </Badge>
               );
             }
             return item[key];

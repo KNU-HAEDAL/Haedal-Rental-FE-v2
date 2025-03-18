@@ -27,7 +27,7 @@ export const TableSection = ({
           {columnData ? (
             <MyItemListTable headerData={headerData} bodyData={bodyData} />
           ) : (
-            <p className='py-5 font-bold'>대여중인 물품이 없습니다.</p>
+            <p className='py-5 font-bold'>대여 중인 물품이 없습니다.</p>
           )}
         </div>
       )}
