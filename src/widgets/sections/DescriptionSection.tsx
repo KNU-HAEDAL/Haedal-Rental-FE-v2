@@ -1,18 +1,18 @@
-import { cn } from '@/shared';
-
 type Props = {
   className?: string;
-  children: React.ReactNode;
+  description: string;
+  name?: string;
 };
 
 export const DescriptionSection = ({
   className,
-  children,
+  description,
+  name,
   ...props
 }: React.ComponentProps<'p'> & Props) => {
   return (
-    <p className={cn(className)} {...props}>
-      {children}
+    <p className={className} {...props}>
+      {name ? `${name} ${description}` : description}
     </p>
   );
 };
