@@ -136,9 +136,9 @@
   }
   html,
   body {
-    @apply bg-background text-foreground font-NotoSans flex min-h-screen items-center justify-center;
+    @apply text-foreground font-NotoSans flex min-h-screen w-full items-center justify-center;
   }
   #root {
-    @apply mx-auto flex w-full max-w-3xl flex-col;
+    @apply mx-auto flex w-full flex-col;
   }
 }
