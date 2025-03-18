@@ -106,7 +106,7 @@ export const SignupContainer = () => {
               type='submit'
               disabled={!formState.isValid}
               className={cn(
-                `w-full rounded-md border px-4 py-2 text-sm`,
+                `w-full rounded-md px-4 py-2 text-sm`,
                 !formState.isValid &&
                   'cursor-not-allowed bg-gray-200 text-gray-500',
               )}

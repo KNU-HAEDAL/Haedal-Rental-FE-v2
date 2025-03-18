@@ -16,3 +16,5 @@ export const ITEM_TYPE = [
     value: 'etc',
   },
 ];
+
+// Todo: 이 파일 경로 옮기기

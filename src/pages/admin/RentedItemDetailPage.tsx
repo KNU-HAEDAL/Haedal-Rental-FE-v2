@@ -13,7 +13,7 @@ import { Button, Spinner, useGetMockData } from '@/shared';
 
 import { LogoContainer } from '@/widgets';
 
-export const RentItemInfoPage = () => {
+export const RentedItemDetailPage = () => {
   const navigate = useNavigate();
 
   const { data: itemData, isPending } = useGetMockData(ITEM_APPLY_DATA);
