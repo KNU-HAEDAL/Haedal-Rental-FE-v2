@@ -5,7 +5,7 @@ import {
   TableSection,
 } from '@/features';
 
-import { BackButtons, useGetMockData } from '@/shared';
+import { BackButtons, DESCRIPTION_DATA, useGetMockData } from '@/shared';
 
 import { DescriptionSection, LogoContainer } from '@/widgets';
 
@@ -14,12 +14,14 @@ export const MyItemPage = () => {
   const { data: penaltyData } = useGetMockData(1);
 
   const name = '김해달';
+
   return (
     <div className='flex h-full flex-col items-center justify-center gap-3 text-center'>
       <LogoContainer title='나의 물품 대여 확인'>
-        <DescriptionSection>
-          {name}님이 대여한 물품 목록입니다.
-        </DescriptionSection>
+        <DescriptionSection
+          name={name}
+          description={DESCRIPTION_DATA[2].description}
+        />
         <PenaltySection penaltyData={penaltyData} />
         <TableSection
           isPending={isPending}
