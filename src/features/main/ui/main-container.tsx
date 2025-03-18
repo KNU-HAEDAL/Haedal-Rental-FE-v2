@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { NAVIGATE_BUTTONS_DATA } from '../model';
+import { NAVIGATE_BUTTONS_DATA } from '@/shared';
 
 export const MainContainer = () => {
   return (
