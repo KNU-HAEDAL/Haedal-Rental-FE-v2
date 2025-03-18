@@ -1,14 +1,11 @@
 import { Progress } from '@/shared';
 
-interface ProgressBarProps {
+type Props = {
   step: number;
   totalSteps: number;
-}
+};
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({
-  step,
-  totalSteps,
-}) => {
+export const ProgressBar = ({ step, totalSteps }: Props) => {
   const progressValue = (step / totalSteps) * 100;
 
   return (
