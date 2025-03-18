@@ -38,7 +38,7 @@ export const AuthButtons = () => {
       ) : (
         <>
           <Link to='/signup'>
-            <Button variant='ghost'>회원가입</Button>
+            <Button variant='secondary'>회원가입</Button>
           </Link>
           <Link to='/login'>
             <Button variant='primary' onClick={onClickLogin}>

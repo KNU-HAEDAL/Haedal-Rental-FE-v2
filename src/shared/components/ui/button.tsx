@@ -14,18 +14,17 @@ const buttonVariants = cva(
         // 액션
         primary:
           'border border-haedal bg-haedal text-white hover:bg-haedal/90 disabled:cursor-not-allowed disabled:opacity-30',
-        secondary: 'border bg-background text-haedal hover:bg-background/90',
+        secondary:
+          'border border-haedal text-haedal hover:bg-accent hover:text-accent-foreground',
         // 상태
         danger:
-          'border border-destructive bg-background text-destructive hover:bg-accent disabled:border-gray-300 disabled:text-gray-400', // 삭제, 로그아웃
+          'border border-destructive bg-background text-destructive hover:bg-accent disabled:border-gray-300 disabled:text-gray-400',
         // 태그
         moonTag: 'border bg-moon text-foreground hover:bg-moon/80',
         sunTag: 'border bg-sun text-white hover:bg-sun/90',
         // 스타일만 제공
         outline:
           'border bg-background text-gray-500 hover:bg-accent hover:text-accent-foreground',
-        ghost:
-          'border border-haedal text-haedal hover:bg-accent hover:text-accent-foreground',
         link: 'text-haedal underline underline-offset-4 hover:text-accent-foreground',
       },
       size: {
