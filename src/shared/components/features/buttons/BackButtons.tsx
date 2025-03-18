@@ -20,7 +20,7 @@ export const BackButtons = ({
 
   return (
     <section className={cn('w-full pt-2 pb-6', className)} {...props}>
-      <Button onClick={onClick} variant='outline' className='px-6 shadow-md'>
+      <Button onClick={onClick} variant='outline'>
         뒤로
       </Button>
     </section>

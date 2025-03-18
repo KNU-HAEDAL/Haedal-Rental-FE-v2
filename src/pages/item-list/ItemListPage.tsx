@@ -19,11 +19,7 @@ export const ItemListPage = () => {
         <ItemListSection />
       </LogoContainer>
       <div className='w-full pt-2 pb-6'>
-        <Button
-          onClick={() => navigate(-1)}
-          variant='outline'
-          className='px-6 shadow-md'
-        >
+        <Button onClick={() => navigate(-1)} variant='outline'>
           뒤로
         </Button>
       </div>

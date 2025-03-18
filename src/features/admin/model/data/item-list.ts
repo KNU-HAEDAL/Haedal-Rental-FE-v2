@@ -25,7 +25,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여가능',
+    status: '대여 가능',
     date: '-',
     borrower: '-',
     itemId: '1',
@@ -33,7 +33,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여가능',
+    status: '대여 가능',
     date: '-',
     borrower: '-',
     itemId: '2',
@@ -41,7 +41,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여가능',
+    status: '대여 가능',
     date: '-',
     borrower: '-',
     itemId: '3',
@@ -49,7 +49,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여가능',
+    status: '대여 가능',
     date: '-',
     borrower: '-',
     itemId: '4',
@@ -57,7 +57,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여가능',
+    status: '대여 가능',
     date: '-',
     borrower: '-',
     itemId: '5',
@@ -65,7 +65,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여중',
+    status: '대여 중',
     date: '12/20',
     borrower: '김해달',
     itemId: '6',
@@ -73,7 +73,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여중',
+    status: '대여 중',
     date: '12/20',
     borrower: '김해달',
     itemId: '7',
@@ -81,7 +81,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여중',
+    status: '대여 중',
     date: '12/20',
     borrower: '김해달',
     itemId: '8',
@@ -89,7 +89,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여중',
+    status: '대여 중',
     date: '12/20',
     borrower: '김해달',
     itemId: '9',
@@ -97,7 +97,7 @@ export const ITEM_BODY = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '대여중',
+    status: '대여 중',
     date: '12/20',
     borrower: '김해달',
     itemId: '10',

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { toast } from 'sonner';
 
-import { Badge, Button, Checkbox, Form, Input } from '@/shared';
+import { Button, Checkbox, Form, Input } from '@/shared';
 
 import { ItemField } from '../components';
 import { AddItem, AddItemSchema, ITEM_TYPE } from '../model';
@@ -63,14 +63,15 @@ export const AddItemForm = () => {
               {(field) => (
                 <div className='flex w-full gap-2'>
                   {ITEM_TYPE.map((item) => (
-                    <Badge
+                    <Button
                       key={item.value}
-                      variant={field.value === item.value ? 'moon' : 'outline'}
-                      className='font-medium shadow-none'
+                      variant={
+                        field.value === item.value ? 'moonTag' : 'outline'
+                      }
                       onClick={() => field.onChange(item.value)}
                     >
                       {item.type}
-                    </Badge>
+                    </Button>
                   ))}
                 </div>
               )}
@@ -91,7 +92,7 @@ export const AddItemForm = () => {
             <Button
               type='submit'
               onClick={() => form.handleSubmit(onSubmit)()}
-              variant='moon'
+              variant='primary'
               className='px-5'
             >
               물품 추가

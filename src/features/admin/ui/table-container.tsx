@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import {
+  Badge,
   Button,
   getDynamicPath,
   ItemTable,
@@ -34,16 +35,12 @@ export const TableContainer = () => {
       <div className='w-full px-3'>
         <div className='flex w-full justify-between'>
           <div className='flex gap-2'>
-            <Button variant='moon'>대여가능</Button>
-            <Button variant='outline' className='border-sun text-sun'>
-              대여중
-            </Button>
+            <Button variant='moonTag'>대여 가능</Button>
+            <Button variant='outline'>대여 중</Button>
           </div>
           <div className='flex gap-2'>
             <Button onClick={goToAddItem}>물품 추가</Button>
-            <Button variant='ghost' className='text-sun'>
-              물품 삭제
-            </Button>
+            <Button variant='danger'>물품 삭제</Button>
           </div>
         </div>
         <div className='overflow-hidden pt-5'>
@@ -58,15 +55,13 @@ export const TableContainer = () => {
             renderCell={(key, item) => {
               if (key === 'status') {
                 return (
-                  <span
-                    className={`flex justify-center px-1 py-1 text-sm font-bold ${
-                      item.status === '대여가능'
-                        ? 'bg-moon text-haedal'
-                        : 'bg-sun text-white'
-                    }`}
+                  <Badge
+                    variant={
+                      item.status === '대여 가능' ? 'available' : 'unavailable'
+                    }
                   >
                     {item.status}
-                  </span>
+                  </Badge>
                 );
               }
               return item[key];

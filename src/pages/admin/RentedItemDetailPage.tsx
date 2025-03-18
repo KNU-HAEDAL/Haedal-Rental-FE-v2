@@ -38,7 +38,7 @@ export const RentedItemDetailPage = () => {
       />
       <ItemImageSection itemImage={itemData.imageUrl} />
       <div className='flex items-center justify-center gap-3 pt-1 pb-5'>
-        <Button onClick={() => navigate(-1)} variant='moon' className='px-5'>
+        <Button onClick={() => navigate(-1)} variant='outline'>
           확인
         </Button>
       </div>

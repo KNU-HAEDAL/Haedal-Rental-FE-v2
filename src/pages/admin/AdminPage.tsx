@@ -18,7 +18,7 @@ export const AdminPage = () => {
         <TableContainer />
       </LogoContainer>
       <div className='w-full pt-2 pb-6'>
-        <Button onClick={onClick} variant='outline' className='px-6 shadow-md'>
+        <Button onClick={onClick} variant='outline'>
           뒤로
         </Button>
       </div>

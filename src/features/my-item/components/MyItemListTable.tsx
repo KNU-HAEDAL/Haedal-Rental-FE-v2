@@ -26,8 +26,9 @@ export const MyItemListTable = ({ headerData, bodyData }: Props) => {
             <td>{item.name}</td>
             <td>
               <Badge
-                variant={item.status === '반납 가능' ? 'moon' : 'sun'}
-                className='px-2 py-1 font-bold'
+                variant={
+                  item.status === '반납 가능' ? 'available' : 'unavailable'
+                }
               >
                 {item.status}
               </Badge>
