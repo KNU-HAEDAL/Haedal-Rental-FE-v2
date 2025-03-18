@@ -12,11 +12,12 @@ const buttonVariants = cva(
     variants: {
       variant: {
         // 액션
-        primary: 'border bg-haedal text-white hover:bg-haedal/90',
+        primary:
+          'border border-haedal bg-haedal text-white hover:bg-haedal/90 disabled:cursor-not-allowed disabled:opacity-30',
         secondary: 'border bg-background text-haedal hover:bg-background/90',
         // 상태
         danger:
-          'border border-destructive bg-background text-destructive hover:bg-accent', // 삭제, 로그아웃
+          'border border-destructive bg-background text-destructive hover:bg-accent disabled:border-gray-300 disabled:text-gray-400', // 삭제, 로그아웃
         // 태그
         moonTag: 'border bg-moon text-foreground hover:bg-moon/80',
         sunTag: 'border bg-sun text-white hover:bg-sun/90',
@@ -29,8 +30,8 @@ const buttonVariants = cva(
       },
       size: {
         default: 'h-full px-4 py-1 rounded-xs',
-        sm: 'h-9 px-3 rounded-sm',
-        lg: 'h-11 px-8 rounded-md',
+        sm: 'h-9 px-3 rounded-xs text-md',
+        lg: 'h-11 px-8 rounded-md text-md',
         icon: 'h-10 w-10',
       },
     },
@@ -50,6 +51,7 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
+
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}

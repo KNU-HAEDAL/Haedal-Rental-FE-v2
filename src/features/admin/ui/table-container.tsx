@@ -34,16 +34,12 @@ export const TableContainer = () => {
       <div className='w-full px-3'>
         <div className='flex w-full justify-between'>
           <div className='flex gap-2'>
-            <Button variant='moon'>대여가능</Button>
-            <Button variant='outline' className='border-sun text-sun'>
-              대여중
-            </Button>
+            <Button variant='moonTag'>대여가능</Button>
+            <Button variant='outline'>대여중</Button>
           </div>
           <div className='flex gap-2'>
             <Button onClick={goToAddItem}>물품 추가</Button>
-            <Button variant='ghost' className='text-sun'>
-              물품 삭제
-            </Button>
+            <Button variant='danger'>물품 삭제</Button>
           </div>
         </div>
         <div className='overflow-hidden pt-5'>

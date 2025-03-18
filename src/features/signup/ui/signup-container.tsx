@@ -4,7 +4,6 @@ import { signupFormSchema, type SignupFormData } from '@/features';
 
 import {
   Button,
-  cn,
   Form,
   FormControl,
   FormField,
@@ -82,7 +81,7 @@ export const SignupContainer = () => {
                         {button && (
                           <Button
                             variant='outline'
-                            className='rounded-md shadow-none'
+                            className='rounded-md'
                             onClick={onClick}
                           >
                             {button}
@@ -105,11 +104,8 @@ export const SignupContainer = () => {
             <Button
               type='submit'
               disabled={!formState.isValid}
-              className={cn(
-                `w-full rounded-md px-4 py-2 text-sm`,
-                !formState.isValid &&
-                  'cursor-not-allowed bg-gray-200 text-gray-500',
-              )}
+              size='lg'
+              className='w-full px-4 py-2'
             >
               회원가입
             </Button>

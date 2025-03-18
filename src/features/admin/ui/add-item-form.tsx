@@ -91,7 +91,7 @@ export const AddItemForm = () => {
             <Button
               type='submit'
               onClick={() => form.handleSubmit(onSubmit)()}
-              variant='moon'
+              variant='primary'
               className='px-5'
             >
               물품 추가

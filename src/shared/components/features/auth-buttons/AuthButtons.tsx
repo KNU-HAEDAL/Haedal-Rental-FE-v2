@@ -31,7 +31,7 @@ export const AuthButtons = () => {
       {isLogin ? (
         <div className='flex w-full items-center justify-between'>
           <p className='font-bold'>김해달님 반갑습니다.</p>
-          <Button variant='sun' onClick={onClickLogout}>
+          <Button variant='danger' onClick={onClickLogout}>
             로그아웃
           </Button>
         </div>
@@ -41,7 +41,7 @@ export const AuthButtons = () => {
             <Button variant='ghost'>회원가입</Button>
           </Link>
           <Link to='/login'>
-            <Button variant='moon' onClick={onClickLogin}>
+            <Button variant='primary' onClick={onClickLogin}>
               로그인
             </Button>
           </Link>
