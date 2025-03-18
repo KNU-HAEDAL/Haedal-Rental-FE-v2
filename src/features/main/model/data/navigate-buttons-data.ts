@@ -7,7 +7,7 @@ import { RouterPath } from '@/shared';
 
 export const NAVIGATE_BUTTONS_DATA = [
   {
-    title: '대여가능 물품 목록',
+    title: '해달 물품 목록',
     icon: searchIcon,
     navigateTo: RouterPath.ITEM_LIST,
     key: 'search',
