@@ -1,16 +1,18 @@
-import { TableContainer } from '@/features';
+import { ItemsTableSection } from '@/features';
 
 import { BackButton, NAVIGATE_BUTTONS_DATA } from '@/shared';
 
-import { ContentsContainer, PageWrapper } from '@/widgets';
+import { ButtonContainer, ContentsContainer, PageWrapper } from '@/widgets';
 
 export const AdminPage = () => {
   return (
     <PageWrapper>
       <ContentsContainer title={NAVIGATE_BUTTONS_DATA[3].title}>
-        <TableContainer />
+        <ItemsTableSection />
       </ContentsContainer>
-      <BackButton />
+      <ButtonContainer>
+        <BackButton />
+      </ButtonContainer>
     </PageWrapper>
   );
 };

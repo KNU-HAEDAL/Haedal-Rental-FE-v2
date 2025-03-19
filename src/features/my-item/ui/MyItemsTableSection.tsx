@@ -10,7 +10,7 @@ type Props = {
   bodyData: BodyData[];
 };
 
-export const TableSection = ({
+export const MyItemsTableSection = ({
   isPending,
   columnData,
   headerData,

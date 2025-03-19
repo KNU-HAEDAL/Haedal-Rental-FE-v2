@@ -5,7 +5,7 @@ import { ItemListDescriptionSection, ItemListSection } from '@/features';
 
 import { BackButton, NAVIGATE_BUTTONS_DATA } from '@/shared';
 
-import { ContentsContainer, PageWrapper } from '@/widgets';
+import { ButtonContainer, ContentsContainer, PageWrapper } from '@/widgets';
 
 export const ItemListPage = () => {
   return (
@@ -14,7 +14,9 @@ export const ItemListPage = () => {
         <ItemListDescriptionSection />
         <ItemListSection />
       </ContentsContainer>
-      <BackButton />
+      <ButtonContainer>
+        <BackButton />
+      </ButtonContainer>
     </PageWrapper>
   );
 };

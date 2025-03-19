@@ -9,7 +9,7 @@ type Props = {
   endDate: string;
 };
 
-export const ItemPeriodSection = ({ startDate, endDate }: Props) => {
+export const ItemPeriodContainer = ({ startDate, endDate }: Props) => {
   const returnDate = getAfterDays(7);
 
   return (

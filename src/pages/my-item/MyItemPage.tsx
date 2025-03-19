@@ -2,12 +2,17 @@ import {
   MY_ITEM_BODY,
   MY_ITEM_HEADERS,
   PenaltySection,
-  TableSection,
+  MyItemsTableSection,
 } from '@/features';
 
 import { BackButton, NAVIGATE_BUTTONS_DATA, useGetMockData } from '@/shared';
 
-import { ContentsContainer, DescriptionSection, PageWrapper } from '@/widgets';
+import {
+  ButtonContainer,
+  ContentsContainer,
+  DescriptionSection,
+  PageWrapper,
+} from '@/widgets';
 
 export const MyItemPage = () => {
   const { data: columnData, isPending } = useGetMockData(MY_ITEM_BODY);
@@ -23,14 +28,16 @@ export const MyItemPage = () => {
           description={NAVIGATE_BUTTONS_DATA[2].description}
         />
         <PenaltySection penaltyData={penaltyData} />
-        <TableSection
+        <MyItemsTableSection
           isPending={isPending}
           columnData={columnData}
           headerData={MY_ITEM_HEADERS}
           bodyData={MY_ITEM_BODY}
         />
       </ContentsContainer>
-      <BackButton />
+      <ButtonContainer>
+        <BackButton />
+      </ButtonContainer>
     </PageWrapper>
   );
 };

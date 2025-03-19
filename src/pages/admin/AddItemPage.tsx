@@ -2,7 +2,7 @@ import { AddItemForm } from '@/features';
 
 import { BackButton } from '@/shared';
 
-import { ContentsContainer, PageWrapper } from '@/widgets';
+import { ContentsContainer, PageWrapper, ButtonContainer } from '@/widgets';
 
 export const AddItemPage = () => {
   return (
@@ -11,7 +11,9 @@ export const AddItemPage = () => {
         <p className='font-bold'>대여 가능한 물품을 추가해주세요.</p>
         <AddItemForm />
       </ContentsContainer>
-      <BackButton />
+      <ButtonContainer>
+        <BackButton />
+      </ButtonContainer>
     </PageWrapper>
   );
 };

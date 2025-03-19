@@ -4,7 +4,7 @@ type Props = {
   itemImage: string;
 };
 
-export const ItemImageSection = ({ itemImage }: Props) => {
+export const ItemImageContainer = ({ itemImage }: Props) => {
   return (
     <ItemBox className='gap-3 border py-5'>
       <p>대여 물품을 사진으로 찍어서 업로드해주세요.</p>

@@ -12,7 +12,7 @@ import {
 
 import { ITEM_HEADERS, ITEM_BODY } from '../../model';
 
-export const TableContainer = () => {
+export const ItemsTableSection = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());
 
   const navigate = useNavigate();
