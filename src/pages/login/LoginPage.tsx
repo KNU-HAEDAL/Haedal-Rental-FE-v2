@@ -1,17 +1,14 @@
 import { LoginForm } from '@/features';
 
-import { SimpleLogo } from '@/shared';
-
-import { AuthContainer, AuthLinkContainer } from '@/widgets';
+import { AuthContainer, AuthLinkContainer, PageWrapper } from '@/widgets';
 
 export const LoginPage = () => {
   return (
-    <main className='bg-haedal flex h-dvh w-full flex-col items-center justify-center gap-3 text-center text-white'>
-      <SimpleLogo />
-      <AuthContainer title='회원가입'>
+    <PageWrapper>
+      <AuthContainer title='로그인'>
         <LoginForm />
       </AuthContainer>
       <AuthLinkContainer />
-    </main>
+    </PageWrapper>
   );
 };

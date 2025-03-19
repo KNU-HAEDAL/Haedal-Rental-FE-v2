@@ -1,2 +1,2 @@
-export * from './button-container';
+export * from './NavButtonSection';
 export * from './description-section';

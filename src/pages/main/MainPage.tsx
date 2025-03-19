@@ -1,12 +1,14 @@
-import { ButtonContainer, DescriptionSection } from '@/features';
+import { NavButtonSection, DescriptionSection } from '@/features';
 
-import { LogoContainer } from '@/widgets';
+import { ContentsContainer, PageWrapper } from '@/widgets';
 
 export const MainPage = () => {
   return (
-    <LogoContainer title='물품 대여 장부 서비스'>
-      <DescriptionSection />
-      <ButtonContainer />
-    </LogoContainer>
+    <PageWrapper>
+      <ContentsContainer title='물품 대여 장부 서비스'>
+        <DescriptionSection />
+        <NavButtonSection />
+      </ContentsContainer>
+    </PageWrapper>
   );
 };
