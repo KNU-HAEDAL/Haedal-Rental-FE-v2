@@ -1,3 +1,3 @@
-export * from './container';
+export * from './containers';
 export * from './sections';
 export * from './wrapper';
