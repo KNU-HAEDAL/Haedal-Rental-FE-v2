@@ -1,4 +1,4 @@
-import { ItemWrapper } from '../components';
+import { ItemWrapper } from '../../components';
 
 type Props = {
   itemName: string;

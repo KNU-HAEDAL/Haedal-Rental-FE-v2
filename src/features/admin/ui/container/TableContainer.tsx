@@ -10,7 +10,7 @@ import {
   RouterPath,
 } from '@/shared';
 
-import { ITEM_BODY, ITEM_HEADERS } from '../model';
+import { ITEM_HEADERS, ITEM_BODY } from '../../model';
 
 export const TableContainer = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());

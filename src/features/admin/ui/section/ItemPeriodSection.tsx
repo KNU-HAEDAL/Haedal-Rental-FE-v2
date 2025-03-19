@@ -2,7 +2,7 @@ import { Calendar } from 'lucide-react';
 
 import { getAfterDays } from '@/shared';
 
-import { ItemWrapper } from '../components';
+import { ItemWrapper } from '../../components';
 
 type Props = {
   startDate: string;
