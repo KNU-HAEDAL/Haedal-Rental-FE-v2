@@ -27,7 +27,7 @@ export const AuthButtons = () => {
   };
 
   return (
-    <section className='flex w-[550px] justify-end gap-2 py-3'>
+    <div className='flex w-[550px] justify-end gap-2 py-4'>
       {isLogin ? (
         <div className='flex w-full items-center justify-between'>
           <p className='font-bold'>김해달님 반갑습니다.</p>
@@ -47,6 +47,6 @@ export const AuthButtons = () => {
           </Link>
         </>
       )}
-    </section>
+    </div>
   );
 };
