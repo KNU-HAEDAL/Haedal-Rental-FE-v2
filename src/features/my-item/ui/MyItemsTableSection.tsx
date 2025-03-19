@@ -23,7 +23,7 @@ export const MyItemsTableSection = ({
           <Spinner />
         </div>
       ) : (
-        <div className='w-full px-5 pb-5'>
+        <div className='w-full px-3'>
           {columnData ? (
             <MyItemListTable headerData={headerData} bodyData={bodyData} />
           ) : (
