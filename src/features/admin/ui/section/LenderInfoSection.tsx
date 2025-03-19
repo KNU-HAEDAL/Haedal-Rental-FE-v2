@@ -1,4 +1,4 @@
-import { ItemWrapper } from '../../components';
+import { ItemBox } from '../../components';
 
 type Props = {
   name: string;
@@ -7,7 +7,7 @@ type Props = {
 
 export const LenderInfoSection = ({ name, phoneNumber }: Props) => {
   return (
-    <ItemWrapper className='gap-5'>
+    <ItemBox className='gap-5'>
       <p>물품 대여자 정보</p>
       <div className='flex gap-10'>
         <div className='flex items-center gap-3'>
@@ -23,6 +23,6 @@ export const LenderInfoSection = ({ name, phoneNumber }: Props) => {
           </span>
         </div>
       </div>
-    </ItemWrapper>
+    </ItemBox>
   );
 };

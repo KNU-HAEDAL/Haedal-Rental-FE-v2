@@ -1,4 +1,4 @@
-import { ItemWrapper } from '../../components';
+import { ItemBox } from '../../components';
 
 type Props = {
   itemImage: string;
@@ -6,7 +6,7 @@ type Props = {
 
 export const ItemImageSection = ({ itemImage }: Props) => {
   return (
-    <ItemWrapper className='gap-3 border py-5'>
+    <ItemBox className='gap-3 border py-5'>
       <p>대여 물품을 사진으로 찍어서 업로드해주세요.</p>
       <span className='flex w-full justify-center text-center'>
         {itemImage ? (
@@ -17,6 +17,6 @@ export const ItemImageSection = ({ itemImage }: Props) => {
           </div>
         )}
       </span>
-    </ItemWrapper>
+    </ItemBox>
   );
 };
