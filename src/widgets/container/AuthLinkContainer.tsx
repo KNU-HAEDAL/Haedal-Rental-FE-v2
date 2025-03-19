@@ -21,7 +21,11 @@ export const AuthLinkContainer = ({
       {isSignupPage && (
         <span className='text-xs font-medium'>계정이 이미 있으신가요?</span>
       )}
-      <Button variant='link' onClick={onClick}>
+      <Button
+        variant='link'
+        className='hover:text-accent-white text-white'
+        onClick={onClick}
+      >
         {label}
       </Button>
     </div>
