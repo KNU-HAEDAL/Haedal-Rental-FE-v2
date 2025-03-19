@@ -16,8 +16,8 @@ export const PageWrapper = ({ children }: PageWrapperProps) => {
   return (
     <main
       className={cn(
-        'flex h-screen w-screen flex-col items-center text-center',
-        isAuthPage ? 'bg-haedal text-white' : 'justify-start',
+        'flex h-screen w-screen flex-col items-center justify-start text-center',
+        isAuthPage && 'bg-haedal text-white',
       )}
     >
       {isAuthPage ? (
