@@ -1,20 +1,18 @@
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { RouterPath } from '@/shared';
 
 import { Button } from '../../shared/components/ui';
 
-type AuthLinkContainerProps = {
-  label: string;
-  onClick: () => void;
-};
-
-export const AuthLinkContainer = ({
-  label,
-  onClick,
-}: AuthLinkContainerProps) => {
+export const AuthLinkContainer = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isSignupPage = location.pathname === RouterPath.SIGNUP;
+
+  const goToPage = () => {
+    if (isSignupPage) navigate(RouterPath.LOGIN);
+    else navigate(RouterPath.SIGNUP);
+  };
 
   return (
     <div className='flex flex-row items-center gap-3'>
@@ -24,9 +22,9 @@ export const AuthLinkContainer = ({
       <Button
         variant='link'
         className='hover:text-accent-white text-white'
-        onClick={onClick}
+        onClick={goToPage}
       >
-        {label}
+        {isSignupPage ? '로그인' : '회원가입'}
       </Button>
     </div>
   );
