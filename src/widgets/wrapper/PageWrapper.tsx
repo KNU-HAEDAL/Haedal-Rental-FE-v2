@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import { AuthButtons, RouterPath, SimpleLogo, SymbolLogo } from '@/shared';
+import { AuthButtons, cn, RouterPath, SimpleLogo, SymbolLogo } from '@/shared';
 
 type PageWrapperProps = {
   children: React.ReactNode;
@@ -14,19 +14,24 @@ export const PageWrapper = ({ children }: PageWrapperProps) => {
     location.pathname === RouterPath.LOGIN;
 
   return (
-    <>
+    <main
+      className={cn(
+        'flex h-screen w-screen flex-col items-center text-center',
+        isAuthPage ? 'bg-haedal text-white' : 'justify-start',
+      )}
+    >
       {isAuthPage ? (
-        <main className='bg-haedal flex h-dvh w-full flex-col items-center justify-center gap-3 text-center text-white'>
+        <>
           <SimpleLogo />
           {children}
-        </main>
+        </>
       ) : (
-        <main className='flex h-full w-full flex-col items-center justify-center gap-3 text-center'>
+        <>
           <SymbolLogo />
           <AuthButtons />
           {children}
-        </main>
+        </>
       )}
-    </>
+    </main>
   );
 };

@@ -1,11 +1,25 @@
+import { cn } from '@/shared';
+
 type AuthContainerProps = {
+  className?: string;
   title: string;
   children: React.ReactNode;
 };
 
-export const AuthContainer = ({ title, children }: AuthContainerProps) => {
+export const AuthContainer = ({
+  className,
+  title,
+  children,
+}: AuthContainerProps) => {
+  // const { pathname } = useLocation();
+
   return (
-    <div className='flex w-96 flex-col gap-8 rounded-xl bg-white py-6 text-black'>
+    <div
+      className={cn(
+        'flex w-96 flex-col gap-8 rounded-xl bg-white py-6 text-black',
+        className,
+      )}
+    >
       <h1 className='px-8 text-xl font-semibold'>{title}</h1>
       {children}
     </div>
