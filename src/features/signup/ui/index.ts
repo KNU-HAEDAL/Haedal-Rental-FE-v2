@@ -1,1 +1,1 @@
-export * from './signup-container';
+export * from './SignupForm';
