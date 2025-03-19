@@ -23,10 +23,9 @@ export const MyItemPage = () => {
   return (
     <PageWrapper>
       <ContentsContainer title={NAVIGATE_BUTTONS_DATA[2].title}>
-        <DescriptionSection
-          name={name}
-          description={NAVIGATE_BUTTONS_DATA[2].description}
-        />
+        <DescriptionSection>
+          {name} {NAVIGATE_BUTTONS_DATA[2].description}
+        </DescriptionSection>
         <PenaltySection penaltyData={penaltyData} />
         <MyItemsTableSection
           isPending={isPending}

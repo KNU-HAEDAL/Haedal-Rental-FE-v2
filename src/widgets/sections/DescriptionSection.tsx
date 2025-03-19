@@ -1,18 +1,24 @@
+import { cn } from '@/shared';
+
 type Props = {
   className?: string;
-  description: string;
-  name?: string;
+  children: React.ReactNode;
 };
 
 export const DescriptionSection = ({
   className,
-  description,
-  name,
+  children,
   ...props
-}: React.ComponentProps<'p'> & Props) => {
+}: React.ComponentProps<'div'> & Props) => {
   return (
-    <p className={className} {...props}>
-      {name ? `${name} ${description}` : description}
-    </p>
+    <div
+      className={cn(
+        'flex w-full flex-col items-start justify-start px-3',
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </div>
   );
 };

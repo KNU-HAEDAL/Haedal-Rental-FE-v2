@@ -1,12 +1,18 @@
-import { NavButtonSection, DescriptionSection } from '@/features';
+import { NavButtonSection } from '@/features';
 
-import { ContentsContainer, PageWrapper } from '@/widgets';
+import { ContentsContainer, DescriptionSection, PageWrapper } from '@/widgets';
 
 export const MainPage = () => {
   return (
     <PageWrapper>
       <ContentsContainer title='물품 대여 장부 서비스'>
-        <DescriptionSection />
+        <DescriptionSection>
+          <p>해달 동아리방 물품 대여 서비스 입니다.</p>
+          <p>
+            해달 물품은 해달 동아리원이라면 대여 장부 작성 후 누구나 대여
+            가능합니다.
+          </p>
+        </DescriptionSection>
         <NavButtonSection />
       </ContentsContainer>
     </PageWrapper>
