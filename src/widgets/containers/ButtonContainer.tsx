@@ -12,7 +12,7 @@ export const ButtonContainer = ({
   return (
     <div
       className={cn(
-        'flex w-full items-center justify-center gap-3 pt-2 pb-6',
+        'flex w-full items-center justify-center gap-3 pb-6',
         className,
       )}
     >
