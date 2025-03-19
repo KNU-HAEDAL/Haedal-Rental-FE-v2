@@ -1,6 +1,6 @@
 import { cn } from '@/shared';
 
-export const ItemWrapper = ({
+export const ItemBox = ({
   className,
   children,
   ...props
