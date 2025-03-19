@@ -1,14 +1,10 @@
-import { useNavigate } from 'react-router-dom';
-
 import { AddItemForm } from '@/features';
 
-import { Button } from '@/shared';
+import { BackButton } from '@/shared';
 
 import { LogoContainer } from '@/widgets';
 
 export const AddItemPage = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       <LogoContainer title='물품 추가'>
@@ -16,9 +12,7 @@ export const AddItemPage = () => {
         <AddItemForm />
       </LogoContainer>
       <div className='flex items-center justify-center gap-3 py-5'>
-        <Button onClick={() => navigate(-1)} variant='outline'>
-          뒤로
-        </Button>
+        <BackButton />
       </div>
     </>
   );

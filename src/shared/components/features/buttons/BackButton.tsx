@@ -1,14 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 
-import { cn } from '@/shared';
-
 import { Button } from '../../ui';
 
 type Props = {
   className?: string;
 };
 
-export const BackButtons = ({
+export const BackButton = ({
   className,
   ...props
 }: React.ComponentProps<'section'> & Props) => {
@@ -19,7 +17,7 @@ export const BackButtons = ({
   };
 
   return (
-    <section className={cn('w-full pt-2 pb-6', className)} {...props}>
+    <section className={className} {...props}>
       <Button onClick={onClick} variant='outline'>
         뒤로
       </Button>

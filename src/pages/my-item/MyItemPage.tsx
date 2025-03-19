@@ -5,7 +5,7 @@ import {
   TableSection,
 } from '@/features';
 
-import { BackButtons, NAVIGATE_BUTTONS_DATA, useGetMockData } from '@/shared';
+import { BackButton, NAVIGATE_BUTTONS_DATA, useGetMockData } from '@/shared';
 
 import { DescriptionSection, LogoContainer } from '@/widgets';
 
@@ -30,7 +30,7 @@ export const MyItemPage = () => {
           bodyData={MY_ITEM_BODY}
         />
       </LogoContainer>
-      <BackButtons />
+      <BackButton />
     </div>
   );
 };
