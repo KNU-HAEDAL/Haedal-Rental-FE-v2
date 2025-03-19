@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
+import { cn } from '@/shared/libs';
+
 import { Button } from '../../ui';
 
 type Props = {
@@ -17,7 +19,7 @@ export const BackButton = ({
   };
 
   return (
-    <section className={className} {...props}>
+    <section className={cn('w-full pt-2 pb-6', className)} {...props}>
       <Button onClick={onClick} variant='outline'>
         뒤로
       </Button>
