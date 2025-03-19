@@ -11,7 +11,7 @@ import {
 
 import { Button, Spinner, useGetMockData } from '@/shared';
 
-import { LogoContainer } from '@/widgets';
+import { ContentsContainer, PageWrapper } from '@/widgets';
 
 export const RentedItemDetailPage = () => {
   const navigate = useNavigate();
@@ -23,13 +23,13 @@ export const RentedItemDetailPage = () => {
   }
 
   return (
-    <div className='flex flex-col gap-5'>
-      <LogoContainer title='물품 대여 정보'>
+    <PageWrapper>
+      <ContentsContainer title='물품 대여 정보'>
         <LenderInfoSection
           name={itemData.lenderName}
           phoneNumber={itemData.lenderPhoneNumber}
         />
-      </LogoContainer>
+      </ContentsContainer>
       <ItemNameSection itemName={itemData.itemName} />
       <ItemTypeSection itemType={itemData.itemType} />
       <ItemPeriodSection
@@ -42,6 +42,6 @@ export const RentedItemDetailPage = () => {
           확인
         </Button>
       </div>
-    </div>
+    </PageWrapper>
   );
 };
