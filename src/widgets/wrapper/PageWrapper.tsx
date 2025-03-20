@@ -2,11 +2,11 @@ import { useLocation } from 'react-router-dom';
 
 import { AuthButtons, cn, RouterPath, SimpleLogo, SymbolLogo } from '@/shared';
 
-type PageWrapperProps = {
+type Props = {
   children: React.ReactNode;
 };
 
-export const PageWrapper = ({ children }: PageWrapperProps) => {
+export const PageWrapper = ({ children }: Props) => {
   const location = useLocation();
 
   const isAuthPage =

@@ -1,16 +1,12 @@
 import { cn } from '@/shared';
 
-type AuthContainerProps = {
+type Props = {
   className?: string;
   title: string;
   children: React.ReactNode;
 };
 
-export const AuthContainer = ({
-  className,
-  title,
-  children,
-}: AuthContainerProps) => {
+export const AuthContainer = ({ className, title, children }: Props) => {
   return (
     <div
       className={cn(
