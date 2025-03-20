@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { authStorage, Button, TOKEN } from '@/shared';
 
-export const AuthButtons = () => {
+export const AuthButton = () => {
   // TODO: 로그인 UI 완성 시 해당 로직 수정
   const [isLogin, setIsLogin] = useState(false);
 
