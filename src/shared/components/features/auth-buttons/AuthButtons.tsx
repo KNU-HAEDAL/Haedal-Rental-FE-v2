@@ -6,6 +6,7 @@ import { authStorage, Button, TOKEN } from '@/shared';
 export const AuthButtons = () => {
   // TODO: 로그인 UI 완성 시 해당 로직 수정
   const [isLogin, setIsLogin] = useState(false);
+  const name = '김해달';
 
   useEffect(() => {
     const accessToken = authStorage.accessToken.get();
@@ -30,7 +31,7 @@ export const AuthButtons = () => {
     <div className='flex w-[550px] justify-end gap-2 py-4'>
       {isLogin ? (
         <div className='flex w-full items-center justify-between'>
-          <p className='font-bold'>김해달님 반갑습니다.</p>
+          <p className='font-bold'>{name} 님 반갑습니다.</p>
           <Button variant='danger' onClick={onClickLogout}>
             로그아웃
           </Button>
