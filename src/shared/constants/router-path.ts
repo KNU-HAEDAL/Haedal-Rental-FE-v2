@@ -4,10 +4,10 @@ export const RouterPath = {
   LOGIN: '/login',
   SIGNUP: '/signup',
   APPLY_FORM: '/apply-form',
-  MY_ITEMS: '/my-items',
+  MY_RENTAL: '/my-rental',
   ADMIN: '/admin',
   ADMIN_RENTED_ITEM_DETAIL: '/admin/:itemId',
   ADMIN_ADD_ITEM: 'add-item',
-  ITEM_LIST: '/item-list',
+  ITEMS: '/items',
   ERROR: '*',
 };
