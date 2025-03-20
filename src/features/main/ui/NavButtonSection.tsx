@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { NAVIGATE_BUTTONS_DATA } from '@/shared';
 
-export const ButtonSection = () => {
+export const NavButtonSection = () => {
   return (
     <section className='grid h-auto w-[380px] grid-cols-2 place-content-center place-items-center gap-5 pb-3'>
       {NAVIGATE_BUTTONS_DATA.map((data) => (

@@ -20,7 +20,7 @@ export const NAVIGATE_BUTTONS_DATA = [
     key: 'write',
   },
   {
-    title: '나의 물품 대여 확인',
+    title: '나의 대여 물품 확인',
     description: '님이 대여한 물품 목록입니다.',
     icon: RentIcon,
     navigateTo: RouterPath.MY_ITEMS,

@@ -1,17 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
-import { Button, cn } from '@/shared';
+import { Button } from '@/shared';
 
-type Props = {
-  className?: string;
-  label?: string;
-};
-
-export const BackButton = ({
-  className,
-  label,
-  ...props
-}: React.ComponentProps<'section'> & Props) => {
+export const BackButton = () => {
   const navigate = useNavigate();
 
   const onClick = () => {
@@ -19,10 +10,8 @@ export const BackButton = ({
   };
 
   return (
-    <section className={cn('w-full pt-2 pb-6', className)} {...props}>
-      <Button onClick={onClick} variant='outline'>
-        {label || '뒤로'}
-      </Button>
-    </section>
+    <Button onClick={onClick} variant='outline'>
+      뒤로
+    </Button>
   );
 };

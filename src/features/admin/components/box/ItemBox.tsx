@@ -7,7 +7,7 @@ export const ItemBox = ({
 }: React.ComponentProps<'section'>) => {
   return (
     <section
-      className={cn('flex w-full flex-col px-5 text-start', className)}
+      className={cn('mb-3 flex w-[550px] flex-col px-3 text-start', className)}
       {...props}
     >
       {children}

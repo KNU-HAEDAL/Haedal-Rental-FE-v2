@@ -1,4 +1,4 @@
-import { Badge } from '@/shared';
+import { Badge, cn } from '@/shared';
 
 import { BodyData, HeaderData } from '../model';
 
@@ -20,8 +20,13 @@ export const MyItemListTable = ({ headerData, bodyData }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {bodyData.map((item) => (
-          <tr key={item.itemId} className='cursor-pointer border-b-1'>
+        {bodyData.map((item, index) => (
+          <tr
+            key={item.itemId}
+            className={cn('cursor-pointer', {
+              'border-b': index !== bodyData.length - 1,
+            })}
+          >
             <td className='py-2'>{item.type}</td>
             <td>{item.name}</td>
             <td>
