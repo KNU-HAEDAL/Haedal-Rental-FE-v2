@@ -1,9 +1,8 @@
-import RentIcon from '@/features/_assets/main/rent-icon.png';
-import searchIcon from '@/features/_assets/main/search-icon.png';
-import SettingIcon from '@/features/_assets/main/setting-icon.png';
-import WriteIcon from '@/features/_assets/main/write-icon.png';
-
 import { RouterPath } from '@/shared';
+import RentIcon from '@/shared/_assets/icons/rent-icon.png';
+import searchIcon from '@/shared/_assets/icons/search-icon.png';
+import SettingIcon from '@/shared/_assets/icons/setting-icon.png';
+import WriteIcon from '@/shared/_assets/icons/write-icon.png';
 
 export const NAVIGATE_BUTTONS_DATA = [
   {
@@ -22,7 +21,7 @@ export const NAVIGATE_BUTTONS_DATA = [
   },
   {
     title: '나의 물품 대여 확인',
-    description: '김해달 님이 대여한 물품 목록입니다.', // Todo: 이름 동적으로 변경
+    description: '님이 대여한 물품 목록입니다.',
     icon: RentIcon,
     navigateTo: RouterPath.MY_ITEMS,
     key: 'my-rent',

@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Button, getDynamicPath, ItemTable, RouterPath } from '@/shared';
+import {
+  Badge,
+  Button,
+  getDynamicPath,
+  ItemTable,
+  NAVIGATE_BUTTONS_DATA,
+  RouterPath,
+} from '@/shared';
 
-import { ITEM_BODY, ITEM_HEADERS } from '../model';
+import { ITEM_HEADERS, ITEM_BODY } from '../../model';
 
 export const TableContainer = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());
@@ -24,20 +31,16 @@ export const TableContainer = () => {
 
   return (
     <>
-      <p>해달 동아리 물품 대여 상태입니다.</p>
+      <p>{NAVIGATE_BUTTONS_DATA[3].description}</p>
       <div className='w-full px-3'>
         <div className='flex w-full justify-between'>
           <div className='flex gap-2'>
-            <Button variant='moon'>대여가능</Button>
-            <Button variant='outline' className='border-sun text-sun'>
-              대여중
-            </Button>
+            <Button variant='moonTag'>대여 가능</Button>
+            <Button variant='outline'>대여 중</Button>
           </div>
           <div className='flex gap-2'>
             <Button onClick={goToAddItem}>물품 추가</Button>
-            <Button variant='ghost' className='text-sun'>
-              물품 삭제
-            </Button>
+            <Button variant='danger'>물품 삭제</Button>
           </div>
         </div>
         <div className='overflow-hidden pt-5'>
@@ -52,15 +55,13 @@ export const TableContainer = () => {
             renderCell={(key, item) => {
               if (key === 'status') {
                 return (
-                  <span
-                    className={`flex justify-center px-1 py-1 text-sm font-bold ${
-                      item.status === '대여가능'
-                        ? 'bg-moon text-haedal'
-                        : 'bg-sun text-white'
-                    }`}
+                  <Badge
+                    variant={
+                      item.status === '대여 가능' ? 'available' : 'unavailable'
+                    }
                   >
                     {item.status}
-                  </span>
+                  </Badge>
                 );
               }
               return item[key];

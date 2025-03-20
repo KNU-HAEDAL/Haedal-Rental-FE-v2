@@ -16,7 +16,7 @@ export const AddItemPage = () => {
         <AddItemForm />
       </LogoContainer>
       <div className='flex items-center justify-center gap-3 py-5'>
-        <Button onClick={() => navigate(-1)} variant='outline' className='px-5'>
+        <Button onClick={() => navigate(-1)} variant='outline'>
           뒤로
         </Button>
       </div>

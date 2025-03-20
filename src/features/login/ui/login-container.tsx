@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form';
 
 import {
   Button,
-  cn,
   Form,
   FormControl,
   FormField,
@@ -59,11 +58,8 @@ export const LoginContainer = () => {
             <Button
               type='submit'
               disabled={!formState.isValid}
-              className={cn(
-                `w-full rounded-md px-4 py-2 text-sm`,
-                !formState.isValid &&
-                  'cursor-not-allowed bg-gray-200 text-gray-500',
-              )}
+              size='lg'
+              className='w-full px-4 py-2'
             >
               로그인
             </Button>
