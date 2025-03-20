@@ -11,8 +11,6 @@ export const AuthContainer = ({
   title,
   children,
 }: AuthContainerProps) => {
-  // const { pathname } = useLocation();
-
   return (
     <div
       className={cn(
