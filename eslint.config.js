@@ -1,5 +1,6 @@
 // JavaScript 기본 설정
 import prettierConfig from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
 // 웹 접근성 관련 규칙
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 // Prettier 관련 설정
@@ -36,6 +37,8 @@ export default tseslint.config(
       js.configs.recommended, // JavaScript 권장 규칙
       ...tseslint.configs.recommended, // TypeScript 권장 규칙
       prettierConfig, // Prettier 관련 규칙 적용
+      importPlugin.flatConfigs.recommended, // import 권장 규칙
+      importPlugin.flatConfigs.typescript, // TypeScript import 권장 규칙
     ],
 
     // 적용 파일 패턴
@@ -68,7 +71,7 @@ export default tseslint.config(
       'jsx-a11y/alt-text': 'warn', // 접근성: alt 속성 검사
       'prettier/prettier': ['warn', { usePrettierrc: false }], // Prettier 관련 규칙 적용
       'import/order': [
-        'warn',
+        'off',
         {
           'newlines-between': 'always', // import 사이에 한 줄 띄우기
           alphabetize: { order: 'asc', caseInsensitive: true },
@@ -90,11 +93,6 @@ export default tseslint.config(
               group: 'internal',
               position: 'after',
             },
-            // {
-            //   pattern: '@/shared',
-            //   group: 'internal',
-            //   position: 'after',
-            // },
           ],
           pathGroupsExcludedImportTypes: ['builtin'],
         },
@@ -102,12 +100,19 @@ export default tseslint.config(
       'react/react-in-jsx-scope': 'off',
       'tailwindcss/no-custom-classname': 'off',
       'tailwindcss/classnames-order': 'off',
+      'no-unused-vars': 'off',
+      'import/no-dynamic-require': 'warn',
+      'import/no-nodejs-modules': 'warn',
     },
 
     // 설정 추가 (예: import-resolver)
     settings: {
       'import/resolver': {
         node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+        typescript: {
+          alwaysTryTypes: true, // 타입스크립트 파일도 찾도록 설정
+          project: './tsconfig.json', // 프로젝트의 tsconfig.json을 사용
+        },
       },
       react: {
         version: '19.0.0',
