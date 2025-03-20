@@ -4,7 +4,7 @@ import {
   AddItemPage,
   AdminPage,
   ApplyFormPage,
-  ItemListPage,
+  ItemsPage,
   LoginPage,
   MainPage,
   MyRentalPage,
@@ -37,8 +37,8 @@ const router = createBrowserRouter(
       element: <MyRentalPage />,
     },
     {
-      path: RouterPath.ITEM_LIST,
-      element: <ItemListPage />,
+      path: RouterPath.ITEMS,
+      element: <ItemsPage />,
     },
     {
       path: RouterPath.ADMIN,

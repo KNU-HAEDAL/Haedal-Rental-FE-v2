@@ -9,8 +9,8 @@ export const NAVIGATE_BUTTONS_DATA = [
     title: '해달 물품 목록',
     description: '해달 동아리방 물품 목록입니다.',
     icon: searchIcon,
-    navigateTo: RouterPath.ITEM_LIST,
-    key: 'item-list',
+    navigateTo: RouterPath.ITEMS,
+    key: 'items',
   },
   {
     title: '물품 대여 장부 작성',

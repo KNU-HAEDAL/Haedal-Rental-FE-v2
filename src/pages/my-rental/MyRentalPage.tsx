@@ -1,8 +1,8 @@
 import {
-  MY_RENTAL_BODY,
+  MY_RENTAL_BODIES,
   MY_RENTAL_HEADERS,
-  PenaltySection,
   MyRentalTableSection,
+  PenaltySection,
 } from '@/features';
 
 import { BackButton, NAVIGATE_BUTTONS_DATA, useGetMockData } from '@/shared';
@@ -15,7 +15,7 @@ import {
 } from '@/widgets';
 
 export const MyRentalPage = () => {
-  const { data: columnData, isPending } = useGetMockData(MY_RENTAL_BODY);
+  const { data: columnData, isPending } = useGetMockData(MY_RENTAL_BODIES);
   const { data: penaltyData } = useGetMockData(1);
 
   const name = '김해달';
@@ -31,7 +31,7 @@ export const MyRentalPage = () => {
           isPending={isPending}
           columnData={columnData}
           headerData={MY_RENTAL_HEADERS}
-          bodyData={MY_RENTAL_BODY}
+          bodyData={MY_RENTAL_BODIES}
         />
       </ContentsContainer>
       <ButtonContainer>

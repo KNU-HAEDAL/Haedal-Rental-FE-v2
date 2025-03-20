@@ -1,1 +1,1 @@
-export * from './my-rental-list';
+export * from './my-rental-data';

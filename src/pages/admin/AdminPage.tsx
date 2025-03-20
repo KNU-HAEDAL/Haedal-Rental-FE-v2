@@ -1,4 +1,4 @@
-import { ItemsTableSection } from '@/features';
+import { AdminItemsTableSection } from '@/features';
 
 import { BackButton, NAVIGATE_BUTTONS_DATA } from '@/shared';
 
@@ -16,7 +16,7 @@ export const AdminPage = () => {
         <DescriptionSection>
           {NAVIGATE_BUTTONS_DATA[3].description}
         </DescriptionSection>
-        <ItemsTableSection />
+        <AdminItemsTableSection />
       </ContentsContainer>
       <ButtonContainer>
         <BackButton />

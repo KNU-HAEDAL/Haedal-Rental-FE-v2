@@ -10,9 +10,9 @@ import {
   RouterPath,
 } from '@/shared';
 
-import { ITEM_HEADERS, ITEM_BODY } from '../../model';
+import { ADMIN_ITEM_HEADERS, ADMIN_ITEM_BODIES } from '../../model';
 
-export const TableContainer = () => {
+export const AdminTableContainer = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());
 
   const navigate = useNavigate();
@@ -45,8 +45,8 @@ export const TableContainer = () => {
         </div>
         <div className='overflow-hidden pt-5'>
           <ItemTable
-            headers={ITEM_HEADERS}
-            items={ITEM_BODY}
+            headers={ADMIN_ITEM_HEADERS}
+            items={ADMIN_ITEM_BODIES}
             selectable={false}
             itemKey='name'
             updateSelection={(newSelection) =>

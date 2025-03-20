@@ -25,7 +25,7 @@ export type BodyData = {
   itemId: string;
 };
 
-export const MY_RENTAL_BODY: BodyData[] = [
+export const MY_RENTAL_BODIES: BodyData[] = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',

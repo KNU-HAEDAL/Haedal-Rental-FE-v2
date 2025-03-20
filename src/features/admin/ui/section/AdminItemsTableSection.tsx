@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { Badge, Button, getDynamicPath, ItemTable, RouterPath } from '@/shared';
 
-import { ITEM_BODY, ITEM_HEADERS } from '../../model';
+import { ADMIN_ITEM_BODIES, ADMIN_ITEM_HEADERS } from '../../model';
 
-export const ItemsTableSection = () => {
+export const AdminItemsTableSection = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());
 
   const navigate = useNavigate();
@@ -36,8 +36,8 @@ export const ItemsTableSection = () => {
       </div>
       <div className='overflow-hidden pt-5'>
         <ItemTable
-          headers={ITEM_HEADERS}
-          items={ITEM_BODY}
+          headers={ADMIN_ITEM_HEADERS}
+          items={ADMIN_ITEM_BODIES}
           selectable={false}
           itemKey='name'
           updateSelection={(newSelection) =>

@@ -8,6 +8,6 @@ export const RouterPath = {
   ADMIN: '/admin',
   ADMIN_RENTED_ITEM_DETAIL: '/admin/:itemId',
   ADMIN_ADD_ITEM: 'add-item',
-  ITEM_LIST: '/item-list',
+  ITEMS: '/items',
   ERROR: '*',
 };

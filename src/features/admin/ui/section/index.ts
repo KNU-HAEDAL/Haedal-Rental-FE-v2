@@ -1,2 +1,2 @@
-export * from './ItemsTableSection';
+export * from './AdminItemsTableSection';
 export * from './LenderInfoSection';

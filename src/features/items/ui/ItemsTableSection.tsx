@@ -1,20 +1,16 @@
 import { useState } from 'react';
 
-import {
-  AVAILABLE_ITEM_BODIES,
-  AVAILABLE_ITEM_HEADERS,
-  ITEM_TYPE,
-} from '@/features';
+import { ITEM_BODIES, ITEM_HEADERS, ITEM_TYPE } from '@/features';
 
 import { Badge, Button, ItemTable } from '@/shared';
 
-export const ItemListSection = () => {
+export const ItemsTableSection = () => {
   //   const navigate = useNavigate();
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [isAvailableSelected, setIsAvailableSelected] =
     useState<boolean>(false);
 
-  const filteredItems = AVAILABLE_ITEM_BODIES.filter((item) => {
+  const filteredItems = ITEM_BODIES.filter((item) => {
     const matchType =
       selectedTypes.length === 0 || selectedTypes.includes(item.type);
     const matchAvailability =
@@ -64,7 +60,7 @@ export const ItemListSection = () => {
       </div>
       <div className='overflow-hidden px-3'>
         <ItemTable
-          headers={AVAILABLE_ITEM_HEADERS}
+          headers={ITEM_HEADERS}
           items={filteredItems}
           itemKey='name'
           renderCell={(key, item) => {
