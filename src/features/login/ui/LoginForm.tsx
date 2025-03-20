@@ -17,7 +17,13 @@ type FormData = {
 };
 
 export const LoginForm = () => {
-  const form = useForm<FormData>({ mode: 'onChange' });
+  const form = useForm<FormData>({
+    mode: 'onChange',
+    defaultValues: {
+      id: '',
+      password: '',
+    },
+  });
   const { control, handleSubmit, formState } = form;
 
   const inputFields = [

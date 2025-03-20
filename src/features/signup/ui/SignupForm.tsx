@@ -51,6 +51,13 @@ export const SignupForm = () => {
   const form = useForm<SignupFormData>({
     resolver: zodResolver(signupFormSchema),
     mode: 'onChange',
+    defaultValues: {
+      id: '',
+      password: '',
+      passwordConfirm: '',
+      name: '',
+      phone: '',
+    },
   });
   const { control, handleSubmit, formState } = form;
 
