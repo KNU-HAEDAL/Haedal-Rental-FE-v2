@@ -8,12 +8,11 @@ import react from 'eslint-plugin-react';
 // React 관련 규칙 및 플러그인
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import tailwindcss from 'eslint-plugin-tailwindcss';
 // 글로벌 변수 환경 설정
 import globals from 'globals';
 // TypeScript 관련 플러그인 및 설정
 import tseslint from 'typescript-eslint';
-
-import tailwindcss from 'eslint-plugin-tailwindcss';
 
 import js from '@eslint/js';
 
@@ -54,7 +53,7 @@ export default tseslint.config(
       'react-hooks': reactHooks, // React Hooks 관련 규칙
       'react-refresh': reactRefresh, // React Refresh 관련 규칙
       'jsx-a11y': jsxA11y, // 웹 접근성 관련 규칙
-      'tailwindcss': tailwindcss,
+      tailwindcss: tailwindcss,
       prettier: prettier, // Prettier 규칙
     },
 
@@ -67,10 +66,42 @@ export default tseslint.config(
         { allowConstantExport: true }, // React Refresh 관련 규칙
       ],
       'jsx-a11y/alt-text': 'warn', // 접근성: alt 속성 검사
-      'prettier/prettier': 'warn', // Prettier 관련 규칙 적용
+      'prettier/prettier': ['warn', { usePrettierrc: false }], // Prettier 관련 규칙 적용
+      'import/order': [
+        'warn',
+        {
+          'newlines-between': 'always', // import 사이에 한 줄 띄우기
+          alphabetize: { order: 'asc', caseInsensitive: true },
+          groups: [
+            'builtin',
+            'external',
+            ['internal', 'parent', 'sibling'],
+            'object',
+            'type',
+          ],
+          pathGroups: [
+            {
+              pattern: 'react',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: '@/**',
+              group: 'internal',
+              position: 'after',
+            },
+            // {
+            //   pattern: '@/shared',
+            //   group: 'internal',
+            //   position: 'after',
+            // },
+          ],
+          pathGroupsExcludedImportTypes: ['builtin'],
+        },
+      ],
       'react/react-in-jsx-scope': 'off',
-      "tailwindcss/no-custom-classname": "off",
-      "tailwindcss/classnames-order": "off",
+      'tailwindcss/no-custom-classname': 'off',
+      'tailwindcss/classnames-order': 'off',
     },
 
     // 설정 추가 (예: import-resolver)
