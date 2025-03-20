@@ -11,7 +11,6 @@ import {
   RentedItemDetailPage,
   SignupPage,
 } from '@/pages';
-
 import { RouterPath } from '@/shared';
 
 const router = createBrowserRouter(

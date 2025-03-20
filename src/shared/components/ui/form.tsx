@@ -9,9 +9,8 @@ import {
   type FieldValues,
 } from 'react-hook-form';
 
-import { cn } from '@/shared';
-
 import { Label } from './label';
+import { cn } from '@/shared';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
 

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { ITEM_BODIES, ITEM_HEADERS, ITEM_TYPE } from '@/features';
-
 import { Badge, Button, ItemTable } from '@/shared';
 
 export const ItemsTableSection = () => {

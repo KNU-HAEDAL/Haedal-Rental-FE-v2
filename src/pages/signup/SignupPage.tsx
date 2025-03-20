@@ -1,5 +1,4 @@
 import { SignupForm } from '@/features';
-
 import { AuthContainer, AuthLinkContainer, PageWrapper } from '@/widgets';
 
 export const SignupPage = () => {

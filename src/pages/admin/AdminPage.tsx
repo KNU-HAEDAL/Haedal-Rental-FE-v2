@@ -1,7 +1,5 @@
 import { AdminItemsTableSection } from '@/features';
-
 import { BackButton, NAVIGATE_BUTTONS_DATA } from '@/shared';
-
 import {
   ButtonContainer,
   ContentsContainer,

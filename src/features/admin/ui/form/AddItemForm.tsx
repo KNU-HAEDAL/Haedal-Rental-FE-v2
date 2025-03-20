@@ -3,10 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { toast } from 'sonner';
 
-import { Button, Checkbox, Form, Input } from '@/shared';
-
 import { ItemField } from '../../components';
 import { AddItem, AddItemSchema, ITEM_TYPE } from '../../model';
+import { Button, Checkbox, Form, Input } from '@/shared';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 export const AddItemForm = () => {

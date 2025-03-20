@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { ADMIN_ITEM_HEADERS, ADMIN_ITEM_BODIES } from '../../model';
 import {
   Badge,
   Button,
@@ -9,8 +10,6 @@ import {
   NAVIGATE_BUTTONS_DATA,
   RouterPath,
 } from '@/shared';
-
-import { ADMIN_ITEM_HEADERS, ADMIN_ITEM_BODIES } from '../../model';
 
 export const AdminTableContainer = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());
