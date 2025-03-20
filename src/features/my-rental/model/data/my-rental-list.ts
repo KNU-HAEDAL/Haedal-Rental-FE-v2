@@ -3,7 +3,7 @@ export type HeaderData = {
   value: string;
 };
 
-export const MY_ITEM_HEADERS: HeaderData[] = [
+export const MY_RENTAL_HEADERS: HeaderData[] = [
   {
     text: '종류',
     value: 'type',
@@ -25,7 +25,7 @@ export type BodyData = {
   itemId: string;
 };
 
-export const MY_ITEM_BODY: BodyData[] = [
+export const MY_RENTAL_BODY: BodyData[] = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',

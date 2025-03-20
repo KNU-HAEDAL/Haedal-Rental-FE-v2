@@ -7,7 +7,7 @@ type Props = {
   bodyData: BodyData[];
 };
 
-export const MyItemListTable = ({ headerData, bodyData }: Props) => {
+export const MyRentalTable = ({ headerData, bodyData }: Props) => {
   return (
     <table className='w-full border-collapse justify-center'>
       <thead>

@@ -1,6 +1,6 @@
 import { Spinner } from '@/shared';
 
-import { MyItemListTable } from '../components';
+import { MyRentalTable } from '../components';
 import { HeaderData, BodyData } from '../model';
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
   bodyData: BodyData[];
 };
 
-export const MyItemsTableSection = ({
+export const MyRentalTableSection = ({
   isPending,
   columnData,
   headerData,
@@ -25,7 +25,7 @@ export const MyItemsTableSection = ({
       ) : (
         <div className='w-full px-3'>
           {columnData ? (
-            <MyItemListTable headerData={headerData} bodyData={bodyData} />
+            <MyRentalTable headerData={headerData} bodyData={bodyData} />
           ) : (
             <p className='py-5 font-bold'>대여 중인 물품이 없습니다.</p>
           )}

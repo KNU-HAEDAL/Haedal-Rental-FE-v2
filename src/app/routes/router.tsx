@@ -7,7 +7,7 @@ import {
   ItemListPage,
   LoginPage,
   MainPage,
-  MyItemPage,
+  MyRentalPage,
   RentedItemDetailPage,
   SignupPage,
 } from '@/pages';
@@ -33,8 +33,8 @@ const router = createBrowserRouter(
       element: <ApplyFormPage />,
     },
     {
-      path: RouterPath.MY_ITEMS,
-      element: <MyItemPage />,
+      path: RouterPath.MY_RENTAL,
+      element: <MyRentalPage />,
     },
     {
       path: RouterPath.ITEM_LIST,
