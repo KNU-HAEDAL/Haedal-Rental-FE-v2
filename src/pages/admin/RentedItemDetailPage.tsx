@@ -1,21 +1,17 @@
-import { useNavigate } from 'react-router-dom';
-
 import {
   ITEM_APPLY_DATA,
-  ItemImageSection,
-  ItemNameSection,
-  ItemPeriodSection,
-  ItemTypeSection,
+  ItemImageContainer,
+  ItemNameContainer,
+  ItemPeriodContainer,
+  ItemTypeContainer,
   LenderInfoSection,
 } from '@/features';
 
-import { Button, Spinner, useGetMockData } from '@/shared';
+import { BackButton, Spinner, useGetMockData } from '@/shared';
 
-import { LogoContainer } from '@/widgets';
+import { ButtonContainer, ContentsContainer, PageWrapper } from '@/widgets';
 
 export const RentedItemDetailPage = () => {
-  const navigate = useNavigate();
-
   const { data: itemData, isPending } = useGetMockData(ITEM_APPLY_DATA);
 
   if (isPending) {
@@ -23,25 +19,23 @@ export const RentedItemDetailPage = () => {
   }
 
   return (
-    <div className='flex flex-col gap-5'>
-      <LogoContainer title='물품 대여 정보'>
+    <PageWrapper>
+      <ContentsContainer title='물품 대여 정보'>
         <LenderInfoSection
           name={itemData.lenderName}
           phoneNumber={itemData.lenderPhoneNumber}
         />
-      </LogoContainer>
-      <ItemNameSection itemName={itemData.itemName} />
-      <ItemTypeSection itemType={itemData.itemType} />
-      <ItemPeriodSection
+      </ContentsContainer>
+      <ItemNameContainer itemName={itemData.itemName} />
+      <ItemTypeContainer itemType={itemData.itemType} />
+      <ItemPeriodContainer
         startDate={itemData.startDate}
         endDate={itemData.endDate}
       />
-      <ItemImageSection itemImage={itemData.imageUrl} />
-      <div className='flex items-center justify-center gap-3 pt-1 pb-5'>
-        <Button onClick={() => navigate(-1)} variant='outline'>
-          확인
-        </Button>
-      </div>
-    </div>
+      <ItemImageContainer itemImage={itemData.imageUrl} />
+      <ButtonContainer>
+        <BackButton />
+      </ButtonContainer>
+    </PageWrapper>
   );
 };
