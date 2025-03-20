@@ -25,7 +25,7 @@ const buttonVariants = cva(
         // 스타일만 제공
         outline:
           'border bg-background text-gray-500 hover:bg-accent hover:text-accent-foreground',
-        link: 'text-haedal underline underline-offset-4 hover:text-accent-foreground',
+        link: 'text-haedal hover:underline underline-offset-4 hover:text-accent-foreground',
       },
       size: {
         default: 'h-full px-4 py-1 rounded-xs',
