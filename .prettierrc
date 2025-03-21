@@ -28,9 +28,9 @@
     "^react(.*)$",
     "<THIRD_PARTY_MODULES>",
     "^@/(app|entities|features|pages|shared|widgets)/(.*)$",
-
-    "^(.*)/(.*)$"
+    "^\\.\\./",
+    "^\\./"
   ],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": false
+  "importOrderSortSpecifiers": true
 }
