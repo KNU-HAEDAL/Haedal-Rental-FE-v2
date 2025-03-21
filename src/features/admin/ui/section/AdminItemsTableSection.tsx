@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-<<<<<<< HEAD
-import { Badge, Button, getDynamicPath, ItemTable, RouterPath } from '@/shared';
-=======
 import { Badge, Button, ItemTable, RouterPath, getDynamicPath } from '@/shared';
->>>>>>> 89e4d7e7bdb541eee81265cba8f510af07a5e22c
 
 import { ADMIN_ITEM_BODIES, ADMIN_ITEM_HEADERS } from '../../model';
 
