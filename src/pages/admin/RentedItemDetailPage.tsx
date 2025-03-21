@@ -6,9 +6,7 @@ import {
   ItemTypeContainer,
   LenderInfoSection,
 } from '@/features';
-
 import { BackButton, Spinner, useGetMockData } from '@/shared';
-
 import { ButtonContainer, ContentsContainer, PageWrapper } from '@/widgets';
 
 export const RentedItemDetailPage = () => {

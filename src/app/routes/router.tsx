@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import {
   AddItemPage,
@@ -11,7 +11,6 @@ import {
   RentedItemDetailPage,
   SignupPage,
 } from '@/pages';
-
 import { RouterPath } from '@/shared';
 
 const router = createBrowserRouter(

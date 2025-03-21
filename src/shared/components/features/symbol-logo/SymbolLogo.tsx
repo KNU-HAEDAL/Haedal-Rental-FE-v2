@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { RouterPath } from '@/shared';
 import Logo from '@/shared/_assets/logo/symbol-logo.png';
+
+import { RouterPath } from '@/shared';
 
 export const SymbolLogo = () => {
   return (

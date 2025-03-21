@@ -4,9 +4,7 @@ import {
   MyRentalTableSection,
   PenaltySection,
 } from '@/features';
-
 import { BackButton, NAVIGATE_BUTTONS_DATA, useGetMockData } from '@/shared';
-
 import {
   ButtonContainer,
   ContentsContainer,
