@@ -1,4 +1,4 @@
-export const AVAILABLE_ITEM_HEADERS = [
+export const ITEM_HEADERS = [
   {
     text: '종류',
     value: 'type',
@@ -13,7 +13,7 @@ export const AVAILABLE_ITEM_HEADERS = [
   },
 ];
 
-export const AVAILABLE_ITEM_BODIES = [
+export const ITEM_BODIES = [
   {
     itemId: '1',
     type: '책',

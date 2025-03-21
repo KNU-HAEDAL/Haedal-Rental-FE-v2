@@ -1,4 +1,4 @@
-export const ITEM_HEADERS = [
+export const ADMIN_ITEM_HEADERS = [
   {
     text: '종류',
     value: 'type',
@@ -21,7 +21,7 @@ export const ITEM_HEADERS = [
   },
 ];
 
-export const ITEM_BODY = [
+export const ADMIN_ITEM_BODIES = [
   {
     type: '책',
     name: '모던 리액트 Deep Dive',

@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import {
-  authStorage,
   Button,
   Form,
   FormControl,
@@ -13,6 +12,7 @@ import {
   Label,
   RouterPath,
   TOKEN,
+  authStorage,
 } from '@/shared';
 
 type FormData = {
@@ -21,7 +21,13 @@ type FormData = {
 };
 
 export const LoginForm = () => {
-  const form = useForm<FormData>({ mode: 'onChange' });
+  const form = useForm<FormData>({
+    mode: 'onChange',
+    defaultValues: {
+      id: '',
+      password: '',
+    },
+  });
   const { control, handleSubmit, formState } = form;
 
   const navigate = useNavigate();

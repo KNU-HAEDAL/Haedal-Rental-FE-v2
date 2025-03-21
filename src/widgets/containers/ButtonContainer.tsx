@@ -1,14 +1,11 @@
 import { cn } from '@/shared/libs';
 
-type ButtonContainerProps = {
+type Props = {
   className?: string;
   children: React.ReactNode;
 };
 
-export const ButtonContainer = ({
-  className,
-  children,
-}: ButtonContainerProps) => {
+export const ButtonContainer = ({ className, children }: Props) => {
   return (
     <div
       className={cn(

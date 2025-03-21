@@ -1,12 +1,10 @@
 import {
-  MY_ITEM_BODY,
-  MY_ITEM_HEADERS,
+  MY_RENTAL_BODIES,
+  MY_RENTAL_HEADERS,
+  MyRentalTableSection,
   PenaltySection,
-  MyItemsTableSection,
 } from '@/features';
-
 import { BackButton, NAVIGATE_BUTTONS_DATA, useGetMockData } from '@/shared';
-
 import {
   ButtonContainer,
   ContentsContainer,
@@ -14,8 +12,8 @@ import {
   PageWrapper,
 } from '@/widgets';
 
-export const MyItemPage = () => {
-  const { data: columnData, isPending } = useGetMockData(MY_ITEM_BODY);
+export const MyRentalPage = () => {
+  const { data: columnData, isPending } = useGetMockData(MY_RENTAL_BODIES);
   const { data: penaltyData } = useGetMockData(1);
 
   const name = '김해달';
@@ -27,11 +25,11 @@ export const MyItemPage = () => {
           {name} {NAVIGATE_BUTTONS_DATA[2].description}
         </DescriptionSection>
         <PenaltySection penaltyData={penaltyData} />
-        <MyItemsTableSection
+        <MyRentalTableSection
           isPending={isPending}
           columnData={columnData}
-          headerData={MY_ITEM_HEADERS}
-          bodyData={MY_ITEM_BODY}
+          headerData={MY_RENTAL_HEADERS}
+          bodyData={MY_RENTAL_BODIES}
         />
       </ContentsContainer>
       <ButtonContainer>

@@ -1,17 +1,16 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import {
   AddItemPage,
   AdminPage,
   ApplyFormPage,
-  ItemListPage,
+  ItemsPage,
   LoginPage,
   MainPage,
-  MyItemPage,
+  MyRentalPage,
   RentedItemDetailPage,
   SignupPage,
 } from '@/pages';
-
 import { RouterPath } from '@/shared';
 
 const router = createBrowserRouter(
@@ -33,12 +32,12 @@ const router = createBrowserRouter(
       element: <ApplyFormPage />,
     },
     {
-      path: RouterPath.MY_ITEMS,
-      element: <MyItemPage />,
+      path: RouterPath.MY_RENTAL,
+      element: <MyRentalPage />,
     },
     {
-      path: RouterPath.ITEM_LIST,
-      element: <ItemListPage />,
+      path: RouterPath.ITEMS,
+      element: <ItemsPage />,
     },
     {
       path: RouterPath.ADMIN,

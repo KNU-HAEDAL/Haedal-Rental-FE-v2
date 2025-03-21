@@ -1,6 +1,7 @@
 import { InternalAxiosRequestConfig } from 'axios';
 
 import { authStorage } from '../utils';
+
 import { initInstance } from './axios-instance';
 
 const BASE_URL = 'http://localhost:8080';

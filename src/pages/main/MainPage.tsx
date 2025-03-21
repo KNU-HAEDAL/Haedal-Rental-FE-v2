@@ -1,5 +1,4 @@
 import { NavButtonSection } from '@/features';
-
 import { ContentsContainer, DescriptionSection, PageWrapper } from '@/widgets';
 
 export const MainPage = () => {
