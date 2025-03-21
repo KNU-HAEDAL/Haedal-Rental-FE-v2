@@ -1,12 +1,11 @@
 import { ApplyFormContainer } from '@/features';
 
-import { SymbolLogo } from '@/shared';
+import { PageWrapper } from '@/widgets';
 
 export const ApplyFormPage = () => {
   return (
-    <div className='flex flex-col items-center gap-3'>
-      <SymbolLogo />
+    <PageWrapper>
       <ApplyFormContainer />
-    </div>
+    </PageWrapper>
   );
 };
