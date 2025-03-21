@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { authStorage, Button, TOKEN } from '@/shared';
+import { Button, TOKEN, authStorage } from '@/shared';
 
 export const AuthButtons = () => {
   // TODO: 로그인 UI 완성 시 해당 로직 수정

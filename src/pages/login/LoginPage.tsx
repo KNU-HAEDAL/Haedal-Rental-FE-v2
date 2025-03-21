@@ -1,5 +1,4 @@
 import { LoginForm } from '@/features';
-
 import { AuthContainer, AuthLinkContainer, PageWrapper } from '@/widgets';
 
 export const LoginPage = () => {

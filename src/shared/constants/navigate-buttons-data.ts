@@ -1,8 +1,9 @@
-import { RouterPath } from '@/shared';
 import RentIcon from '@/shared/_assets/icons/rent-icon.png';
 import searchIcon from '@/shared/_assets/icons/search-icon.png';
 import SettingIcon from '@/shared/_assets/icons/setting-icon.png';
 import WriteIcon from '@/shared/_assets/icons/write-icon.png';
+
+import { RouterPath } from '@/shared';
 
 export const NAVIGATE_BUTTONS_DATA = [
   {
