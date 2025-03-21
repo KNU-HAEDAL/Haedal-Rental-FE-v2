@@ -10,6 +10,7 @@ public
 # *.config.js
 *.config.mjs
 *.md
+eslint.config.js
 
 # Git 관련 파일 무시
 .github
