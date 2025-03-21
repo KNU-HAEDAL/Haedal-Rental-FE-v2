@@ -2,10 +2,16 @@ import { useNavigate } from 'react-router-dom';
 
 import { RouterPath } from '@/shared';
 
-import { ProgressBar, NavigationButtons } from '../components';
-import { NoticeMessage, ItemListButton } from '../sections';
+import { ContentsContainer, DescriptionSection } from '@/widgets';
 
-export const NoticeContainer = ({
+import {
+  ProgressBar,
+  NavigationButtons,
+  NoticeMessage,
+  ItemListButton,
+} from '../../components';
+
+export const NoticeSection = ({
   currentStep,
   onNext,
   resetForm,
@@ -21,19 +27,22 @@ export const NoticeContainer = ({
   };
 
   return (
-    <div className='flex w-[550px] flex-col items-center justify-center bg-white'>
-      <section className='w-full overflow-hidden rounded-lg border border-gray-300 shadow-sm'>
-        <header className='bg-haedal p-3 text-center text-xl font-bold text-white'>
-          물품 대여 안내
-        </header>
-
-        <div className='bg-white p-6 text-left'>
+    <div>
+      <ContentsContainer title='물품 대여 안내'>
+        <DescriptionSection>
+          <p className='text-start'>
+            해달에서는 동아리 내의 공용 물품을 대여 장부 작성을 통해 무료로
+            대여하고 있습니다. 대여 물품 관리를 위해 아래 사항을 꼭 지켜주세요.
+          </p>
+        </DescriptionSection>
+        <div className='bg-white p-5 text-left'>
           <NoticeMessage />
           <div className='mt-4 flex justify-start'>
             <ItemListButton />
           </div>
         </div>
-      </section>
+      </ContentsContainer>
+
       <div className='mt-4 flex w-full flex-col items-center'>
         <ProgressBar step={currentStep} totalSteps={3} />
         <NavigationButtons

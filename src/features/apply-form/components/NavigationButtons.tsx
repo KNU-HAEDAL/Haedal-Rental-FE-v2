@@ -13,7 +13,7 @@ export const NavigationButtons = ({
 }) => {
   return (
     <div className='mt-4 flex w-full items-center justify-end gap-4'>
-      <Button variant='ghost' className='mr-auto' onClick={resetForm}>
+      <Button variant='secondary' className='mr-auto' onClick={resetForm}>
         양식 지우기
       </Button>
       {currentStep < 3 && (
@@ -22,7 +22,10 @@ export const NavigationButtons = ({
         </Button>
       )}
       {currentStep < 3 && (
-        <Button variant='moon' onClick={onNext}>
+        <Button
+          variant={currentStep === 2 ? 'primary' : 'outline'}
+          onClick={onNext}
+        >
           {currentStep === 2 ? '제출' : '다음'}
         </Button>
       )}

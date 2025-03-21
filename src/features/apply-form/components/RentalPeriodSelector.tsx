@@ -8,7 +8,7 @@ import {
   Calendar,
 } from '@/shared';
 
-import { useRentalPeriod } from '../../../model';
+import { useRentalPeriod } from '../model';
 
 export const RentalPeriodSelector = () => {
   const { date, setDate, rentalPeriod } = useRentalPeriod();
@@ -22,7 +22,7 @@ export const RentalPeriodSelector = () => {
       <div className='mt-2 flex items-center space-x-2'>
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant='ghost' className='h-10 px-3'>
+            <Button variant='secondary' className='h-10 px-3'>
               <img src={CalendarIcon} alt='캘린더 아이콘' className='h-7 w-7' />
             </Button>
           </PopoverTrigger>

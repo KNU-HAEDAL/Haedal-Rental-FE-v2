@@ -12,7 +12,7 @@ export const GoToMainPageButton = () => {
   return (
     <div className='mt-6'>
       <Button
-        variant='moon'
+        variant='secondary'
         onClick={handleGoToMainPage}
         className='h-[35px] w-[150px] font-bold'
       >

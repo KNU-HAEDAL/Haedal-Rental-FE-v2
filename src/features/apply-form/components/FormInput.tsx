@@ -1,4 +1,4 @@
-import { useRentalForm } from '../../../model';
+import { useRentalForm } from '../model';
 
 export const FormInput = () => {
   const { itemName, setItemName } = useRentalForm();
@@ -10,7 +10,7 @@ export const FormInput = () => {
         type='text'
         value={itemName}
         onChange={(e) => setItemName(e.target.value)}
-        className='w-1/2 border-b border-gray-300 p-2 focus:outline-none'
+        className='w-[300px] border-b border-gray-300 p-2 focus:outline-none'
       />
     </div>
   );

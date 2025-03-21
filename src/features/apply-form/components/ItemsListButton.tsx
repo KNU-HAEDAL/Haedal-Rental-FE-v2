@@ -6,7 +6,7 @@ export const ItemListButton = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate(RouterPath.ITEM_LIST);
+    navigate(RouterPath.ITEMS);
   };
 
   return (
@@ -14,7 +14,7 @@ export const ItemListButton = () => {
       <div className='flex items-center justify-start gap-2'>
         <span className='font-bold text-gray-800'>대여 가능 물품 확인 :</span>
         <Button
-          variant='moon'
+          variant='secondary'
           className='h-[35px] w-[150px] px-6 font-bold'
           onClick={handleButtonClick}
         >

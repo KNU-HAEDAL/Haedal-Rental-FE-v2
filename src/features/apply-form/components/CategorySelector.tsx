@@ -1,6 +1,6 @@
 import { Button } from '@/shared';
 
-import { useRentalForm } from '../../../model';
+import { useRentalForm } from '../model';
 
 export const CategorySelector = () => {
   const { categories, selectedCategory, setSelectedCategory } = useRentalForm();
@@ -13,7 +13,7 @@ export const CategorySelector = () => {
           <Button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            variant={selectedCategory === category ? 'moon' : 'outline'}
+            variant={selectedCategory === category ? 'moonTag' : 'outline'}
             className='h-[30px]'
           >
             {category}

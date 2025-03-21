@@ -1,10 +1,6 @@
 export const NoticeMessage = () => {
   return (
     <div>
-      <p className='mb-5 leading-relaxed text-gray-800'>
-        해달에서는 동아리 내의 공용 물품을 대여 장부 작성을 통해 무료로 대여하고
-        있습니다. 대여 물품 관리를 위해 아래 사항을 꼭 지켜주세요.
-      </p>
       <ol className='list-outside list-decimal space-y-[1px] pl-4 text-gray-800'>
         <li className='hanging-indent-6 pl-2 leading-relaxed'>
           대여 가능 기간은 대여장부 작성일로부터

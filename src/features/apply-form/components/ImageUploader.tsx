@@ -1,6 +1,6 @@
 import CameraIcon from '@/features/_assets/apply-form/camera-icon.png';
 
-import { useRentalForm } from '../../../model';
+import { useRentalForm } from '../model';
 
 export const ImageUploader = () => {
   const { image, setImage } = useRentalForm();
