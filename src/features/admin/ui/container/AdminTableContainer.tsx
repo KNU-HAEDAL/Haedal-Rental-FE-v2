@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import {
   Badge,
   Button,
-  getDynamicPath,
   ItemTable,
   NAVIGATE_BUTTONS_DATA,
   RouterPath,
+  getDynamicPath,
 } from '@/shared';
 
-import { ADMIN_ITEM_HEADERS, ADMIN_ITEM_BODIES } from '../../model';
+import { ADMIN_ITEM_BODIES, ADMIN_ITEM_HEADERS } from '../../model';
 
 export const AdminTableContainer = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());
