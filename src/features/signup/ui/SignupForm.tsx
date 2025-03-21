@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
 
-import { signupFormSchema, type SignupFormData } from '@/features';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { type SignupFormData, signupFormSchema } from '@/features';
 import {
   Button,
   Form,
@@ -11,7 +13,6 @@ import {
   Input,
   Label,
 } from '@/shared';
-import { zodResolver } from '@hookform/resolvers/zod';
 
 const inputFields = [
   {

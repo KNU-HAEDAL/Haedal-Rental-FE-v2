@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const useGetMockData = <T>(data: T) => {
   const [isPending, setIsPending] = useState(true);

@@ -1,6 +1,7 @@
-import { MyRentalTable } from '../components';
-import { HeaderData, BodyData } from '../model';
 import { Spinner } from '@/shared';
+
+import { MyRentalTable } from '../components';
+import { BodyData, HeaderData } from '../model';
 
 type Props = {
   isPending: boolean;

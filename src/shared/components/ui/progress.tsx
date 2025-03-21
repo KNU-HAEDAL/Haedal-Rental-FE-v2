@@ -1,7 +1,8 @@
 import * as React from 'react';
 
-import { cn } from '@/shared';
 import * as ProgressPrimitive from '@radix-ui/react-progress';
+
+import { cn } from '@/shared';
 
 function Progress({
   className,

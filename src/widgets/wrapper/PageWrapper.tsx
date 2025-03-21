@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import { AuthButtons, cn, RouterPath, SimpleLogo, SymbolLogo } from '@/shared';
+import { AuthButtons, RouterPath, SimpleLogo, SymbolLogo, cn } from '@/shared';
 
 type Props = {
   children: React.ReactNode;

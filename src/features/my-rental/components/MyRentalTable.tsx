@@ -1,5 +1,6 @@
-import { BodyData, HeaderData } from '../model';
 import { Badge, cn } from '@/shared';
+
+import { BodyData, HeaderData } from '../model';
 
 type Props = {
   headerData: HeaderData[];

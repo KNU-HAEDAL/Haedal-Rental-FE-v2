@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { Badge, Button, ItemTable, RouterPath, getDynamicPath } from '@/shared';
+
 import { ADMIN_ITEM_BODIES, ADMIN_ITEM_HEADERS } from '../../model';
-import { Badge, Button, getDynamicPath, ItemTable, RouterPath } from '@/shared';
 
 export const AdminItemsTableSection = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());

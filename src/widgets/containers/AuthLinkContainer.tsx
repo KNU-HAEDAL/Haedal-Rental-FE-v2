@@ -1,7 +1,8 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+import { RouterPath } from '@/shared';
 
 import { Button } from '../../shared/components/ui';
-import { RouterPath } from '@/shared';
 
 export const AuthLinkContainer = () => {
   const location = useLocation();

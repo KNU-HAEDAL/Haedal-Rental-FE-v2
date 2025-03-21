@@ -1,6 +1,7 @@
+import { Badge } from '@/shared';
+
 import { ItemBox } from '../../components';
 import { ITEM_TYPE } from '../../model';
-import { Badge } from '@/shared';
 
 type Props = {
   itemType: string;
