@@ -27,6 +27,7 @@ export default tseslint.config(
       '**/*.test.tsx',
       '**/*.config.{ts|tsx}',
       '**/*.config.js',
+      '**/*.config.ts',
       '**/*.config.mjs',
       '**/*.config.cjs',
     ],
