@@ -1,3 +1,10 @@
+import { ApplyFormContainer } from '@/features';
+import { PageWrapper } from '@/widgets';
+
 export const ApplyFormPage = () => {
-  return <div>ApplyFormPage</div>;
+  return (
+    <PageWrapper>
+      <ApplyFormContainer />
+    </PageWrapper>
+  );
 };

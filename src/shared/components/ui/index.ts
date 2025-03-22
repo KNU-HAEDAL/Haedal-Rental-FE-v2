@@ -9,3 +9,5 @@ export * from './progress';
 export * from './skeleton';
 export * from './badge';
 export * from './sonner';
+export * from './popover';
+export * from './calendar';
