@@ -1,30 +1,42 @@
-import CalendarIcon from '@/features/_assets/apply-form/calendar-icon.png';
+import { CalendarDays } from 'lucide-react';
 
 import {
-  Button,
   Calendar,
+  Input,
   Popover,
   PopoverContent,
   PopoverTrigger,
+  getAfterDays,
 } from '@/shared';
 
-import { useRentalPeriod } from '../model';
+import { useRentalPeriod } from '../../model';
 
-export const RentalPeriodSelector = () => {
+export const RentalPeriodBox = () => {
   const { date, setDate, rentalPeriod } = useRentalPeriod();
 
+  const currentDate = getAfterDays(7);
+
   return (
-    <div>
-      <p className='mb-2 text-gray-800'>
-        물품 대여 기간을 작성해주세요. 최대 대여 기간은{' '}
-        <span className='font-bold'>일주일</span>입니다.
+    <div className='flex flex-col gap-1'>
+      <p className='text-gray-800'>
+        물품 대여 기간을 작성해주세요. 최대 대여 기간은&nbsp;
+        <b>일주일</b>입니다.
+      </p>
+      <p className='text-gray-800'>
+        오늘 물품 대여자의 반납 가능 날짜는 <b>{currentDate}</b>입니다.
       </p>
       <div className='mt-2 flex items-center space-x-2'>
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant='secondary' className='h-10 px-3'>
-              <img src={CalendarIcon} alt='캘린더 아이콘' className='h-7 w-7' />
-            </Button>
+            <div className='flex items-center gap-3'>
+              <CalendarDays size={30} />
+              <Input
+                value={rentalPeriod}
+                readOnly
+                placeholder='날짜 선택'
+                className='w-3xs border-none shadow-none focus:outline-none focus-visible:ring-0'
+              />
+            </div>
           </PopoverTrigger>
           <PopoverContent className='w-auto p-2'>
             <Calendar
@@ -46,13 +58,6 @@ export const RentalPeriodSelector = () => {
             />
           </PopoverContent>
         </Popover>
-        <input
-          type='text'
-          value={rentalPeriod}
-          readOnly
-          placeholder='날짜 선택'
-          className='w-full p-2 focus:outline-none'
-        />
       </div>
     </div>
   );

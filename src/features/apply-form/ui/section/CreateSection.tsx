@@ -3,68 +3,47 @@ import { ContentsContainer, DescriptionSection } from '@/widgets';
 import {
   CategorySelector,
   FormInput,
+  FormWrapper,
   ImageUploader,
   NavigationButtons,
   ProgressBar,
-  RentalPeriodSelector,
+  RentalPeriodBox,
 } from '../../components';
+import { useStepStore } from '../../model';
 
-export const CreateSection = ({
-  currentStep,
-  onNext,
-  onBack,
-  resetForm,
-}: {
-  currentStep: number;
-  onNext: () => void;
-  onBack: () => void;
-  resetForm: () => void;
-}) => {
+export const CreateSection = ({ resetForm }: { resetForm: () => void }) => {
+  const { step } = useStepStore();
+
   return (
-    <div>
+    <div className='flex w-full flex-col gap-5'>
       <ContentsContainer title='물품 대여 장부 작성'>
         <DescriptionSection>
-          <div className='p-6 text-start'>
-            <FormInput />
-          </div>
+          <FormInput />
         </DescriptionSection>
       </ContentsContainer>
 
-      <FormSection>
+      <FormWrapper>
         <div className='p-6 text-start'>
           <CategorySelector />
         </div>
-      </FormSection>
+      </FormWrapper>
 
-      <FormSection>
+      <FormWrapper>
         <div className='p-6 text-start'>
-          <RentalPeriodSelector />
+          <RentalPeriodBox />
         </div>
-      </FormSection>
+      </FormWrapper>
 
-      <FormSection>
+      <FormWrapper>
         <div className='p-6 text-start'>
           <ImageUploader />
         </div>
-      </FormSection>
+      </FormWrapper>
 
-      <div className='mt-4 flex w-full flex-col items-center'>
-        <ProgressBar step={currentStep} totalSteps={3} />
-        <NavigationButtons
-          currentStep={currentStep}
-          onNext={onNext}
-          onBack={onBack}
-          resetForm={resetForm}
-        />
+      <div className='flex w-full flex-col items-center'>
+        <ProgressBar step={step} />
+        <NavigationButtons currentStep={step} resetForm={resetForm} />
       </div>
     </div>
-  );
-};
-
-const FormSection = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <section className='mt-2 overflow-hidden border border-gray-200'>
-      {children}
-    </section>
   );
 };
