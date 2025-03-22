@@ -1,6 +1,3 @@
-import { useNavigate } from 'react-router-dom';
-
-import { RouterPath } from '@/shared';
 import { ContentsContainer, DescriptionSection } from '@/widgets';
 
 import {
@@ -12,19 +9,11 @@ import {
 
 export const NoticeSection = ({
   currentStep,
-  onNext,
   resetForm,
 }: {
   currentStep: number;
-  onNext: () => void;
-  onBack: () => void;
   resetForm: () => void;
 }) => {
-  const navigate = useNavigate();
-  const handleBack = () => {
-    navigate(RouterPath.MAIN);
-  };
-
   return (
     <div>
       <ContentsContainer title='물품 대여 안내'>
@@ -43,13 +32,8 @@ export const NoticeSection = ({
       </ContentsContainer>
 
       <div className='mt-4 flex w-full flex-col items-center'>
-        <ProgressBar step={currentStep} totalSteps={3} />
-        <NavigationButtons
-          currentStep={currentStep}
-          onNext={onNext}
-          onBack={handleBack}
-          resetForm={resetForm}
-        />
+        <ProgressBar step={currentStep} />
+        <NavigationButtons currentStep={currentStep} resetForm={resetForm} />
       </div>
     </div>
   );

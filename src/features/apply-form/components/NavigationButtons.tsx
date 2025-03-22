@@ -1,32 +1,31 @@
 import { Button } from '@/shared';
 
+import { useStepStore } from '../model';
+
 export const NavigationButtons = ({
-  currentStep,
-  onNext,
-  onBack,
   resetForm,
 }: {
   currentStep: number;
-  onNext: () => void;
-  onBack: () => void;
   resetForm: () => void;
 }) => {
+  const { step, nextStep, prevStep } = useStepStore();
+
   return (
     <div className='mt-4 flex w-full items-center justify-end gap-4'>
       <Button variant='secondary' className='mr-auto' onClick={resetForm}>
         양식 지우기
       </Button>
-      {currentStep < 3 && (
-        <Button variant='outline' onClick={onBack}>
+      {step < 3 && (
+        <Button variant='outline' onClick={() => prevStep()}>
           뒤로
         </Button>
       )}
-      {currentStep < 3 && (
+      {step < 3 && (
         <Button
-          variant={currentStep === 2 ? 'primary' : 'outline'}
-          onClick={onNext}
+          variant={step === 2 ? 'primary' : 'outline'}
+          onClick={() => nextStep()}
         >
-          {currentStep === 2 ? '제출' : '다음'}
+          {step === 2 ? '제출' : '다음'}
         </Button>
       )}
     </div>

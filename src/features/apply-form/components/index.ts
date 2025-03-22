@@ -4,7 +4,8 @@ export * from './ItemsListButton';
 export * from './NoticeMessage';
 export * from './FormInput';
 export * from './CategorySelector';
-export * from './RentalPeriodSelector';
 export * from './ImageUploader';
-export * from './SubmitMessage';
 export * from './GoToMainPageButton';
+
+export * from './box';
+export * from './wrapper';
