@@ -11,6 +11,7 @@
 }
 
 :root {
+  --layout-width: 550px;
   --moon: #ffd050;
   --sun: #e06260;
   --haedal: #0f1729;
@@ -76,6 +77,7 @@
 }
 
 @theme inline {
+  --width-layout: var(--layout-width);
   --font-family: var(--font-NotoSans);
   --color-moon: var(--moon);
   --color-sun: var(--sun);

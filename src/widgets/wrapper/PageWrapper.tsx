@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import { AuthButtons, RouterPath, SimpleLogo, SymbolLogo, cn } from '@/shared';
+import { AuthButton, RouterPath, SimpleLogo, SymbolLogo, cn } from '@/shared';
 
 type Props = {
   children: React.ReactNode;
@@ -28,7 +28,7 @@ export const PageWrapper = ({ children }: Props) => {
       ) : (
         <>
           <SymbolLogo />
-          <AuthButtons />
+          <AuthButton />
           {children}
         </>
       )}
