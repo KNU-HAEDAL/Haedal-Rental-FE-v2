@@ -2,10 +2,10 @@ import CalendarIcon from '@/features/_assets/apply-form/calendar-icon.png';
 
 import {
   Button,
+  Calendar,
   Popover,
   PopoverContent,
   PopoverTrigger,
-  Calendar,
 } from '@/shared';
 
 import { useRentalPeriod } from '../model';

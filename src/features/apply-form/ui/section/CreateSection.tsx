@@ -1,12 +1,12 @@
 import { ContentsContainer, DescriptionSection } from '@/widgets';
 
 import {
-  ProgressBar,
-  NavigationButtons,
-  FormInput,
   CategorySelector,
-  RentalPeriodSelector,
+  FormInput,
   ImageUploader,
+  NavigationButtons,
+  ProgressBar,
+  RentalPeriodSelector,
 } from '../../components';
 
 export const CreateSection = ({

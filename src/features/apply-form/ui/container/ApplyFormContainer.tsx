@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useRentalForm } from '@/features/apply-form/model';
 
-import { NoticeSection, CreateSection, SubmitSection } from '../section';
+import { CreateSection, NoticeSection, SubmitSection } from '../section';
 
 export const ApplyFormContainer = () => {
   const [step, setStep] = useState(1);

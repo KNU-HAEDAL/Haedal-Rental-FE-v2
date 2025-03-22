@@ -1,6 +1,6 @@
 import { ContentsContainer } from '@/widgets';
 
-import { SubmitMessage, GoToMainPageButton } from '../../components';
+import { GoToMainPageButton, SubmitMessage } from '../../components';
 
 export const SubmitSection = () => {
   return (

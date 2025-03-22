@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const useRentalForm = () => {
   const getStoredValue = (key: string, defaultValue: string) => {

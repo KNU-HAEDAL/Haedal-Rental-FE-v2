@@ -1,14 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 
 import { RouterPath } from '@/shared';
-
 import { ContentsContainer, DescriptionSection } from '@/widgets';
 
 import {
-  ProgressBar,
+  ItemListButton,
   NavigationButtons,
   NoticeMessage,
-  ItemListButton,
+  ProgressBar,
 } from '../../components';
 
 export const NoticeSection = ({

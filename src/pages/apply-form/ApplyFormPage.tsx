@@ -1,5 +1,4 @@
 import { ApplyFormContainer } from '@/features';
-
 import { PageWrapper } from '@/widgets';
 
 export const ApplyFormPage = () => {
