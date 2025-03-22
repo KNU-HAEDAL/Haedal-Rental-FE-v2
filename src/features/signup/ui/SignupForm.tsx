@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form';
 
+import { signupFormSchema, type SignupFormData } from '@/features';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { type SignupFormData, signupFormSchema } from '@/features';
