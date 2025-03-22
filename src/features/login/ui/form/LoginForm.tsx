@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 import {
   Button,
@@ -9,6 +10,9 @@ import {
   FormMessage,
   Input,
   Label,
+  RouterPath,
+  TOKEN,
+  authStorage,
 } from '@/shared';
 
 type FormData = {
@@ -26,12 +30,19 @@ export const LoginForm = () => {
   });
   const { control, handleSubmit, formState } = form;
 
+  const navigate = useNavigate();
+
   const inputFields = [
     { name: 'id', label: '아이디', type: 'text' },
     { name: 'password', label: '비밀번호', type: 'password' },
   ];
 
   const onSubmit = (data: FormData) => {
+    authStorage.accessToken.set(TOKEN.accessToken);
+    authStorage.refreshToken.set(TOKEN.refreshToken);
+
+    navigate(RouterPath.ROOT);
+    alert('로그인 성공');
     // Todo: API 요청
     console.log(data);
   };

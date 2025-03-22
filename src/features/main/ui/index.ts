@@ -1,1 +1,1 @@
-export * from './NavButtonSection';
+export * from './section';
