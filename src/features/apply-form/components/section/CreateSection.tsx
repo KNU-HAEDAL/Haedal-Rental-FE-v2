@@ -4,7 +4,6 @@ import {
   CategorySelectBox,
   ImageUploadBox,
   ItemNameBox,
-  RentalPeriodBox,
 } from '../../components';
 
 export const CreateSection = () => {
@@ -19,7 +18,7 @@ export const CreateSection = () => {
       </section>
 
       <section className='w-full border p-6 text-start'>
-        <RentalPeriodBox />
+        {/* <RentalPeriodBox /> */}
       </section>
 
       <section className='w-full border p-6 text-start'>
