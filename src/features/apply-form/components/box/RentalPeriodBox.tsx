@@ -29,12 +29,12 @@ export const RentalPeriodBox = () => {
         <Popover>
           <PopoverTrigger asChild>
             <div className='flex items-center gap-3'>
-              <CalendarDays size={30} />
+              <CalendarDays size={30} className='cursor-pointer' />
               <Input
                 value={rentalPeriod}
                 readOnly
                 placeholder='날짜 선택'
-                className='w-3xs border-none shadow-none focus:outline-none focus-visible:ring-0'
+                className='w-3xs cursor-pointer border-none shadow-none focus:outline-none focus-visible:ring-0'
               />
             </div>
           </PopoverTrigger>
