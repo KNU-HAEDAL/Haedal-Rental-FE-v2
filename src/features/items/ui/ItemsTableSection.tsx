@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { ITEM_BODIES, ITEM_HEADERS, ITEM_TYPE } from '@/features';
-import { Badge, Button, ItemTable } from '@/shared';
+import { ITEM_BODIES, ITEM_HEADERS } from '@/features';
+import { Badge, Button, ITEM_TYPE, ItemTable } from '@/shared';
 
 export const ItemsTableSection = () => {
   //   const navigate = useNavigate();

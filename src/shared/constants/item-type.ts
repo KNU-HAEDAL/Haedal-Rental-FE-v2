@@ -15,6 +15,4 @@ export const ITEM_TYPE = [
     type: '기타용품',
     value: 'etc',
   },
-];
-
-// Todo: 이 파일 경로 옮기기
+] as const;

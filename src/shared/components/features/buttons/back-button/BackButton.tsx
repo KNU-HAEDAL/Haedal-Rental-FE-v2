@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import { Button } from '../../ui';
+import { Button } from '@/shared';
 
 export const BackButton = () => {
   const navigate = useNavigate();
