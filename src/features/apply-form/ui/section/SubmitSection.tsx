@@ -1,10 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+
+import { Button, RouterPath } from '@/shared';
 import { ContentsContainer } from '@/widgets';
 
-import { GoToMainPageButton } from '../../components';
-
 export const SubmitSection = () => {
+  const navigate = useNavigate();
+
   return (
-    <div>
+    <div className='flex flex-col gap-3'>
       <ContentsContainer title='물품 대여 장부'>
         <div className='flex flex-col gap-5 bg-white p-2 text-center leading-relaxed'>
           <span>
@@ -25,7 +28,15 @@ export const SubmitSection = () => {
           </p>
         </div>
       </ContentsContainer>
-      <GoToMainPageButton />
+      <div className='w-full'>
+        <Button
+          variant='secondary'
+          onClick={() => navigate(RouterPath.MAIN)}
+          className='h-9 px-5 font-bold'
+        >
+          첫 페이지로 이동
+        </Button>
+      </div>
     </div>
   );
 };
