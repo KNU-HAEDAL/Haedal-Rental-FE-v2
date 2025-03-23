@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import { Button, RouterPath } from '@/shared';
-import { ContentsContainer } from '@/widgets';
+import { ContentsContainer, DescriptionSection } from '@/widgets';
 
 export const SubmitSection = () => {
   const navigate = useNavigate();
