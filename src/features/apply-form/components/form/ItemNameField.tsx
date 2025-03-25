@@ -21,7 +21,7 @@ export const ItemNameField = ({ name }: Props) => {
       control={form.control}
       name={name}
       render={({ field }) => (
-        <FormItem className='flex w-full flex-col px-5'>
+        <FormItem className='flex w-full flex-col px-3'>
           <FormDescription className='text-md'>
             대여 물품의 이름을 작성해주세요.
           </FormDescription>
