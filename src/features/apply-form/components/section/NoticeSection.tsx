@@ -1,7 +1,7 @@
 import { Button } from '@/shared';
 import { ContentsContainer, DescriptionSection } from '@/widgets';
 
-import { ItemListBox, NoticeMessage } from '../../components';
+import { ItemListBox, NoticeMessageBox, ProgressBox } from '../../components';
 import { useGoStep } from '../../hooks';
 
 type Props = {
@@ -20,17 +20,20 @@ export const NoticeSection = ({ step, setStep }: Props) => {
           대여하고 있습니다. 대여 물품 관리를 위해 아래 사항을 꼭 지켜주세요.
         </DescriptionSection>
         <div className='flex flex-col gap-5 bg-white px-5 text-left'>
-          <NoticeMessage />
+          <NoticeMessageBox />
           <ItemListBox />
         </div>
       </ContentsContainer>
-      <div className='flex gap-3'>
-        <Button variant='outline' className='px-5' onClick={goPrevStep}>
-          뒤로
-        </Button>
-        <Button className='px-5' variant='outline' onClick={goNextStep}>
-          다음
-        </Button>
+      <div className='w-layout flex flex-col items-center'>
+        <ProgressBox step={step} progressValue={(step / 2) * 100} />
+        <div className='flex w-full justify-end gap-3 py-3'>
+          <Button variant='outline' className='px-5' onClick={goPrevStep}>
+            뒤로
+          </Button>
+          <Button className='px-5' variant='outline' onClick={goNextStep}>
+            다음
+          </Button>
+        </div>
       </div>
     </>
   );
