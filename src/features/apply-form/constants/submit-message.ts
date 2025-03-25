@@ -1,4 +1,4 @@
-export const SUBMIT_MESSAGES = [
+export const SUBMIT_MESSAGE = [
   [
     '물품 대여 장부가 정상적으로 제출되었습니다.',
     '원활한 물품 대여를 위해 <b>반납 기한을 준수</b>해주세요.',

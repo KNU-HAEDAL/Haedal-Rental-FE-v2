@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, RouterPath } from '@/shared';
 import { ContentsContainer, DescriptionSection } from '@/widgets';
 
-import { SUBMIT_MESSAGES } from '../../constants';
+import { SUBMIT_MESSAGE } from '../../constants';
 
 export const SubmitSection = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export const SubmitSection = () => {
       <ContentsContainer title='물품 대여 장부'>
         <DescriptionSection className='items-center justify-center gap-3'>
           <div className='flex flex-col gap-3'>
-            {SUBMIT_MESSAGES.map((group, index) => (
+            {SUBMIT_MESSAGE.map((group, index) => (
               <div key={index}>
                 {group.map((text, i) => (
                   <p key={i} dangerouslySetInnerHTML={{ __html: text }} />
