@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -59,23 +58,18 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
       </form>
       <div className='w-layout flex flex-col items-center'>
         <ProgressBox step={step} progressValue={(step / 2) * 100} />
-        <div className='flex w-full justify-between py-3'>
-          <Button variant='secondary' onClick={() => form.reset()}>
-            양식 지우기
+        <div className='flex w-full justify-center gap-3 py-3'>
+          <Button variant='outline' onClick={goPrevStep}>
+            뒤로
           </Button>
-          <div className='flex gap-3'>
-            <Button variant='outline' onClick={goPrevStep}>
-              뒤로
-            </Button>
-            <Button
-              variant='outline'
-              disabled={!form.formState.isValid}
-              type='submit'
-              onClick={() => form.handleSubmit(onSubmit)()}
-            >
-              제출
-            </Button>
-          </div>
+          <Button
+            variant='primary'
+            disabled={!form.formState.isValid}
+            type='submit'
+            onClick={() => form.handleSubmit(onSubmit)()}
+          >
+            제출
+          </Button>
         </div>
       </div>
     </Form>
