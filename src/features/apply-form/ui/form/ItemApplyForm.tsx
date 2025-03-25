@@ -22,16 +22,10 @@ type Props = {
 
 export const ItemApplyForm = ({ step, setStep }: Props) => {
   const { goNextStep, goPrevStep } = useGoStep({ step, setStep });
-  // const [isValid, setIsValid] = useState({
-  //   itemName: false,
-  //   category: false,
-  //   rentalStartDate: false,
-  //   rentalEndDate: false,
-  //   itemImage: false,
-  // });
 
   const form = useForm<ApplyForm>({
     resolver: zodResolver(ApplyFormSchema),
+    mode: 'onChange',
     defaultValues: {
       itemName: '',
       category: '',
@@ -41,31 +35,9 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
     },
   });
 
-  const onSubmit = () => {
-    try {
-      // if (!isValid.itemName) throw new Error('물품 이름을 입력해주세요.');
-      // if (!isValid.category) throw new Error('카테고리를 선택해주세요.');
-      // if (!isValid.rentalStartDate)
-      //   throw new Error('대여 시작 날짜를 선택해주세요.');
-      // if (!isValid.rentalEndDate)
-      //   throw new Error('대여 종료 날짜를 선택해주세요.');
-      // if (!isValid.itemImage) throw new Error('이미지를 업로드해주세요.');
-      // const { itemName, category, rentalStartDate, rentalEndDate, itemImage } = form.getValues();
-    } catch (error) {
-      if (error instanceof Error) {
-        // if (
-        //   !isValid.itemName ||
-        //   !isValid.category ||
-        //   !isValid.rentalStartDate ||
-        //   !isValid.rentalEndDate ||
-        //   !isValid.itemImage
-        // ) {
-        //   alert(error.message);
-        // }
-        alert(error.message);
-      }
-      goNextStep();
-    }
+  const onSubmit = (data: ApplyForm) => {
+    console.log(data);
+    goNextStep();
   };
 
   return (
