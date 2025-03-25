@@ -6,6 +6,7 @@ import {
   FormDescription,
   FormField,
   FormItem,
+  FormMessage,
   ITEM_TYPE,
 } from '@/shared';
 
@@ -41,6 +42,7 @@ export const CategorySelectField = ({ name }: Props) => {
               ))}
             </div>
           </FormControl>
+          <FormMessage />
         </FormItem>
       )}
     />
