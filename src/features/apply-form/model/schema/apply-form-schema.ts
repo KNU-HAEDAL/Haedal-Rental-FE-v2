@@ -7,7 +7,7 @@ export const ApplyFormSchema = z.object({
     message: '대여 시작 날짜를 선택해주세요.',
   }),
   rentalEndDate: z.string(),
-  images: z.array(z.string()),
+  itemImage: z.array(z.instanceof(File)),
 });
 
 export type ApplyForm = z.infer<typeof ApplyFormSchema>;
