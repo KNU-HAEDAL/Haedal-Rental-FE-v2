@@ -35,7 +35,7 @@ export const ImageUploadField = ({ name }: Props) => {
     }
   };
 
-  // 두 imageUpload 함수가 방식이 서로 달라서 일단 이 코드도 살려두겠습니다.
+  // FIXME: 두 imageUpload 함수가 방식이 서로 달라서 일단 이 코드도 살려두겠습니다.
   // const imageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   const file = e.target.files?.[0];
   //   if (file) {
