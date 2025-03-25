@@ -10,6 +10,7 @@ import {
   CategorySelectField,
   ImageUploadField,
   ItemNameField,
+  ProgressBox,
   RentalPeriodField,
 } from '../../components';
 import { useGoStep } from '../../hooks';
@@ -56,22 +57,25 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
         <RentalPeriodField name='rentalStartDate' />
         <ImageUploadField name='itemImage' />
       </form>
-      <div className='w-layout flex justify-between py-5'>
-        <Button variant='secondary' onClick={() => form.reset()}>
-          양식 지우기
-        </Button>
-        <div className='flex gap-3'>
-          <Button variant='outline' onClick={goPrevStep}>
-            뒤로
+      <div className='w-layout flex flex-col items-center'>
+        <ProgressBox step={step} progressValue={(step / 2) * 100} />
+        <div className='flex w-full justify-between py-3'>
+          <Button variant='secondary' onClick={() => form.reset()}>
+            양식 지우기
           </Button>
-          <Button
-            variant='outline'
-            disabled={!form.formState.isValid}
-            type='submit'
-            onClick={() => form.handleSubmit(onSubmit)()}
-          >
-            제출
-          </Button>
+          <div className='flex gap-3'>
+            <Button variant='outline' onClick={goPrevStep}>
+              뒤로
+            </Button>
+            <Button
+              variant='outline'
+              disabled={!form.formState.isValid}
+              type='submit'
+              onClick={() => form.handleSubmit(onSubmit)()}
+            >
+              제출
+            </Button>
+          </div>
         </div>
       </div>
     </Form>
