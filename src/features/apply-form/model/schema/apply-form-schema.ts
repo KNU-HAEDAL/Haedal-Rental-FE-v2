@@ -1,5 +1,8 @@
 import { z } from 'zod';
 
+// 5MB (바이트 단위 변환)
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
+
 export const ApplyFormSchema = z.object({
   itemName: z.string().min(1, { message: '물품 이름을 입력해주세요.' }),
   category: z.string().min(1, { message: '카테고리를 선택해주세요.' }),
@@ -7,7 +10,11 @@ export const ApplyFormSchema = z.object({
     message: '대여 시작 날짜를 선택해주세요.',
   }),
   rentalEndDate: z.string(),
-  itemImage: z.array(z.instanceof(File)),
+  itemImage: z
+    .array(z.instanceof(File))
+    .refine((files) => files.every((file) => file.size <= MAX_FILE_SIZE), {
+      message: '각 파일은 최대 5MB까지 업로드할 수 있습니다.',
+    }),
 });
 
 export type ApplyForm = z.infer<typeof ApplyFormSchema>;
