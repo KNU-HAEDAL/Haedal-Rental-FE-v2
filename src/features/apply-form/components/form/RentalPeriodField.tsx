@@ -12,6 +12,7 @@ import {
   FormMessage,
   Popover,
   PopoverContent,
+  formatDate,
   getAfterDays,
 } from '@/shared';
 
@@ -27,8 +28,6 @@ export const RentalPeriodField = ({ name }: Props) => {
     from: undefined,
     to: undefined,
   });
-
-  const currentDate = getAfterDays(7);
 
   const onSelectCalendar = (from?: Date, to?: Date) => {
     if (from) {
@@ -56,13 +55,14 @@ export const RentalPeriodField = ({ name }: Props) => {
       name={name}
       render={({ field }) => (
         <FormItem className='flex w-full flex-col gap-2 border p-5 text-start'>
-          <div className='text-md flex flex-col gap-1'>
+          <div className='text-base/7'>
+            <p>물품 대여 기간을 작성해주세요.</p>
             <p>
-              물품 대여 기간을 작성해주세요. 최대 대여 기간은&nbsp;
-              <b>일주일</b>입니다.
+              물품 대여 기간은 신청일인 현재 날짜(<b>{getAfterDays(0)}</b>)로
+              부터 최대 7일 까지입니다.
             </p>
             <p>
-              오늘 물품 대여자의 반납 가능 날짜는 <b>{currentDate}</b>입니다.
+              (반납 마감일: <b>{formatDate(new Date(), 7)}</b>)
             </p>
           </div>
           <FormControl>
