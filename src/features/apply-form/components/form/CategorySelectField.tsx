@@ -10,17 +10,15 @@ import {
   ITEM_TYPE,
 } from '@/shared';
 
-type Props = {
-  name: string;
-};
+import { ApplyForm } from '../../model';
 
-export const CategorySelectField = ({ name }: Props) => {
-  const form = useFormContext();
+export const CategorySelectField = () => {
+  const form = useFormContext<ApplyForm>();
 
   return (
     <FormField
       control={form.control}
-      name={name}
+      name='category'
       render={({ field }) => (
         <FormItem className='flex w-full flex-col gap-3 border p-5 text-start'>
           <FormDescription className='text-md'>

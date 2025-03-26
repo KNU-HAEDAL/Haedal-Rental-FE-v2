@@ -50,11 +50,11 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
           className='mb-0 text-start'
           title='물품 대여 장부 작성'
         >
-          <ItemNameField name='itemName' />
+          <ItemNameField />
         </ContentsContainer>
-        <CategorySelectField name='category' />
-        <RentalPeriodField name='rentalStartDate' />
-        <ImageUploadField name='itemImage' />
+        <CategorySelectField />
+        <RentalPeriodField />
+        <ImageUploadField />
       </form>
       <div className='w-layout flex flex-col items-center'>
         <ProgressBox step={step} progressValue={(step / 2) * 100} />

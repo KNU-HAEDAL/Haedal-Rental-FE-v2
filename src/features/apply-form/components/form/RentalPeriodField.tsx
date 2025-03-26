@@ -16,13 +16,11 @@ import {
   getAfterDays,
 } from '@/shared';
 
+import { ApplyForm } from '../../model';
 import { DatePopoverTriggerButton } from '../button';
 
-type Props = {
-  name: string;
-};
-export const RentalPeriodField = ({ name }: Props) => {
-  const form = useFormContext();
+export const RentalPeriodField = () => {
+  const form = useFormContext<ApplyForm>();
 
   const [date, setDate] = useState<DateRange | undefined>({
     from: undefined,
@@ -52,7 +50,7 @@ export const RentalPeriodField = ({ name }: Props) => {
   return (
     <FormField
       control={form.control}
-      name={name}
+      name='rentalStartDate'
       render={({ field }) => (
         <FormItem className='flex w-full flex-col gap-2 border p-5 text-start'>
           <div className='text-base/7'>

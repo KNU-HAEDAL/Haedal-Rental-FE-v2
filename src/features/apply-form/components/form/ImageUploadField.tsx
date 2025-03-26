@@ -5,12 +5,10 @@ import { Camera } from 'lucide-react';
 
 import { FormControl, FormField, FormItem, FormMessage, Input } from '@/shared';
 
-type Props = {
-  name: string;
-};
+import { ApplyForm } from '../../model';
 
-export const ImageUploadField = ({ name }: Props) => {
-  const form = useFormContext();
+export const ImageUploadField = () => {
+  const form = useFormContext<ApplyForm>();
 
   const [itemImagePreview, setItemImagePreview] = useState('');
 
@@ -50,7 +48,7 @@ export const ImageUploadField = ({ name }: Props) => {
   return (
     <FormField
       control={form.control}
-      name={name}
+      name='itemImage'
       render={({ field }) => (
         <FormItem className='flex w-full flex-col gap-4 border p-5 text-start'>
           <p>대여 물품을 사진으로 찍어서 업로드해주세요.</p>

@@ -9,17 +9,15 @@ import {
   Input,
 } from '@/shared';
 
-type Props = {
-  name: string;
-};
+import { ApplyForm } from '../../model';
 
-export const ItemNameField = ({ name }: Props) => {
-  const form = useFormContext();
+export const ItemNameField = () => {
+  const form = useFormContext<ApplyForm>();
 
   return (
     <FormField
       control={form.control}
-      name={name}
+      name='itemName'
       render={({ field }) => (
         <FormItem className='flex w-full flex-col px-5'>
           <FormDescription className='text-md'>
