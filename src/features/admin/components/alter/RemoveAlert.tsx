@@ -24,7 +24,7 @@ export const RemoveAlert = ({ open, setOpen }: Props) => {
 
   const onClickRemove = () => {
     toast.promise(promise, {
-      loading: '물품을 삭재하는 중...',
+      loading: '물품을 삭제하는 중...',
       success: '물품이 삭제되었습니다.',
       error: '물품 삭제를 실패했습니다.',
     });
