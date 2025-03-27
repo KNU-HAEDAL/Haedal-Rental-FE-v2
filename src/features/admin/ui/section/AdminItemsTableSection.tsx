@@ -8,6 +8,7 @@ import { ADMIN_ITEM_BODIES, ADMIN_ITEM_HEADERS } from '../../model';
 
 export const AdminItemsTableSection = () => {
   const [selection, setSelection] = useState<Set<string>>(new Set());
+  const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -23,13 +24,6 @@ export const AdminItemsTableSection = () => {
     console.log(Array.from(selection));
   }, [selection]);
 
-  const [open, setOpen] = useState(false);
-
-  const onClickRemove = () => {
-    setOpen(true);
-    console.log('click');
-  };
-
   return (
     <>
       <div className='w-full px-3'>
@@ -40,7 +34,7 @@ export const AdminItemsTableSection = () => {
           </div>
           <div className='flex gap-2'>
             <Button onClick={goToAddItem}>물품 추가</Button>
-            <Button variant='danger' onClick={onClickRemove}>
+            <Button variant='danger' onClick={() => setOpen(true)}>
               물품 삭제
             </Button>
           </div>
