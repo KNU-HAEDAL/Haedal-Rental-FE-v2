@@ -11,4 +11,3 @@ export * from './badge';
 export * from './sonner';
 export * from './popover';
 export * from './calendar';
-export * from './dialog';
