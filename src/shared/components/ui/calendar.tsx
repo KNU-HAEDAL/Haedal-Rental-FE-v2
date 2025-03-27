@@ -44,7 +44,7 @@ function Calendar({
             : '[&:has([aria-selected])]:rounded-md',
         ),
         day: cn(
-          buttonVariants({ variant: 'outline' }),
+          buttonVariants({ variant: 'link' }),
           'h-8 w-8 p-0 font-normal aria-selected:opacity-100',
         ),
         day_range_start: 'day-range-start',
@@ -54,7 +54,7 @@ function Calendar({
         day_today: 'bg-accent text-accent-foreground',
         day_outside:
           'day-outside text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground',
-        day_disabled: 'text-muted-foreground opacity-50',
+        day_disabled: 'text-muted-foreground opacity-20',
         day_range_middle:
           'aria-selected:bg-accent aria-selected:text-accent-foreground',
         day_hidden: 'invisible',
