@@ -8,7 +8,7 @@ interface RentalItemRequest {
   picture: string;
 }
 
-export const rentalItemApi = async ({
+export const itemRentalAPI = async ({
   name,
   itemCategory,
   rentalDate,
