@@ -8,6 +8,8 @@ type Props = {
 };
 
 export const MyRentalTable = ({ headerData, bodyData }: Props) => {
+  const today = new Date().toISOString().split('T')[0];
+
   return (
     <table className='w-full border-collapse justify-center'>
       <thead>
@@ -20,26 +22,27 @@ export const MyRentalTable = ({ headerData, bodyData }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {bodyData.map((item, index) => (
-          <tr
-            key={item.itemId}
-            className={cn('cursor-pointer', {
-              'border-b': index !== bodyData.length - 1,
-            })}
-          >
-            <td className='py-2'>{item.type}</td>
-            <td>{item.name}</td>
-            <td>
-              <Badge
-                variant={
-                  item.status === '반납 가능' ? 'available' : 'unavailable'
-                }
-              >
-                {item.status}
-              </Badge>
-            </td>
-          </tr>
-        ))}
+        {bodyData.map((item, index) => {
+          const isOverdue = item.dueDate < today;
+
+          return (
+            <tr
+              key={item.itemId}
+              className={cn('cursor-pointer', {
+                'border-b': index !== bodyData.length - 1,
+              })}
+            >
+              <td className='py-2'>{item.type}</td>
+              <td>{item.name}</td>
+              <td>{item.dueDate}</td>
+              <td>
+                <Badge variant={isOverdue ? 'unavailable' : 'available'}>
+                  {isOverdue ? '기한 초과' : '이용 중'}
+                </Badge>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

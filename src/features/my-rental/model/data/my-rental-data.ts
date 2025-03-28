@@ -12,6 +12,7 @@ export const MY_RENTAL_HEADERS: HeaderData[] = [
     text: '이름',
     value: 'name',
   },
+  { text: '반납 기한', value: 'dueDate' },
   {
     text: '상태',
     value: 'status',
@@ -19,29 +20,29 @@ export const MY_RENTAL_HEADERS: HeaderData[] = [
 ];
 
 export type BodyData = {
+  itemId: string;
   type: string;
   name: string;
-  status: string;
-  itemId: string;
+  dueDate: string;
 };
 
 export const MY_RENTAL_BODIES: BodyData[] = [
   {
-    type: '책',
-    name: '모던 리액트 Deep Dive',
-    status: '반납 가능',
     itemId: '1',
-  },
-  {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '반납 가능',
+    dueDate: '2025-03-30',
+  },
+  {
     itemId: '2',
-  },
-  {
     type: '책',
     name: '모던 리액트 Deep Dive',
-    status: '기간 초과',
+    dueDate: '2025-03-10',
+  },
+  {
     itemId: '3',
+    type: '책',
+    name: '모던 리액트 Deep Dive',
+    dueDate: '2025-03-30',
   },
 ];
