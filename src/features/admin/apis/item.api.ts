@@ -19,7 +19,7 @@ interface DeleteItemRequest {
 
 export const deleteItemAPI = async ({ itemId }: DeleteItemRequest) => {
   const response = await fetchInstance.delete(`/admin/item`, {
-    data: { itemId },
+    params: { itemId },
   });
   return response.data;
 };
