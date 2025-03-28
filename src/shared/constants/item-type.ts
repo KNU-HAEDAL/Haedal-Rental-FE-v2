@@ -9,7 +9,7 @@ export const ITEM_TYPE = [
   },
   {
     type: '사무용품',
-    value: 'stationery',
+    value: 'officeSupply',
   },
   {
     type: '기타용품',
