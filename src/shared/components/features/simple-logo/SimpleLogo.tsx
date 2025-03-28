@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 
+import Logo from '@/shared/_assets/logo/simple-logo.svg';
+
 import { RouterPath } from '@/shared';
 
 export const SimpleLogo = () => {
   return (
     <Link to={RouterPath.MAIN} className='mt-6'>
       <img
-        src='/src/shared/_assets/logo/simple-logo.svg'
+        src={Logo}
         alt='haedal'
         className='cursor-pointer'
         width={230}
