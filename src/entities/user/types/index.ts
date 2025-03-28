@@ -1,1 +1,1 @@
-export type * from './rental-item-list.type';
+export * from './rental-item-list.type';
