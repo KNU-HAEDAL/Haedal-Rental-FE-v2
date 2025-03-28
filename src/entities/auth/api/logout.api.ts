@@ -1,6 +1,6 @@
 import { fetchInstance } from '@/shared';
 
-export const LogoutAPI = async () => {
+export const logoutAPI = async () => {
   const response = await fetchInstance.get('/api/auth/logout');
   return response.data;
 };
