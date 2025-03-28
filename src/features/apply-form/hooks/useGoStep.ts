@@ -10,9 +10,5 @@ export const useGoStep = ({ step, setStep }: Props) => {
     setStep(Math.min(step + 1, 3));
   }, [step, setStep]);
 
-  const goPrevStep = useCallback(() => {
-    setStep(Math.max(step - 1, 1));
-  }, [step, setStep]);
-
-  return { goNextStep, goPrevStep };
+  return { goNextStep };
 };
