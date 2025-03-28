@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import { Button } from '@/shared';
 import { ContentsContainer, DescriptionSection } from '@/widgets';
 
@@ -10,7 +12,9 @@ type Props = {
 };
 
 export const NoticeSection = ({ step, setStep }: Props) => {
-  const { goNextStep, goPrevStep } = useGoStep({ step, setStep });
+  const { goNextStep } = useGoStep({ step, setStep });
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -29,7 +33,11 @@ export const NoticeSection = ({ step, setStep }: Props) => {
       <div className='w-layout flex flex-col items-center'>
         <ProgressBox step={step} progressValue={(step / 2) * 100} />
         <div className='flex w-full justify-center gap-3 py-3'>
-          <Button variant='outline' className='px-5' onClick={goPrevStep}>
+          <Button
+            variant='outline'
+            className='px-5'
+            onClick={() => navigate(-1)}
+          >
             뒤로
           </Button>
           <Button className='px-5' variant='outline' onClick={goNextStep}>

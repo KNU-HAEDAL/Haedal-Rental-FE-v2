@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -21,7 +22,9 @@ type Props = {
 };
 
 export const ItemApplyForm = ({ step, setStep }: Props) => {
-  const { goNextStep, goPrevStep } = useGoStep({ step, setStep });
+  const { goNextStep } = useGoStep({ step, setStep });
+
+  const navigate = useNavigate();
 
   const form = useForm<ApplyForm>({
     resolver: zodResolver(ApplyFormSchema),
@@ -59,10 +62,15 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
       <div className='w-layout flex flex-col items-center'>
         <ProgressBox step={step} progressValue={(step / 2) * 100} />
         <div className='flex w-full justify-center gap-3 py-3'>
-          <Button variant='outline' onClick={goPrevStep}>
+          <Button
+            className='px-5'
+            variant='outline'
+            onClick={() => navigate(-1)}
+          >
             뒤로
           </Button>
           <Button
+            className='px-5'
             variant='primary'
             disabled={!form.formState.isValid}
             type='submit'
