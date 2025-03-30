@@ -5,5 +5,5 @@ export interface RentalItemRequest {
   itemCategory: ItemCategory;
   rentalDate: string;
   returnDate: string;
-  picture: string;
+  picture: File;
 }
