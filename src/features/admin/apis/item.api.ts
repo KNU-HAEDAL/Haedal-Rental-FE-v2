@@ -1,9 +1,11 @@
-import { ItemCategory, ItemStatus, fetchInstance } from '@/shared';
+import { fetchInstance } from '@/shared';
 
-export interface AddItemRequest {
-  itemId: string;
-  itemCategory: ItemCategory;
-}
+import {
+  AddItemRequest,
+  DeleteItemRequest,
+  GetItemDetailRequest,
+  GetItemListParams,
+} from './item.type';
 
 export const addItemPath = '/admin/item';
 
@@ -15,10 +17,6 @@ export const addItemAPI = async ({ itemId, itemCategory }: AddItemRequest) => {
   return response.data;
 };
 
-export interface DeleteItemRequest {
-  itemId: string;
-}
-
 export const deleteItemPath = '/admin/item';
 
 export const deleteItemAPI = async ({ itemId }: DeleteItemRequest) => {
@@ -28,10 +26,6 @@ export const deleteItemAPI = async ({ itemId }: DeleteItemRequest) => {
   return response.data;
 };
 
-export interface GetItemDetailRequest {
-  itemId: string;
-}
-
 export const getItemDetailPath = ({ itemId }: GetItemDetailRequest) =>
   `/admin/itemDetail/${itemId}`;
 
@@ -39,10 +33,6 @@ export const getItemDetailAPI = async ({ itemId }: GetItemDetailRequest) => {
   const response = await fetchInstance.get(getItemDetailPath({ itemId }));
   return response.data;
 };
-
-export interface GetItemListParams {
-  itemStatus: ItemStatus;
-}
 
 export const getItemListPath = '/admin/itemList';
 

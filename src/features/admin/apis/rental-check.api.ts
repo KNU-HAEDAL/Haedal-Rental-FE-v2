@@ -1,11 +1,11 @@
 import { fetchInstance } from '@/shared';
 
-interface RentalCheckRequest {
-  itemId: string;
-}
+import { RentalCheckRequest } from './rental-check.type';
+
+export const rentalCheckPath = '/admin/rentalCheck';
 
 export const rentalCheckAPI = async ({ itemId }: RentalCheckRequest) => {
-  const response = await fetchInstance.put('/admin/rentalCheck', {
+  const response = await fetchInstance.put(rentalCheckPath, {
     itemId,
   });
   return response.data;
