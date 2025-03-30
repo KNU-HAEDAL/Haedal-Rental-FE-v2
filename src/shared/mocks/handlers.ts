@@ -1,3 +1,3 @@
-import { itemListHandler } from '@/features';
+import { adminItemListHandler, itemListHandler } from '@/features';
 
-export const handlers = [...itemListHandler];
+export const handlers = [...adminItemListHandler, ...itemListHandler];
