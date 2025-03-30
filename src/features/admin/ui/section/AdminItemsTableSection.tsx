@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Badge, Button, ItemTable, RouterPath, getDynamicPath } from '@/shared';
 
 import { RemoveAlert } from '../../components/alter';
+import { useGetItemList } from '../../hooks';
 import { ADMIN_ITEM_BODIES, ADMIN_ITEM_HEADERS } from '../../model';
 
 export const AdminItemsTableSection = () => {
@@ -23,6 +24,16 @@ export const AdminItemsTableSection = () => {
   useEffect(() => {
     console.log(Array.from(selection));
   }, [selection]);
+
+  const { data: itemList, isError } = useGetItemList({
+    itemStatus: 'RENTAL_AVAILABLE',
+  });
+
+  console.log(itemList);
+
+  if (isError) {
+    return <div>에러 발생</div>;
+  }
 
   return (
     <>

@@ -4,7 +4,7 @@ import { authStorage } from '../utils';
 
 import { initInstance } from './axios-instance';
 
-const BASE_URL = 'http://13.209.182.65:8080';
+export const BASE_URL = 'http://13.209.182.65:8080';
 
 export const fetchInstance = initInstance({
   baseURL: BASE_URL,
