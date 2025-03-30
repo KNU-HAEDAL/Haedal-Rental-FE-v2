@@ -4,9 +4,9 @@ import { GetItemListParams, getItemListAPI, getItemListPath } from '../apis';
 
 export const getItemListQueryKey = [getItemListPath];
 
-export const useGetItemList = ({ itemStatus }: GetItemListParams) => {
+export const useGetItemList = (itemStatus: GetItemListParams) => {
   return useQuery({
     queryKey: getItemListQueryKey,
-    queryFn: () => getItemListAPI({ itemStatus }),
+    queryFn: () => getItemListAPI(itemStatus),
   });
 };
