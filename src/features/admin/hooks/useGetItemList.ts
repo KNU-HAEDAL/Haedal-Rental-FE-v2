@@ -2,11 +2,13 @@ import { useQuery } from '@tanstack/react-query';
 
 import { GET_ITEM_LIST_PATH, GetItemListParams, getItemListAPI } from '../apis';
 
-export const getItemListQueryKey = [GET_ITEM_LIST_PATH];
-
-export const useGetItemList = (itemStatus: GetItemListParams) => {
+export const getAdminItemListQueryKey = (itemStatus: GetItemListParams) => [
+  GET_ITEM_LIST_PATH,
+  itemStatus,
+];
+export const useGetAdminItemList = (itemStatus: GetItemListParams) => {
   return useQuery({
-    queryKey: getItemListQueryKey,
+    queryKey: getAdminItemListQueryKey(itemStatus),
     queryFn: () => getItemListAPI(itemStatus),
   });
 };

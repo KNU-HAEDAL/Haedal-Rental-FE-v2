@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Badge, Button, ItemTable, RouterPath, getDynamicPath } from '@/shared';
 
 import { RemoveAlert } from '../../components/alter';
-import { useGetItemList } from '../../hooks';
+import { useGetAdminItemList } from '../../hooks';
 import { ADMIN_ITEM_BODIES, ADMIN_ITEM_HEADERS } from '../../model';
 
 export const AdminItemsTableSection = () => {
@@ -25,7 +25,7 @@ export const AdminItemsTableSection = () => {
     console.log(Array.from(selection));
   }, [selection]);
 
-  const { data: itemList, isError } = useGetItemList({
+  const { data: itemList, isError } = useGetAdminItemList({
     itemStatus: 'RENTAL_AVAILABLE',
   });
 
