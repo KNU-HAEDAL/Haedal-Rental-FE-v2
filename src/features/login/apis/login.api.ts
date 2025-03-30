@@ -1,17 +1,11 @@
 import { fetchInstance } from '@/shared';
 
-interface LoginResponse {
-  accessToken: string;
-  refreshToken: string;
-}
+import { LoginRequest, LoginResponse } from './login.type';
 
-interface LoginRequest {
-  id: string;
-  password: string;
-}
+export const loginPath = '/api/auth/login';
 
 export const loginApi = async ({ id, password }: LoginRequest) => {
-  const response = await fetchInstance.post<LoginResponse>('/api/auth/login', {
+  const response = await fetchInstance.post<LoginResponse>(loginPath, {
     id,
     password,
   });
