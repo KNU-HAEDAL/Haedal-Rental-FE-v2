@@ -1,11 +1,11 @@
-import { ItemCategory, fetchInstance } from '@/shared';
+import { fetchInstance } from '@/shared';
 
-interface ItemListParams {
-  itemCategory: ItemCategory;
-}
+import { ItemListParams } from './item-list.type';
+
+export const itemListPath = '/api/rental/itemList';
 
 export const itemListAPI = async ({ itemCategory }: ItemListParams) => {
-  const response = await fetchInstance.get('/api/rental/itemList', {
+  const response = await fetchInstance.get(itemListPath, {
     params: {
       itemCategory,
     },
