@@ -27,7 +27,7 @@ type Props = {
 export const ItemApplyForm = ({ step, setStep }: Props) => {
   const { goNextStep } = useGoStep({ step, setStep });
 
-  const { mutate: applyItemMutate, isPending } = useMutation({
+  const { mutate: applyItemMutate } = useMutation({
     mutationFn: (data: RentalItemRequest) => itemRentalAPI(data),
     onSuccess: () => {
       onSuccess();
@@ -52,12 +52,12 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
   });
 
   const onSuccess = () => {
-    toast.success('물품이 성공적으로 추가되었습니다!');
+    toast.success('물품 대여 요청이 제출되었습니다!');
     goNextStep();
   };
 
   const onError = () => {
-    toast.error('물품 추가에 실패했습니다.');
+    toast.error('물품 대여 요청이 제출되지 않았습니다. 다시 시도해주세요.');
   };
 
   const onSubmit = (data: ApplyForm) => {
@@ -74,7 +74,6 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
 
   return (
     <Form {...form}>
-      {isPending && <p>물품을 추가하는 중...</p>}
       <form
         onSubmit={(e) => e.preventDefault()}
         className='w-layout flex flex-col items-center gap-5'
