@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { itemRentalApi, itemRentalPath } from '../apis';
+import { ITEM_RENTAL_PATH, itemRentalApi } from '../apis';
 
-export const getMyItemRentalQueryKey = [itemRentalPath];
+export const getMyItemRentalQueryKey = [ITEM_RENTAL_PATH];
 
 export const useGetMyItemRental = () => {
   return useQuery({

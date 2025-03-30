@@ -2,10 +2,10 @@ import { fetchInstance } from '@/shared';
 
 import { RentalCheckRequest } from './rental-check.type';
 
-export const rentalCheckPath = '/admin/rentalCheck';
+export const RETURN_CHECK_PATH = '/admin/rentalCheck';
 
 export const rentalCheckAPI = async ({ itemId }: RentalCheckRequest) => {
-  const response = await fetchInstance.put(rentalCheckPath, {
+  const response = await fetchInstance.put(RETURN_CHECK_PATH, {
     itemId,
   });
   return response.data;

@@ -1,8 +1,8 @@
 import { fetchInstance } from '@/shared';
 
-export const logoutPath = '/api/auth/logout';
+export const LOGOUT_PATH = '/api/auth/logout';
 
 export const logoutAPI = async () => {
-  const response = await fetchInstance.get(logoutPath);
+  const response = await fetchInstance.get(LOGOUT_PATH);
   return response.data;
 };

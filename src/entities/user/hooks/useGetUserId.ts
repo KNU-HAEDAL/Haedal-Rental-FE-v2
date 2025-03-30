@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { getUserIdAPI, getUserIdPath } from '../api';
+import { GET_USER_ID_PATH, getUserIdAPI } from '../api';
 
-export const getUserIdQueryKey = [getUserIdPath];
+export const getUserIdQueryKey = [GET_USER_ID_PATH];
 
 export const useGetUserId = () => {
   return useQuery({

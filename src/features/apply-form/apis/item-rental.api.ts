@@ -2,7 +2,7 @@ import { fetchInstance } from '@/shared';
 
 import { RentalItemRequest } from './item-rental.type';
 
-export const itemRentalPath = '/admin/rental';
+export const ITEM_RENTAL_PATH = '/admin/rental';
 
 export const itemRentalAPI = async ({
   name,
@@ -11,7 +11,7 @@ export const itemRentalAPI = async ({
   returnDate,
   picture,
 }: RentalItemRequest) => {
-  const response = await fetchInstance.post(itemRentalPath, {
+  const response = await fetchInstance.post(ITEM_RENTAL_PATH, {
     name,
     itemCategory,
     rentalDate,

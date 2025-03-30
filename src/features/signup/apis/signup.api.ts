@@ -2,7 +2,7 @@ import { fetchInstance } from '@/shared';
 
 import { SignupRequest } from './signup.type';
 
-export const signupPath = '/api/auth/signup';
+export const SIGNUP_PATH = '/api/auth/signup';
 
 export const signupAPI = async ({
   email,
@@ -10,7 +10,7 @@ export const signupAPI = async ({
   name,
   phoneNumber,
 }: SignupRequest) => {
-  const response = await fetchInstance.post(signupPath, {
+  const response = await fetchInstance.post(SIGNUP_PATH, {
     email,
     password,
     name,

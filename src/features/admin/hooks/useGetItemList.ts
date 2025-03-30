@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { GetItemListParams, getItemListAPI, getItemListPath } from '../apis';
+import { GET_ITEM_LIST_PATH, GetItemListParams, getItemListAPI } from '../apis';
 
-export const getItemListQueryKey = [getItemListPath];
+export const getItemListQueryKey = [GET_ITEM_LIST_PATH];
 
 export const useGetItemList = (itemStatus: GetItemListParams) => {
   return useQuery({
