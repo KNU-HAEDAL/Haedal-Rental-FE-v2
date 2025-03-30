@@ -1,12 +1,8 @@
-import { ItemCategory, fetchInstance } from '@/shared';
+import { fetchInstance } from '@/shared';
 
-interface RentalItemRequest {
-  name: string;
-  itemCategory: ItemCategory;
-  rentalDate: string;
-  returnDate: string;
-  picture: string;
-}
+import { RentalItemRequest } from './item-rental.type';
+
+export const ITEM_RENTAL_PATH = '/admin/rental';
 
 export const itemRentalAPI = async ({
   name,
@@ -15,7 +11,7 @@ export const itemRentalAPI = async ({
   returnDate,
   picture,
 }: RentalItemRequest) => {
-  const response = await fetchInstance.post('/api/rental', {
+  const response = await fetchInstance.post(ITEM_RENTAL_PATH, {
     name,
     itemCategory,
     rentalDate,

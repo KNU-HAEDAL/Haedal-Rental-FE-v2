@@ -1,22 +1,19 @@
-import { UserRentalItemList } from '@/entities';
 import { fetchInstance } from '@/shared';
 
-interface ItemRentalResponse {
-  penaltyCount: number;
-  userRentalItemList: UserRentalItemList[];
-}
+import { ItemRentalResponse, ItemReturnRequest } from './item-return.type';
+
+export const ITEM_RENTAL_PATH = '/api/rental';
 
 export const itemRentalApi = async () => {
-  const response = await fetchInstance.get<ItemRentalResponse>('/api/rental');
+  const response =
+    await fetchInstance.get<ItemRentalResponse>(ITEM_RENTAL_PATH);
   return response.data;
 };
 
-interface ItemReturnRequest {
-  itemId: number;
-}
+export const ITEM_RETURN_PATH = '/api/rental/return';
 
 export const itemReturnApi = async ({ itemId }: ItemReturnRequest) => {
-  const response = await fetchInstance.post('/api/rental/return', {
+  const response = await fetchInstance.post(ITEM_RETURN_PATH, {
     itemId,
   });
   return response.data;

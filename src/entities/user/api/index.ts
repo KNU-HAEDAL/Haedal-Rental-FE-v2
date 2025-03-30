@@ -1,1 +1,1 @@
-export * from './user-id.api';
+export * from './get-user-id.api';
