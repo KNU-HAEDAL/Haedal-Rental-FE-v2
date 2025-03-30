@@ -2,10 +2,13 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation } from '@tanstack/react-query';
+import { toast } from 'sonner';
 
-import { Button, Form } from '@/shared';
+import { Button, Form, ItemCategory } from '@/shared';
 import { ContentsContainer } from '@/widgets';
 
+import { RentalItemRequest, itemRentalAPI } from '../../apis';
 import {
   CategorySelectField,
   ImageUploadField,
@@ -24,6 +27,16 @@ type Props = {
 export const ItemApplyForm = ({ step, setStep }: Props) => {
   const { goNextStep } = useGoStep({ step, setStep });
 
+  const { mutate: applyItemMutate, isPending } = useMutation({
+    mutationFn: (data: RentalItemRequest) => itemRentalAPI(data),
+    onSuccess: () => {
+      onSuccess();
+    },
+    onError: () => {
+      onError();
+    },
+  });
+
   const navigate = useNavigate();
 
   const form = useForm<ApplyForm>({
@@ -38,13 +51,30 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
     },
   });
 
-  const onSubmit = (data: ApplyForm) => {
-    console.log(data);
+  const onSuccess = () => {
+    toast.success('물품이 성공적으로 추가되었습니다!');
     goNextStep();
+  };
+
+  const onError = () => {
+    toast.error('물품 추가에 실패했습니다.');
+  };
+
+  const onSubmit = (data: ApplyForm) => {
+    applyItemMutate({
+      name: data.itemName,
+      itemCategory: data.category as ItemCategory,
+      rentalDate: data.rentalStartDate,
+      returnDate: data.rentalEndDate,
+      picture: data.itemImage[0],
+    });
+
+    console.log(data);
   };
 
   return (
     <Form {...form}>
+      {isPending && <p>물품을 추가하는 중...</p>}
       <form
         onSubmit={(e) => e.preventDefault()}
         className='w-layout flex flex-col items-center gap-5'
