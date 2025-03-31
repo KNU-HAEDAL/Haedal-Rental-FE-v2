@@ -13,6 +13,13 @@ export const fetchInstance = initInstance({
   },
 });
 
+export const multipartInstance = initInstance({
+  baseURL: BASE_URL,
+  headers: {
+    'Content-Type': 'multipart/form-data',
+  },
+});
+
 fetchInstance.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     const accessToken = authStorage.accessToken.get();
