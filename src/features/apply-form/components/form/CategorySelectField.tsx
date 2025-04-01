@@ -30,9 +30,9 @@ export const CategorySelectField = () => {
                 <Button
                   {...field}
                   key={category.value}
-                  onClick={() => field.onChange(category.type)}
+                  onClick={() => field.onChange(category.value)}
                   variant={
-                    field.value === category.type ? 'moonTag' : 'outline'
+                    field.value === category.value ? 'moonTag' : 'outline'
                   }
                 >
                   {category.type}
