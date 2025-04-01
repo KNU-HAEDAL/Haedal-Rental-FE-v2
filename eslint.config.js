@@ -23,6 +23,7 @@ export default tseslint.config(
   {
     ignores: [
       'dist',
+      'public/mockServiceWorker.js',
       '**/*.test.ts',
       '**/*.test.tsx',
       '**/*.config.{ts|tsx}',

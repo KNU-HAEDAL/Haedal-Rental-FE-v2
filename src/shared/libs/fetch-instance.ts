@@ -4,12 +4,19 @@ import { authStorage } from '../utils';
 
 import { initInstance } from './axios-instance';
 
-const BASE_URL = 'http://localhost:8080';
+export const BASE_URL = 'http://13.209.182.65:8080';
 
-const fetchInstance = initInstance({
+export const fetchInstance = initInstance({
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
+  },
+});
+
+export const multipartInstance = initInstance({
+  baseURL: BASE_URL,
+  headers: {
+    'Content-Type': 'multipart/form-data',
   },
 });
 
