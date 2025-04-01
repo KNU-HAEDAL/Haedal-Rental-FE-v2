@@ -10,6 +10,11 @@ type Props = {
 export const MyRentalTable = ({ headerData, bodyData }: Props) => {
   const today = new Date().toISOString().split('T')[0];
 
+  const returnItem = (itemId: string) => {
+    // todo: 반납 모달 오픈
+    console.log('return item', itemId);
+  };
+
   return (
     <table className='w-full border-collapse justify-center'>
       <thead>
@@ -31,6 +36,7 @@ export const MyRentalTable = ({ headerData, bodyData }: Props) => {
               className={cn('cursor-pointer', {
                 'border-b': index !== bodyData.length - 1,
               })}
+              onClick={() => returnItem(item.itemId)}
             >
               <td className='py-2'>{item.type}</td>
               <td>{item.name}</td>
