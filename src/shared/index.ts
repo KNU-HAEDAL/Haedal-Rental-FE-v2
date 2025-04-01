@@ -4,3 +4,4 @@ export * from './hooks';
 export * from './libs';
 export * from './utils';
 export * from './types';
+export * from './mocks';
