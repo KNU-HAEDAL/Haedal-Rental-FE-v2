@@ -56,8 +56,7 @@ export const RentalPeriodField = () => {
           <div className='text-base/7'>
             <p>물품 대여 기간을 작성해주세요.</p>
             <p>
-              물품 대여 기간은 신청일인 현재 날짜(<b>{getAfterDays(0)}</b>)로
-              부터 최대 7일 까지입니다.
+              대여 기간은 신청일(<b>{getAfterDays(0)}</b>)로부터 최대 7일입니다.
             </p>
             <p>
               (반납 마감일: <b>{formatDate(new Date(), 7)}</b>)
