@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import { ReturnAlert } from '..';
-
 import { Badge, cn } from '@/shared';
 
+import { ReturnAlert } from '..';
 import { BodyData, HeaderData } from '../../model';
 
 type Props = {
