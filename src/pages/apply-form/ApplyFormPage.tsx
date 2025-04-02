@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { ItemApplyForm, NoticeSection, SubmitSection } from '@/features';
+import { ItemApplyForm, NoticeContainer, SubmitContainer } from '@/features';
 import { PageWrapper } from '@/widgets';
 
 export const ApplyFormPage = () => {
@@ -8,9 +8,9 @@ export const ApplyFormPage = () => {
 
   return (
     <PageWrapper>
-      {step === 1 && <NoticeSection step={step} setStep={setStep} />}
+      {step === 1 && <NoticeContainer step={step} setStep={setStep} />}
       {step === 2 && <ItemApplyForm step={step} setStep={setStep} />}
-      {step === 3 && <SubmitSection />}
+      {step === 3 && <SubmitContainer />}
     </PageWrapper>
   );
 };

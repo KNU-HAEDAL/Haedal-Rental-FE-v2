@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, RouterPath } from '@/shared';
 import { ContentsContainer, DescriptionSection } from '@/widgets';
 
-export const SubmitSection = () => {
+export const SubmitContainer = () => {
   const navigate = useNavigate();
 
   return (

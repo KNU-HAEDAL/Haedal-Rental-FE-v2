@@ -11,7 +11,7 @@ type Props = {
   setStep: (step: number) => void;
 };
 
-export const NoticeSection = ({ step, setStep }: Props) => {
+export const NoticeContainer = ({ step, setStep }: Props) => {
   const { goNextStep } = useGoStep({ step, setStep });
 
   const navigate = useNavigate();
