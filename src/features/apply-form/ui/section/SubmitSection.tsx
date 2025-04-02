@@ -34,7 +34,7 @@ export const SubmitSection = () => {
 
 const SUBMIT_MESSAGE = [
   [
-    '물품 대여 장부가 정상적으로 제출되었습니다.\n',
+    '물품 대여 장부를 작성 완료하었습니다.\n',
     '원활한 물품 대여를 위해 ',
     <b key='submit-message-one'>반납 기한을 준수</b>,
     '해주세요.',

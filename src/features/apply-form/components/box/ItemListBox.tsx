@@ -13,7 +13,7 @@ export const ItemListBox = () => {
         className='h-full px-4 font-bold'
         onClick={() => navigate(RouterPath.ITEMS)}
       >
-        대여 물품 목록 페이지
+        해달 물품 목록 페이지
       </Button>
     </div>
   );
