@@ -1,1 +1,1 @@
-export * from './item-list.handler';
+export * from './admin-item-list.handler';
