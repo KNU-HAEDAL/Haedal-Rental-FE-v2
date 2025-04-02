@@ -21,7 +21,7 @@ type Props = {
 };
 
 export const ReturnAlert = ({ isOpen, setIsOpen }: Props) => {
-  const [image, setImage] = useState<string | null>('');
+  const [image, setImage] = useState<string>('');
 
   const uploadImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -35,7 +35,7 @@ export const ReturnAlert = ({ isOpen, setIsOpen }: Props) => {
   };
 
   const onClickCancel = () => {
-    setImage(null);
+    setImage('');
     setIsOpen(false);
   };
 
