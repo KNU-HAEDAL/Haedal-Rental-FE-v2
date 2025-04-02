@@ -5,8 +5,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
-import { Button, Form, ItemCategory } from '@/shared';
-import { ContentsContainer } from '@/widgets';
+import { Button, Form, ItemCategory, NAVIGATE_BUTTONS_DATA } from '@/shared';
+import { ButtonContainer, ContentsContainer } from '@/widgets';
 
 import { RentalItemRequest, itemRentalAPI } from '../../apis';
 import {
@@ -76,9 +76,9 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
     <Form {...form}>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className='w-layout flex flex-col items-center gap-5'
+        className='w-layout flex flex-col gap-5'
       >
-        <ContentsContainer title='물품 대여 장부 작성'>
+        <ContentsContainer title={NAVIGATE_BUTTONS_DATA[1].title}>
           <ItemNameField />
         </ContentsContainer>
         <CategorySelectField />
@@ -87,7 +87,7 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
       </form>
       <div className='w-layout flex flex-col items-center'>
         <ProgressBox step={step} progressValue={(step / 2) * 100} />
-        <div className='flex w-full justify-center gap-3 py-3'>
+        <ButtonContainer>
           <Button
             className='px-5'
             variant='outline'
@@ -104,7 +104,7 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
           >
             제출
           </Button>
-        </div>
+        </ButtonContainer>
       </div>
     </Form>
   );

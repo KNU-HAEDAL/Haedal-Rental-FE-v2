@@ -1,7 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/shared';
-import { ContentsContainer, DescriptionSection } from '@/widgets';
+import {
+  ButtonContainer,
+  ContentsContainer,
+  DescriptionSection,
+} from '@/widgets';
 
 import {
   ItemsButtonBox,
@@ -30,7 +34,7 @@ export const NoticeContainer = ({ step, setStep }: Props) => {
       </ContentsContainer>
       <div className='w-layout flex flex-col items-center'>
         <ProgressBox step={step} progressValue={(step / 2) * 100} />
-        <div className='flex w-full justify-center gap-3 py-3'>
+        <ButtonContainer>
           <Button
             variant='outline'
             className='px-5'
@@ -41,7 +45,7 @@ export const NoticeContainer = ({ step, setStep }: Props) => {
           <Button className='px-5' variant='outline' onClick={goNextStep}>
             다음
           </Button>
-        </div>
+        </ButtonContainer>
       </div>
     </>
   );
