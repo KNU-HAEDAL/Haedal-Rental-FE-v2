@@ -3,7 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/shared';
 import { ContentsContainer, DescriptionSection } from '@/widgets';
 
-import { ItemListBox, NoticeMessageBox, ProgressBox } from '../../components';
+import {
+  ItemsButtonBox,
+  NoticeMessageBox,
+  ProgressBox,
+} from '../../components';
 import { useGoStep } from '../../hooks';
 
 type Props = {
@@ -21,7 +25,7 @@ export const NoticeContainer = ({ step, setStep }: Props) => {
       <ContentsContainer title='물품 대여 안내'>
         <DescriptionSection>
           <NoticeMessageBox />
-          <ItemListBox />
+          <ItemsButtonBox />
         </DescriptionSection>
       </ContentsContainer>
       <div className='w-layout flex flex-col items-center'>

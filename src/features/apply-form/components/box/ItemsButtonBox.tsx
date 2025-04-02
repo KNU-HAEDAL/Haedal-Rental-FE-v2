@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button, RouterPath } from '@/shared';
 
-export const ItemListBox = () => {
+export const ItemsButtonBox = () => {
   const navigate = useNavigate();
 
   return (
