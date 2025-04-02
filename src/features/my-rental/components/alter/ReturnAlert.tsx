@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+import { Camera } from 'lucide-react';
 import { toast } from 'sonner';
 
 import {
@@ -9,6 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   Button,
+  Input,
 } from '@/shared';
 
 type Props = {
@@ -17,7 +21,25 @@ type Props = {
 };
 
 export const ReturnAlert = ({ isOpen, setIsOpen }: Props) => {
-  const onClickRemove = () => {
+  const [image, setImage] = useState<string | null>('');
+
+  const imageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const onClickCancel = () => {
+    setImage(null);
+    setIsOpen(false);
+  };
+
+  const onClickReturn = () => {
     // Todo: 물품 반납 API 호출
     const promise = new Promise((resolve) => {
       setTimeout(() => {
@@ -41,17 +63,51 @@ export const ReturnAlert = ({ isOpen, setIsOpen }: Props) => {
             물품 반납
           </AlertDialogTitle>
           <AlertDialogDescription className='flex justify-center py-2'>
-            해당 물품을 반납하시겠습니까?
+            반납 완료 사진을 추가하고 확인 버튼을 눌러주세요.
           </AlertDialogDescription>
+          <label
+            htmlFor='image-upload'
+            className='flex cursor-pointer flex-row items-center gap-2 self-center text-sm'
+          >
+            {image ? (
+              <>
+                <div className='flex aspect-3/4 w-8 items-center justify-center self-center overflow-hidden border border-gray-300'>
+                  <img
+                    src={image}
+                    alt='미리보기'
+                    className='h-full w-full object-cover'
+                  />
+                </div>
+                이미지 변경
+              </>
+            ) : (
+              <>
+                <Camera
+                  strokeWidth={1}
+                  className='aspect-square w-6 text-gray-400'
+                />
+                이미지 추가
+              </>
+            )}
+          </label>
+          <Input
+            id='image-upload'
+            type='file'
+            accept='image/*'
+            className='hidden'
+            onChange={imageUpload}
+          />
         </AlertDialogHeader>
         <div className='flex w-full justify-center gap-3 pb-3'>
           <AlertDialogCancel asChild>
-            <Button variant='outline' onClick={() => setIsOpen(false)}>
+            <Button variant='outline' onClick={onClickCancel}>
               취소
             </Button>
           </AlertDialogCancel>
           <AlertDialogAction asChild>
-            <Button onClick={onClickRemove}>확인</Button>
+            <Button disabled={!image} onClick={onClickReturn}>
+              확인
+            </Button>
           </AlertDialogAction>
         </div>
       </AlertDialogContent>
