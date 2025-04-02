@@ -1,18 +1,10 @@
-import { cn } from '@/shared/libs';
-
 type Props = {
-  className?: string;
   children: React.ReactNode;
 };
 
-export const ButtonContainer = ({ className, children }: Props) => {
+export const ButtonContainer = ({ children }: Props) => {
   return (
-    <div
-      className={cn(
-        'flex w-full items-center justify-center gap-3 pb-6',
-        className,
-      )}
-    >
+    <div className='flex w-full items-center justify-center gap-3 pb-6'>
       {children}
     </div>
   );

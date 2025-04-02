@@ -11,7 +11,7 @@ export const AdminPage = () => {
   return (
     <PageWrapper>
       <ContentsContainer title={NAVIGATE_BUTTONS_DATA[3].title}>
-        <DescriptionSection className='items-center'>
+        <DescriptionSection>
           {NAVIGATE_BUTTONS_DATA[3].description}
         </DescriptionSection>
         <AdminItemsTableSection />
