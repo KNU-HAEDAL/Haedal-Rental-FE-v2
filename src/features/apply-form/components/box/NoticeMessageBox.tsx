@@ -1,12 +1,18 @@
 export const NoticeMessageBox = () => {
   return (
-    <ol className='list-outside list-decimal space-y-[1px] pl-4 text-[15px]'>
-      {NOTICE_MESSAGE.map((message, index) => (
-        <li key={index} className='hanging-indent-6 leading-relaxed'>
-          <p className='whitespace-pre-line'>{message}</p>
-        </li>
-      ))}
-    </ol>
+    <>
+      <p className='mb-5'>
+        해달에서는 동아리 내의 공용 물품을 대여 장부 작성을 통해 무료로 대여하고
+        있습니다. 대여 물품 관리를 위해 아래 사항을 꼭 지켜주세요.
+      </p>
+      <ol className='text-md mb-5 list-outside list-decimal space-y-[1px] pl-4'>
+        {NOTICE_MESSAGE.map((message, index) => (
+          <li key={index} className='hanging-indent-6 leading-relaxed'>
+            <p className='whitespace-pre-line'>{message}</p>
+          </li>
+        ))}
+      </ol>
+    </>
   );
 };
 
