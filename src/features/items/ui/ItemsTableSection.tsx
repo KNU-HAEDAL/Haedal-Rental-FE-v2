@@ -1,13 +1,23 @@
 import { useState } from 'react';
 
 import { ITEM_BODIES, ITEM_HEADERS } from '@/features';
-import { Badge, Button, ITEM_TYPE, ItemTable } from '@/shared';
+import { Badge, Button, ITEM_TYPE, ItemCategory, ItemTable } from '@/shared';
+
+import { useGetItemList } from '../hooks';
 
 export const ItemsTableSection = () => {
   //   const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] =
+    useState<ItemCategory>('BOOK');
+  const { data: itemListData } = useGetItemList({
+    itemCategory: selectedCategory,
+  });
+
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [isAvailableSelected, setIsAvailableSelected] =
     useState<boolean>(false);
+
+  console.log(itemListData);
 
   const filteredItems = ITEM_BODIES.filter((item) => {
     const matchType =
@@ -44,7 +54,10 @@ export const ItemsTableSection = () => {
               variant={
                 selectedTypes.includes(item.type) ? 'moonTag' : 'outline'
               }
-              onClick={() => handleSelectType(item.type)}
+              onClick={() => {
+                handleSelectType(item.type);
+                setSelectedCategory(item.value);
+              }}
             >
               {item.type}
             </Button>
