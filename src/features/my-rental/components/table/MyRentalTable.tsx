@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
+import { ReturnAlert } from '..';
+
 import { Badge, cn } from '@/shared';
 
-import { ReturnAlert } from '../components';
-import { BodyData, HeaderData } from '../model';
+import { BodyData, HeaderData } from '../../model';
 
 type Props = {
   headerData: HeaderData[];
