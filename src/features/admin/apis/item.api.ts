@@ -4,6 +4,7 @@ import {
   AddItemRequest,
   DeleteItemRequest,
   GetItemDetailRequest,
+  GetItemDetailResponse,
   GetItemListParams,
 } from './item.type';
 
@@ -30,7 +31,9 @@ export const GET_ITEM_DETAIL_PATH = ({ itemId }: GetItemDetailRequest) =>
   `/admin/itemDetail/${itemId}`;
 
 export const getItemDetailAPI = async ({ itemId }: GetItemDetailRequest) => {
-  const response = await fetchInstance.get(GET_ITEM_DETAIL_PATH({ itemId }));
+  const response = await fetchInstance.get<GetItemDetailResponse>(
+    GET_ITEM_DETAIL_PATH({ itemId }),
+  );
   return response.data;
 };
 
