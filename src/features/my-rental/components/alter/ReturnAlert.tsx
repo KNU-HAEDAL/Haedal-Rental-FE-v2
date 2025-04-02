@@ -23,7 +23,7 @@ type Props = {
 export const ReturnAlert = ({ isOpen, setIsOpen }: Props) => {
   const [image, setImage] = useState<string | null>('');
 
-  const imageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const uploadImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -63,7 +63,7 @@ export const ReturnAlert = ({ isOpen, setIsOpen }: Props) => {
             물품 반납
           </AlertDialogTitle>
           <AlertDialogDescription className='flex justify-center py-2'>
-            반납 완료 사진을 추가하고 확인 버튼을 눌러주세요.
+            반납된 사진을 추가하고 확인 버튼을 눌러주세요.
           </AlertDialogDescription>
           <label
             htmlFor='image-upload'
@@ -95,7 +95,7 @@ export const ReturnAlert = ({ isOpen, setIsOpen }: Props) => {
             type='file'
             accept='image/*'
             className='hidden'
-            onChange={imageUpload}
+            onChange={uploadImage}
           />
         </AlertDialogHeader>
         <div className='flex w-full justify-center gap-3 pb-3'>
