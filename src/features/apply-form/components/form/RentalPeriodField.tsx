@@ -54,7 +54,7 @@ export const RentalPeriodField = () => {
       render={({ field }) => (
         <FormItem className='flex w-full flex-col gap-2 border px-3 py-5 text-start'>
           <div className='text-base/7'>
-            <p>물품 대여 기간을 작성해주세요.</p>
+            <p>물품 대여 기간을 선택해주세요.</p>
             <p>
               대여 기간은 신청일(<b>{getAfterDays(0)}</b>)로부터 최대 7일입니다.
             </p>
