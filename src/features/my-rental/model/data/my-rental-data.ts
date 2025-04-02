@@ -37,12 +37,12 @@ export const MY_RENTAL_BODIES: BodyData[] = [
     itemId: '2',
     type: '책',
     name: '모던 리액트 Deep Dive',
-    dueDate: '2025-03-10',
+    dueDate: '2025-03-30',
   },
   {
     itemId: '3',
     type: '책',
     name: '모던 리액트 Deep Dive',
-    dueDate: '2025-03-30',
+    dueDate: '2025-04-10',
   },
 ];
