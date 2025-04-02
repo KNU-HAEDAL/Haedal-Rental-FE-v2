@@ -78,10 +78,7 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
         onSubmit={(e) => e.preventDefault()}
         className='w-layout flex flex-col items-center gap-5'
       >
-        <ContentsContainer
-          className='mb-0 text-start'
-          title='물품 대여 장부 작성'
-        >
+        <ContentsContainer title='물품 대여 장부 작성'>
           <ItemNameField />
         </ContentsContainer>
         <CategorySelectField />
