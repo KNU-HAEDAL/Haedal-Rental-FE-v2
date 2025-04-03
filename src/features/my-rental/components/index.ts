@@ -1,2 +1,2 @@
-export * from './alter';
-export * from './table';
+export * from './MyRentalTable';
+export * from './ReturnAlert';
