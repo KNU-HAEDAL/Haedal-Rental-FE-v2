@@ -113,7 +113,7 @@ export default tseslint.config(
       'import/resolver': {
         node: { 
           extensions: ['.js', '.jsx', '.ts', '.tsx'], 
-          moduleDirectory: ['node_modules', 'src'], 
+          moduleDirectory: ['node_modules', 'src/'], 
         },
         typescript: {
           alwaysTryTypes: true, // 타입스크립트 파일도 찾도록 설정
