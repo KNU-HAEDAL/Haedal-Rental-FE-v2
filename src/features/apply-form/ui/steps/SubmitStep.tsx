@@ -32,7 +32,7 @@ export const SubmitStep = () => {
     <>
       <ContentsContainer title='물품 대여 장부'>
         <DescriptionSection>
-          {SUBMIT_MESSAGE.map((message, index) => (
+          {SUBMIT_MESSAGES.map((message, index) => (
             <p key={index} className='leading-relaxed whitespace-pre-line'>
               {replacePlaceholders(message)}
             </p>
@@ -48,7 +48,7 @@ export const SubmitStep = () => {
   );
 };
 
-const SUBMIT_MESSAGE = [
+const SUBMIT_MESSAGES = [
   '물품 대여 장부를 작성 완료하었습니다.\n',
   '원활한 물품 대여 관리를 위해 **반납 기한을 준수**해주세요.\n',
   '대여한 물품은 해달의 소중한 자산입니다. **2차 공유 및 파손을 자제**해주세요.\n',

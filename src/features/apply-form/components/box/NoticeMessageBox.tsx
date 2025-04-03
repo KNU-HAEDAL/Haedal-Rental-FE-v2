@@ -45,11 +45,11 @@ export const NoticeMessageBox = () => {
 
   return (
     <>
-      <p className='mb-5'>{NOTICE_MESSAGE[0]}</p>
+      <p className='mb-5'>{NOTICE_MESSAGES[0]}</p>
       <ol className='w-full list-outside list-decimal space-y-[1px] pl-5'>
-        {NOTICE_MESSAGE.slice(1).map((item, index) => (
+        {NOTICE_MESSAGES.slice(1).map((message, index) => (
           <li key={index} className='mb-2 leading-relaxed whitespace-pre-line'>
-            {replacePlaceholders(item)}
+            {replacePlaceholders(message)}
           </li>
         ))}
       </ol>
@@ -57,7 +57,7 @@ export const NoticeMessageBox = () => {
   );
 };
 
-const NOTICE_MESSAGE = [
+const NOTICE_MESSAGES = [
   '해달에서는 동아리 공용 물품을 대여 장부 작성을 통해 무료로 대여해드리고 있습니다. 물품 관리를 위해 아래 사항을 꼭 지켜주세요.',
   '대여 가능 기간은 장부 작성일로부터 **최대 일주일**입니다.\n연장을 원할 시 다시 대여해주세요.',
   '물품 반납 시 반드시 {{MY_RENTAL}}에서 반납을 해주세요.\n반납 절차 미완료 시 발생하는 모든 책임은 대여자에게 있습니다.',
