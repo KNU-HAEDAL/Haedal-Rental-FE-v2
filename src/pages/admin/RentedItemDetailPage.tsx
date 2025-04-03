@@ -7,7 +7,7 @@ import {
   LenderInfoSection,
 } from '@/features';
 import { BackButton, Spinner, useGetMockData } from '@/shared';
-import { ButtonContainer, ContentsContainer, PageWrapper } from '@/widgets';
+import { ButtonSection, ContentsContainer, PageWrapper } from '@/widgets';
 
 export const RentedItemDetailPage = () => {
   const { data: itemData, isPending } = useGetMockData(ITEM_APPLY_DATA);
@@ -31,9 +31,9 @@ export const RentedItemDetailPage = () => {
         endDate={itemData.endDate}
       />
       <ItemImageContainer itemImage={itemData.imageUrl} />
-      <ButtonContainer>
+      <ButtonSection>
         <BackButton />
-      </ButtonContainer>
+      </ButtonSection>
     </PageWrapper>
   );
 };

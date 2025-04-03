@@ -6,7 +6,7 @@ import {
 } from '@/features';
 import { BackButton, NAVIGATE_BUTTONS_DATA, useGetMockData } from '@/shared';
 import {
-  ButtonContainer,
+  ButtonSection,
   ContentsContainer,
   DescriptionSection,
   PageWrapper,
@@ -32,9 +32,9 @@ export const MyRentalPage = () => {
           bodyData={MY_RENTAL_BODIES}
         />
       </ContentsContainer>
-      <ButtonContainer>
+      <ButtonSection>
         <BackButton />
-      </ButtonContainer>
+      </ButtonSection>
     </PageWrapper>
   );
 };

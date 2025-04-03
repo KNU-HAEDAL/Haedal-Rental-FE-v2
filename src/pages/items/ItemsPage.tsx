@@ -1,7 +1,7 @@
 import { ItemsTableSection } from '@/features';
 import { BackButton, NAVIGATE_BUTTONS_DATA } from '@/shared';
 import {
-  ButtonContainer,
+  ButtonSection,
   ContentsContainer,
   DescriptionSection,
   PageWrapper,
@@ -16,9 +16,9 @@ export const ItemsPage = () => {
         </DescriptionSection>
         <ItemsTableSection />
       </ContentsContainer>
-      <ButtonContainer>
+      <ButtonSection>
         <BackButton />
-      </ButtonContainer>
+      </ButtonSection>
     </PageWrapper>
   );
 };
