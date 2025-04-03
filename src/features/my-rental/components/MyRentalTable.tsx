@@ -12,8 +12,13 @@ type Props = {
 };
 
 export const MyRentalTable = ({ headerData, bodyData }: Props) => {
-  const today = new Date().toISOString().split('T')[0];
   const [isAlertOpen, setIsAlertOpen] = useState(false);
+
+  const today = new Date().toISOString().split('T')[0];
+  const processedBodyData = bodyData.map((item) => ({
+    ...item,
+    isOverdue: item.dueDate < today,
+  }));
 
   return (
     <>
@@ -29,28 +34,24 @@ export const MyRentalTable = ({ headerData, bodyData }: Props) => {
           </tr>
         </thead>
         <tbody>
-          {bodyData.map((item, index) => {
-            const isOverdue = item.dueDate < today;
-
-            return (
-              <tr
-                key={item.itemId}
-                className={cn('cursor-pointer', {
-                  'border-b': index !== bodyData.length - 1,
-                })}
-                onClick={() => setIsAlertOpen(true)}
-              >
-                <td className='py-2'>{item.type}</td>
-                <td>{item.name}</td>
-                <td>{item.dueDate}</td>
-                <td>
-                  <Badge variant={isOverdue ? 'unavailable' : 'available'}>
-                    {isOverdue ? '기한 초과' : '이용 중'}
-                  </Badge>
-                </td>
-              </tr>
-            );
-          })}
+          {processedBodyData.map((item, index) => (
+            <tr
+              key={item.itemId}
+              className={cn('cursor-pointer', {
+                'border-b': index !== processedBodyData.length - 1,
+              })}
+              onClick={() => setIsAlertOpen(true)}
+            >
+              <td className='py-2'>{item.type}</td>
+              <td>{item.name}</td>
+              <td>{item.dueDate}</td>
+              <td>
+                <Badge variant={item.isOverdue ? 'unavailable' : 'available'}>
+                  {item.isOverdue ? '기한 초과' : '이용 중'}
+                </Badge>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>
