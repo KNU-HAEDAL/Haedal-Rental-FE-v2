@@ -11,7 +11,7 @@ export const SubmitContainer = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='flex flex-col gap-3'>
+    <>
       <ContentsContainer title='물품 대여 장부'>
         <DescriptionSection className='items-center justify-center gap-3'>
           <div className='flex flex-col gap-3'>
@@ -28,7 +28,7 @@ export const SubmitContainer = () => {
           첫 페이지로 이동
         </Button>
       </ButtonContainer>
-    </div>
+    </>
   );
 };
 
