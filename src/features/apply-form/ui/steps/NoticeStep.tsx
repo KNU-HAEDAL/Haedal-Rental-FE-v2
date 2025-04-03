@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/shared';
 import {
+  BottomContainer,
   ButtonSection,
   ContentsContainer,
   DescriptionSection,
@@ -28,7 +29,7 @@ export const NoticeStep = ({ step, setStep }: Props) => {
           <NoticeMessageBox />
         </DescriptionSection>
       </ContentsContainer>
-      <div className='w-layout flex flex-col items-center'>
+      <BottomContainer>
         <ProgressSection step={step} progressValue={(step / 2) * 100} />
         <ButtonSection>
           <Button variant='outline' onClick={() => navigate(-1)}>
@@ -38,7 +39,7 @@ export const NoticeStep = ({ step, setStep }: Props) => {
             다음
           </Button>
         </ButtonSection>
-      </div>
+      </BottomContainer>
     </>
   );
 };
