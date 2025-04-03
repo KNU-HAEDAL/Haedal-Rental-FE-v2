@@ -7,8 +7,8 @@ import { NavigateButton } from '../button';
 export const NoticeMessageBox = () => {
   const navigate = useNavigate();
 
-  const replacePlaceholder = (message: string) => {
-    const placeholder = message
+  const replacePlaceholders = (message: string) => {
+    const replacedTag = message
       .split(/(\{\{.*?\}\}|\*\*.*?\*\*)/g)
       .map((part, index) => {
         if (part === '{{MY_RENTAL}}') {
@@ -20,8 +20,7 @@ export const NoticeMessageBox = () => {
               나의 대여 물품 확인
             </NavigateButton>
           );
-        }
-        if (part === '{{ITEMS}}') {
+        } else if (part === '{{ITEMS}}') {
           return (
             <NavigateButton
               key={index}
@@ -30,8 +29,7 @@ export const NoticeMessageBox = () => {
               해달 물품 목록
             </NavigateButton>
           );
-        }
-        if (/^\*\*(.*?)\*\*$/.test(part)) {
+        } else if (/^\*\*(.*?)\*\*$/.test(part)) {
           return (
             <b key={index} className='text-sun'>
               {part.replace(/\*\*/g, '')}
@@ -42,7 +40,7 @@ export const NoticeMessageBox = () => {
         return part;
       });
 
-    return placeholder;
+    return replacedTag;
   };
 
   return (
@@ -51,7 +49,7 @@ export const NoticeMessageBox = () => {
       <ol className='mb-5 list-outside list-decimal space-y-[1px] pl-5'>
         {NOTICE_MESSAGE.slice(1).map((item, index) => (
           <li key={index} className='mb-1 leading-relaxed whitespace-pre-line'>
-            {replacePlaceholder(item)}
+            {replacePlaceholders(item)}
           </li>
         ))}
       </ol>
