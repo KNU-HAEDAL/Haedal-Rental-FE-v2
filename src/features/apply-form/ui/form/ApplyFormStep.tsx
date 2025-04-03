@@ -24,7 +24,7 @@ type Props = {
   setStep: (step: number) => void;
 };
 
-export const ItemApplyForm = ({ step, setStep }: Props) => {
+export const ApplyFormStep = ({ step, setStep }: Props) => {
   const { goNextStep } = useGoStep({ step, setStep });
 
   const { mutate: applyItemMutate } = useMutation({

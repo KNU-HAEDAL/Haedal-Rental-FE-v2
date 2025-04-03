@@ -7,7 +7,7 @@ import {
   DescriptionSection,
 } from '@/widgets';
 
-export const SubmitContainer = () => {
+export const SubmitStep = () => {
   const navigate = useNavigate();
 
   return (
