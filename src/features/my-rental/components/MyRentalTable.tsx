@@ -4,7 +4,7 @@ import { Badge, cn } from '@/shared';
 
 import { BodyData, HeaderData } from '../model';
 
-import { ReturnAlert } from './';
+import { ReturnAlert } from './ReturnAlert';
 
 type Props = {
   headerData: HeaderData[];
