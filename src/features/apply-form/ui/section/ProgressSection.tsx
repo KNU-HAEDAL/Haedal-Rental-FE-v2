@@ -5,7 +5,7 @@ type Props = {
   progressValue: number;
 };
 
-export const ProgressBox = ({ step, progressValue }: Props) => {
+export const ProgressSection = ({ step, progressValue }: Props) => {
   return (
     <div className='mb-3 flex w-2/5 items-center gap-3'>
       <Progress value={progressValue} className='flex-1' />

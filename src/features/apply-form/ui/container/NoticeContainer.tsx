@@ -2,13 +2,14 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/shared';
 import {
-  ButtonContainer,
+  ButtonSection,
   ContentsContainer,
   DescriptionSection,
 } from '@/widgets';
 
-import { NoticeMessageBox, ProgressBox } from '../../components';
+import { NoticeMessageBox } from '../../components';
 import { useGoStep } from '../../hooks';
+import { ProgressSection } from '../section';
 
 type Props = {
   step: number;
@@ -28,15 +29,15 @@ export const NoticeContainer = ({ step, setStep }: Props) => {
         </DescriptionSection>
       </ContentsContainer>
       <div className='w-layout flex flex-col items-center'>
-        <ProgressBox step={step} progressValue={(step / 2) * 100} />
-        <ButtonContainer>
+        <ProgressSection step={step} progressValue={(step / 2) * 100} />
+        <ButtonSection>
           <Button variant='outline' onClick={() => navigate(-1)}>
             뒤로
           </Button>
           <Button variant='primary' onClick={goNextStep}>
             다음
           </Button>
-        </ButtonContainer>
+        </ButtonSection>
       </div>
     </>
   );

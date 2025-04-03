@@ -6,18 +6,18 @@ import { useMutation } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
 import { Button, Form, ItemCategory, NAVIGATE_BUTTONS_DATA } from '@/shared';
-import { ButtonContainer, ContentsContainer } from '@/widgets';
+import { ButtonSection, ContentsContainer } from '@/widgets';
 
 import { RentalItemRequest, itemRentalAPI } from '../../apis';
 import {
   CategorySelectField,
   ImageUploadField,
   ItemNameField,
-  ProgressBox,
   RentalPeriodField,
 } from '../../components';
 import { useGoStep } from '../../hooks';
 import { ApplyForm, ApplyFormSchema } from '../../model';
+import { ProgressSection } from '../section';
 
 type Props = {
   step: number;
@@ -86,8 +86,8 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
         <ImageUploadField />
       </form>
       <div className='w-layout flex flex-col items-center'>
-        <ProgressBox step={step} progressValue={(step / 2) * 100} />
-        <ButtonContainer>
+        <ProgressSection step={step} progressValue={(step / 2) * 100} />
+        <ButtonSection>
           <Button variant='outline' onClick={() => navigate(-1)}>
             뒤로
           </Button>
@@ -99,7 +99,7 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
           >
             제출
           </Button>
-        </ButtonContainer>
+        </ButtonSection>
       </div>
     </Form>
   );
