@@ -46,9 +46,9 @@ export const NoticeMessageBox = () => {
   return (
     <>
       <p className='mb-5'>{NOTICE_MESSAGE[0]}</p>
-      <ol className='mb-5 list-outside list-decimal space-y-[1px] pl-5'>
+      <ol className='w-full list-outside list-decimal space-y-[1px] pl-5'>
         {NOTICE_MESSAGE.slice(1).map((item, index) => (
-          <li key={index} className='mb-1 leading-relaxed whitespace-pre-line'>
+          <li key={index} className='mb-2 leading-relaxed whitespace-pre-line'>
             {replacePlaceholders(item)}
           </li>
         ))}

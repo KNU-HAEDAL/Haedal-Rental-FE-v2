@@ -7,11 +7,7 @@ import {
   DescriptionSection,
 } from '@/widgets';
 
-import {
-  ItemsButtonBox,
-  NoticeMessageBox,
-  ProgressBox,
-} from '../../components';
+import { NoticeMessageBox, ProgressBox } from '../../components';
 import { useGoStep } from '../../hooks';
 
 type Props = {
@@ -29,7 +25,6 @@ export const NoticeContainer = ({ step, setStep }: Props) => {
       <ContentsContainer title='물품 대여 안내'>
         <DescriptionSection>
           <NoticeMessageBox />
-          <ItemsButtonBox />
         </DescriptionSection>
       </ContentsContainer>
       <div className='w-layout flex flex-col items-center'>
