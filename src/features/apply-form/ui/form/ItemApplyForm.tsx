@@ -88,15 +88,10 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
       <div className='w-layout flex flex-col items-center'>
         <ProgressBox step={step} progressValue={(step / 2) * 100} />
         <ButtonContainer>
-          <Button
-            className='px-5'
-            variant='outline'
-            onClick={() => navigate(-1)}
-          >
+          <Button variant='outline' onClick={() => navigate(-1)}>
             뒤로
           </Button>
           <Button
-            className='px-5'
             variant='primary'
             disabled={!form.formState.isValid}
             type='submit'

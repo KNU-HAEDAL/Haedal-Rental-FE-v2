@@ -1,7 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
 import { Button, RouterPath } from '@/shared';
-import { ContentsContainer, DescriptionSection } from '@/widgets';
+import {
+  ButtonContainer,
+  ContentsContainer,
+  DescriptionSection,
+} from '@/widgets';
 
 export const SubmitContainer = () => {
   const navigate = useNavigate();
@@ -19,15 +23,11 @@ export const SubmitContainer = () => {
           </div>
         </DescriptionSection>
       </ContentsContainer>
-      <div className='w-full'>
-        <Button
-          variant='secondary'
-          onClick={() => navigate(RouterPath.MAIN)}
-          className='h-9 px-5 font-bold'
-        >
+      <ButtonContainer>
+        <Button variant='outline' onClick={() => navigate(RouterPath.MAIN)}>
           첫 페이지로 이동
         </Button>
-      </div>
+      </ButtonContainer>
     </div>
   );
 };

@@ -30,14 +30,10 @@ export const NoticeContainer = ({ step, setStep }: Props) => {
       <div className='w-layout flex flex-col items-center'>
         <ProgressBox step={step} progressValue={(step / 2) * 100} />
         <ButtonContainer>
-          <Button
-            variant='outline'
-            className='px-5'
-            onClick={() => navigate(-1)}
-          >
+          <Button variant='outline' onClick={() => navigate(-1)}>
             뒤로
           </Button>
-          <Button className='px-5' variant='outline' onClick={goNextStep}>
+          <Button variant='primary' onClick={goNextStep}>
             다음
           </Button>
         </ButtonContainer>
