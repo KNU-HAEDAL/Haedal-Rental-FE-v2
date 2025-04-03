@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button, RouterPath } from '@/shared';
 import {
-  ButtonSection,
+  ButtonContainer,
   ContentsContainer,
   DescriptionSection,
 } from '@/widgets';
@@ -39,11 +39,11 @@ export const SubmitStep = () => {
           ))}
         </DescriptionSection>
       </ContentsContainer>
-      <ButtonSection>
+      <ButtonContainer>
         <Button variant='outline' onClick={() => navigate(RouterPath.MAIN)}>
           메인 페이지로 이동
         </Button>
-      </ButtonSection>
+      </ButtonContainer>
     </>
   );
 };

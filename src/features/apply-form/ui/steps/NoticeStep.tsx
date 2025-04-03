@@ -2,15 +2,14 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/shared';
 import {
-  BottomContainer,
-  ButtonSection,
+  ButtonContainer,
   ContentsContainer,
   DescriptionSection,
 } from '@/widgets';
 
 import { NoticeMessageBox } from '../../components';
 import { useGoStep } from '../../hooks';
-import { ProgressSection } from '../section';
+import { ProgressContainer } from '../containers';
 
 type Props = {
   step: number;
@@ -29,17 +28,15 @@ export const NoticeStep = ({ step, setStep }: Props) => {
           <NoticeMessageBox />
         </DescriptionSection>
       </ContentsContainer>
-      <BottomContainer>
-        <ProgressSection step={step} progressValue={(step / 2) * 100} />
-        <ButtonSection>
-          <Button variant='outline' onClick={() => navigate(-1)}>
-            뒤로
-          </Button>
-          <Button variant='primary' onClick={goNextStep}>
-            다음
-          </Button>
-        </ButtonSection>
-      </BottomContainer>
+      <ProgressContainer step={step} progressValue={(step / 2) * 100} />
+      <ButtonContainer>
+        <Button variant='outline' onClick={() => navigate(-1)}>
+          뒤로
+        </Button>
+        <Button variant='primary' onClick={goNextStep}>
+          다음
+        </Button>
+      </ButtonContainer>
     </>
   );
 };

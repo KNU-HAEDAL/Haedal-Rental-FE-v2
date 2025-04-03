@@ -6,7 +6,7 @@ import { useMutation } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
 import { Button, Form, ItemCategory, NAVIGATE_BUTTONS_DATA } from '@/shared';
-import { BottomContainer, ButtonSection, ContentsContainer } from '@/widgets';
+import { ButtonContainer, ContentsContainer } from '@/widgets';
 
 import { RentalItemRequest, itemRentalAPI } from '../../apis';
 import {
@@ -17,7 +17,7 @@ import {
 } from '../../components';
 import { useGoStep } from '../../hooks';
 import { ApplyForm, ApplyFormSchema } from '../../model';
-import { ProgressSection } from '../section';
+import { ProgressContainer } from '../containers';
 
 type Props = {
   step: number;
@@ -85,22 +85,20 @@ export const ApplyFormStep = ({ step, setStep }: Props) => {
         <RentalPeriodField />
         <ImageUploadField />
       </form>
-      <BottomContainer>
-        <ProgressSection step={step} progressValue={(step / 2) * 100} />
-        <ButtonSection>
-          <Button variant='outline' onClick={() => navigate(-1)}>
-            뒤로
-          </Button>
-          <Button
-            variant='primary'
-            disabled={!form.formState.isValid}
-            type='submit'
-            onClick={() => form.handleSubmit(onSubmit)()}
-          >
-            제출
-          </Button>
-        </ButtonSection>
-      </BottomContainer>
+      <ProgressContainer step={step} progressValue={(step / 2) * 100} />
+      <ButtonContainer>
+        <Button variant='outline' onClick={() => navigate(-1)}>
+          뒤로
+        </Button>
+        <Button
+          variant='primary'
+          disabled={!form.formState.isValid}
+          type='submit'
+          onClick={() => form.handleSubmit(onSubmit)()}
+        >
+          제출
+        </Button>
+      </ButtonContainer>
     </Form>
   );
 };

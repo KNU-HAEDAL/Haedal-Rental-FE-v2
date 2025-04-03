@@ -1,4 +1,4 @@
 export * from './AuthContainer';
 export * from './AuthLinkContainer';
-export * from './BottomContainer';
+export * from './ButtonContainer';
 export * from './ContentsContainer';

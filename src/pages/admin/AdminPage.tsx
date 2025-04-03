@@ -1,7 +1,7 @@
 import { AdminItemsTableSection } from '@/features';
 import { BackButton, NAVIGATE_BUTTONS_DATA } from '@/shared';
 import {
-  ButtonSection,
+  ButtonContainer,
   ContentsContainer,
   DescriptionSection,
   PageWrapper,
@@ -16,9 +16,9 @@ export const AdminPage = () => {
         </DescriptionSection>
         <AdminItemsTableSection />
       </ContentsContainer>
-      <ButtonSection>
+      <ButtonContainer>
         <BackButton />
-      </ButtonSection>
+      </ButtonContainer>
     </PageWrapper>
   );
 };

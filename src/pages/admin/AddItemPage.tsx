@@ -1,7 +1,7 @@
 import { AddItemForm } from '@/features';
 import { BackButton } from '@/shared';
 import {
-  ButtonSection,
+  ButtonContainer,
   ContentsContainer,
   DescriptionSection,
   PageWrapper,
@@ -16,9 +16,9 @@ export const AddItemPage = () => {
         </DescriptionSection>
         <AddItemForm />
       </ContentsContainer>
-      <ButtonSection>
+      <ButtonContainer>
         <BackButton />
-      </ButtonSection>
+      </ButtonContainer>
     </PageWrapper>
   );
 };
