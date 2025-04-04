@@ -59,7 +59,7 @@ export const RentalPeriodField = () => {
               대여 기간은 대여일(<b>{getAfterDays(0)}</b>)로부터 최대 7일입니다.
             </p>
             <p>
-              (반납 마감일: <b>{formatDate(new Date(), 7)}</b>)
+              (반납 기한: <b>{formatDate(new Date(), 7)}</b>)
             </p>
           </div>
           <FormControl>
