@@ -23,6 +23,7 @@ export default tseslint.config(
   {
     ignores: [
       'dist',
+      'public/mockServiceWorker.js',
       '**/*.test.ts',
       '**/*.test.tsx',
       '**/*.config.{ts|tsx}',
@@ -110,7 +111,10 @@ export default tseslint.config(
     // 설정 추가 (예: import-resolver)
     settings: {
       'import/resolver': {
-        node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+        node: { 
+          extensions: ['.js', '.jsx', '.ts', '.tsx'], 
+          moduleDirectory: ['node_modules', 'src/'], 
+        },
         typescript: {
           alwaysTryTypes: true, // 타입스크립트 파일도 찾도록 설정
           project: './tsconfig.json', // 프로젝트의 tsconfig.json을 사용

@@ -50,7 +50,7 @@ export const ImageUploadField = () => {
       control={form.control}
       name='itemImage'
       render={({ field }) => (
-        <FormItem className='flex w-full flex-col gap-4 border p-5 text-start'>
+        <FormItem className='flex w-full flex-col gap-4 border px-3 py-5 text-start'>
           <p>대여 물품을 사진으로 찍어서 업로드해주세요.</p>
           <FormControl>
             <div>

@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
+import { useMutation } from '@tanstack/react-query';
+
 import {
   Button,
   Form,
@@ -11,9 +13,10 @@ import {
   Input,
   Label,
   RouterPath,
-  TOKEN,
   authStorage,
 } from '@/shared';
+
+import { loginApi } from '../../apis/login.api';
 
 type FormData = {
   id: string;
@@ -21,6 +24,24 @@ type FormData = {
 };
 
 export const LoginForm = () => {
+  const { mutate: loginData } = useMutation({
+    mutationFn: loginApi,
+    onSuccess: (data) => {
+      onSuccess(data);
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
+
+  const onSuccess = (data: { accessToken: string; refreshToken: string }) => {
+    navigate(RouterPath.ROOT);
+
+    authStorage.accessToken.set(data.accessToken);
+    authStorage.refreshToken.set(data.refreshToken);
+    console.log(data);
+  };
+
   const form = useForm<FormData>({
     mode: 'onChange',
     defaultValues: {
@@ -28,6 +49,7 @@ export const LoginForm = () => {
       password: '',
     },
   });
+
   const { control, handleSubmit, formState } = form;
 
   const navigate = useNavigate();
@@ -38,13 +60,10 @@ export const LoginForm = () => {
   ];
 
   const onSubmit = (data: FormData) => {
-    authStorage.accessToken.set(TOKEN.accessToken);
-    authStorage.refreshToken.set(TOKEN.refreshToken);
-
-    navigate(RouterPath.ROOT);
-    alert('로그인 성공');
-    // Todo: API 요청
-    console.log(data);
+    loginData({
+      id: data.id,
+      password: data.password,
+    });
   };
 
   return (
