@@ -21,16 +21,16 @@ export const MyRentalPage = () => {
   return (
     <PageWrapper>
       <ContentsContainer title={NAVIGATE_BUTTONS_DATA[2].title}>
-        <DescriptionSection>
+        <DescriptionSection className='gap-3'>
           {name} {NAVIGATE_BUTTONS_DATA[2].description}
         </DescriptionSection>
-        <PenaltySection penaltyData={penaltyData} />
         <MyRentalTableSection
           isPending={isPending}
           columnData={columnData}
           headerData={MY_RENTAL_HEADERS}
           bodyData={MY_RENTAL_BODIES}
         />
+        <PenaltySection penaltyData={penaltyData} />
       </ContentsContainer>
       <ButtonContainer>
         <BackButton />
