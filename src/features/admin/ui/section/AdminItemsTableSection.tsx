@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Button, ItemStatus, RouterPath, Spinner } from '@/shared';
+import { Button, RouterPath, Spinner } from '@/shared';
 
 import { AdminItemTable } from '../../components';
 import { RemoveAlert } from '../../components/alter';
@@ -9,7 +9,9 @@ import { useGetAdminItemList } from '../../hooks';
 import { ADMIN_ITEM_HEADERS } from '../../model';
 
 export const AdminItemsTableSection = () => {
-  const [statusFilter, setStatusFilter] = useState<ItemStatus | ''>('');
+  const [statusFilter, setStatusFilter] = useState<
+    'RENTAL_AVAILABLE' | 'RENTING' | ''
+  >('');
   const [open, setOpen] = useState<boolean>(false);
 
   const { data: itemListData, isPending } = useGetAdminItemList({
@@ -18,7 +20,7 @@ export const AdminItemsTableSection = () => {
 
   const navigate = useNavigate();
 
-  const toggleStatusFilter = (status: ItemStatus) => {
+  const toggleStatusFilter = (status: 'RENTAL_AVAILABLE' | 'RENTING') => {
     setStatusFilter((prev) => (prev === status ? '' : status));
   };
 
