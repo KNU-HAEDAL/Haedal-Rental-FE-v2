@@ -52,7 +52,7 @@ export const AdminItemTable = ({ adminHeaderData, adminBodyData }: Props) => {
             <td>{item.itemName}</td>
             <td>
               <Badge
-                className='px-1/2 w-full border-none'
+                className='w-full border-none px-0.5'
                 variant={statusVariantMap[item.itemStatus]}
               >
                 {statusFormat(item.itemStatus)}
