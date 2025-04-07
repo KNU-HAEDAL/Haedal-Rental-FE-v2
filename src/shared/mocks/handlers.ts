@@ -1,5 +1,11 @@
-import { itemRentalHandler } from '@/features/apply-form/mock';
+import {
+  adminItemsHandler,
+  itemDetailHandler,
+  itemRentalHandler,
+} from '@/features';
 
-import { itemListHandler } from '@/features';
-
-export const handlers = [...itemListHandler, ...itemRentalHandler];
+export const handlers = [
+  ...adminItemsHandler,
+  ...itemRentalHandler,
+  ...itemDetailHandler,
+];
