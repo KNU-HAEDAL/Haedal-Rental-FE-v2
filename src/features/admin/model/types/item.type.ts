@@ -1,11 +1,11 @@
 import { GetItemListResponse } from '../../apis';
 
-export type HeaderData = {
+export type AdminHeaderData = {
   text: string;
   value: string;
 };
 
-export const ADMIN_ITEM_TABLE_HEADERS: HeaderData[] = [
+export const ADMIN_ITEM_TABLE_HEADERS: AdminHeaderData[] = [
   {
     text: '종류',
     value: 'itemCategory',
@@ -28,4 +28,4 @@ export const ADMIN_ITEM_TABLE_HEADERS: HeaderData[] = [
   },
 ];
 
-export type BodyData = GetItemListResponse;
+export type AdminBodyData = GetItemListResponse;

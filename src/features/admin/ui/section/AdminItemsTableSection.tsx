@@ -57,8 +57,8 @@ export const AdminItemsTableSection = () => {
         </div>
         <div className='overflow-hidden pt-5'>
           <AdminItemTable
-            headerData={ADMIN_ITEM_HEADERS}
-            bodyData={Array.isArray(itemListData) ? itemListData : []}
+            adminHeaderData={ADMIN_ITEM_HEADERS}
+            adminBodyData={Array.isArray(itemListData) ? itemListData : []}
           />
         </div>
       </div>

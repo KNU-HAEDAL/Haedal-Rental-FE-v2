@@ -10,25 +10,29 @@ import {
   statusVariantMap,
 } from '@/shared';
 
-import { BodyData, HeaderData } from '../../model';
+import { AdminBodyData, AdminHeaderData } from '../../model';
 
 type Props = {
-  headerData: HeaderData[];
-  bodyData: BodyData[];
+  adminHeaderData: AdminHeaderData[];
+  adminBodyData: AdminBodyData[];
 };
 
-export const AdminItemTable = ({ headerData, bodyData }: Props) => {
+export const AdminItemTable = ({ adminHeaderData, adminBodyData }: Props) => {
   const navigate = useNavigate();
 
   const goToRentedItemDetail = (itemId: string) => {
     navigate(getDynamicPath.rentedItemDetail(String(itemId)));
   };
 
+  const renderItemInfo = (status: string, value: string | null | undefined) => {
+    return status === 'RENTAL_AVAILABLE' ? '-' : value || '-';
+  };
+
   return (
     <table className='w-full border-collapse justify-center'>
       <thead>
         <tr className='border-b-2'>
-          {headerData.map((header) => (
+          {adminHeaderData.map((header) => (
             <th key={header.value} className='py-2'>
               {header.text}
             </th>
@@ -36,11 +40,11 @@ export const AdminItemTable = ({ headerData, bodyData }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {bodyData.map((item, index) => (
+        {adminBodyData.map((item, index) => (
           <tr
             key={item.itemId}
             className={cn('cursor-pointer', {
-              'border-b': index !== bodyData.length - 1,
+              'border-b': index !== adminBodyData.length - 1,
             })}
             onClick={() => goToRentedItemDetail(item.itemId)}
           >
@@ -55,11 +59,11 @@ export const AdminItemTable = ({ headerData, bodyData }: Props) => {
               </Badge>
             </td>
             <td className='text-sm font-medium'>
-              {item.itemStatus === 'RENTAL_AVAILABLE'
-                ? '-'
-                : formatDate(item.returnDate)}
+              {renderItemInfo(item.itemStatus, formatDate(item.returnDate))}
             </td>
-            <td className='text-sm font-medium'>{item.rentalMemberName}</td>
+            <td className='text-sm font-medium'>
+              {renderItemInfo(item.itemStatus, item.rentalMemberName)}
+            </td>
           </tr>
         ))}
       </tbody>
