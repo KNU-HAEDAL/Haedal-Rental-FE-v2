@@ -6,6 +6,7 @@ import {
   GetItemDetailRequest,
   GetItemDetailResponse,
   GetItemListParams,
+  GetItemListResponse,
 } from './item.type';
 
 export const ADD_ITEM_PATH = '/admin/item';
@@ -40,8 +41,11 @@ export const getItemDetailAPI = async ({ itemId }: GetItemDetailRequest) => {
 export const GET_ITEM_LIST_PATH = '/admin/itemList';
 
 export const getItemListAPI = async ({ itemStatus }: GetItemListParams) => {
-  const response = await fetchInstance.get(GET_ITEM_LIST_PATH, {
-    params: { itemStatus },
-  });
+  const response = await fetchInstance.get<GetItemListResponse>(
+    GET_ITEM_LIST_PATH,
+    {
+      params: { itemStatus },
+    },
+  );
   return response.data;
 };

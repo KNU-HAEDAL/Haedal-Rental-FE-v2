@@ -27,3 +27,12 @@ export interface GetItemDetailResponse {
 export interface GetItemListParams {
   itemStatus: ItemStatus;
 }
+
+export interface GetItemListResponse {
+  itemCategory: ItemCategory;
+  itemName: string;
+  itemStatus: ItemStatus;
+  itemId: string;
+  returnDate: string;
+  rentalMemberName: string;
+}
