@@ -20,4 +20,5 @@ export const statusVariantMap: Record<
   RENTAL_OVERDUE: 'unavailable',
   OVERDUE: 'unavailable',
   RENTAL_WAITING: 'wait',
+  '': 'available',
 };
