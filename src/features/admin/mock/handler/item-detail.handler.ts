@@ -12,7 +12,10 @@ export const itemDetailHandler = [
       const { itemId } = params;
 
       if (!itemId) {
-        return new HttpResponse('Missing itemId', { status: 400 });
+        return HttpResponse.json(
+          { message: 'Missing itemId' },
+          { status: 400 },
+        );
       }
 
       const itemDetail = ITEM_DETAIL_MOCK.find(
@@ -20,7 +23,10 @@ export const itemDetailHandler = [
       );
 
       if (!itemDetail) {
-        return new HttpResponse('Item not found', { status: 404 });
+        return HttpResponse.json(
+          { message: 'Item not found' },
+          { status: 404 },
+        );
       }
 
       return HttpResponse.json(itemDetail);
