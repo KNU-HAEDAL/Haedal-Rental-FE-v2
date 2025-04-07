@@ -3,7 +3,7 @@ import { HttpResponse, http } from 'msw';
 import { BASE_URL } from '@/shared';
 
 import { GET_ITEM_LIST_PATH } from '../../apis';
-import { ITEM_LIST_MOCK } from '../data';
+import { ITEMS_MOCK } from '../data';
 
 export const adminItemsHandler = [
   http.get(`${BASE_URL}${GET_ITEM_LIST_PATH}`, async ({ request }) => {
@@ -11,10 +11,10 @@ export const adminItemsHandler = [
     const itemStatus = url.searchParams.get('itemStatus');
 
     if (!itemStatus) {
-      return HttpResponse.json(ITEM_LIST_MOCK);
+      return HttpResponse.json(ITEMS_MOCK);
     }
 
-    const filteredItems = ITEM_LIST_MOCK.filter(
+    const filteredItems = ITEMS_MOCK.filter(
       (item) => item.itemStatus === itemStatus,
     );
 
