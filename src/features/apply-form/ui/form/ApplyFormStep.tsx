@@ -5,26 +5,26 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
-import { Button, Form, ItemCategory } from '@/shared';
-import { ContentsContainer } from '@/widgets';
+import { Button, Form, ItemCategory, NAVIGATE_BUTTONS_DATA } from '@/shared';
+import { ButtonContainer, ContentsContainer } from '@/widgets';
 
 import { RentalItemRequest, itemRentalAPI } from '../../apis';
 import {
   CategorySelectField,
   ImageUploadField,
   ItemNameField,
-  ProgressBox,
   RentalPeriodField,
 } from '../../components';
 import { useGoStep } from '../../hooks';
 import { ApplyForm, ApplyFormSchema } from '../../model';
+import { ProgressContainer } from '../containers';
 
 type Props = {
   step: number;
   setStep: (step: number) => void;
 };
 
-export const ItemApplyForm = ({ step, setStep }: Props) => {
+export const ApplyFormStep = ({ step, setStep }: Props) => {
   const { goNextStep } = useGoStep({ step, setStep });
 
   const { mutate: applyItemMutate } = useMutation({
@@ -76,39 +76,29 @@ export const ItemApplyForm = ({ step, setStep }: Props) => {
     <Form {...form}>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className='w-layout flex flex-col items-center gap-5'
+        className='w-layout mb-3 flex flex-col gap-5'
       >
-        <ContentsContainer
-          className='mb-0 text-start'
-          title='물품 대여 장부 작성'
-        >
+        <ContentsContainer title={NAVIGATE_BUTTONS_DATA[1].title}>
           <ItemNameField />
         </ContentsContainer>
         <CategorySelectField />
         <RentalPeriodField />
         <ImageUploadField />
       </form>
-      <div className='w-layout flex flex-col items-center'>
-        <ProgressBox step={step} progressValue={(step / 2) * 100} />
-        <div className='flex w-full justify-center gap-3 py-3'>
-          <Button
-            className='px-5'
-            variant='outline'
-            onClick={() => navigate(-1)}
-          >
-            뒤로
-          </Button>
-          <Button
-            className='px-5'
-            variant='primary'
-            disabled={!form.formState.isValid}
-            type='submit'
-            onClick={() => form.handleSubmit(onSubmit)()}
-          >
-            제출
-          </Button>
-        </div>
-      </div>
+      <ProgressContainer step={step} progressValue={(step / 2) * 100} />
+      <ButtonContainer>
+        <Button variant='outline' onClick={() => navigate(-1)}>
+          뒤로
+        </Button>
+        <Button
+          variant='primary'
+          disabled={!form.formState.isValid}
+          type='submit'
+          onClick={() => form.handleSubmit(onSubmit)()}
+        >
+          제출
+        </Button>
+      </ButtonContainer>
     </Form>
   );
 };

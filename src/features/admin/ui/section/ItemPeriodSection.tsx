@@ -15,7 +15,7 @@ export const ItemPeriodSection = ({ startDate, endDate }: Props) => {
   return (
     <ItemBox className='gap-1 border py-5'>
       <span className='flex w-full'>
-        물품 대여 기간을 작성해주세요. 최대 대여기간은&nbsp;
+        물품 대여 기간을 선택해주세요. 최대 대여 기간은&nbsp;
         <p className='font-bold'>일주일</p>
         입니다.
       </span>

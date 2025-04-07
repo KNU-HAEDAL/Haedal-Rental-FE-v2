@@ -25,7 +25,7 @@ export const DatePopoverTriggerButton = ({ startDate, endDate }: Props) => {
                 kstFormat(startDate, 'yyyy.LL.dd')
               )
             ) : (
-              <span className='text-gray-400'>대여할 날짜를 선택해주세요.</span>
+              <span className='text-gray-400'>대여 기간을 선택해주세요.</span>
             )}
           </Button>
         </div>
