@@ -1,16 +1,26 @@
+import { useParams } from 'react-router-dom';
+
 import {
-  ITEM_APPLY_DATA,
   ItemImageContainer,
   ItemNameContainer,
   ItemPeriodContainer,
   ItemTypeContainer,
   LenderInfoSection,
+  useGetItemDetail,
 } from '@/features';
-import { BackButton, Spinner, useGetMockData } from '@/shared';
+import { BackButton, Spinner } from '@/shared';
 import { ButtonContainer, ContentsContainer, PageWrapper } from '@/widgets';
 
 export const RentedItemDetailPage = () => {
-  const { data: itemData, isPending } = useGetMockData(ITEM_APPLY_DATA);
+  const { itemId } = useParams();
+
+  const { data: itemData, isPending } = useGetItemDetail({
+    itemId: itemId ?? '',
+  });
+
+  if (!itemData) {
+    return <div>에러 발생</div>;
+  }
 
   if (isPending) {
     return <Spinner />;
@@ -20,17 +30,17 @@ export const RentedItemDetailPage = () => {
     <PageWrapper>
       <ContentsContainer title='물품 대여 정보'>
         <LenderInfoSection
-          name={itemData.lenderName}
-          phoneNumber={itemData.lenderPhoneNumber}
+          name={itemData.rentalMemberName}
+          phoneNumber={itemData.rentalMemberPhoneNumber}
         />
       </ContentsContainer>
       <ItemNameContainer itemName={itemData.itemName} />
-      <ItemTypeContainer itemType={itemData.itemType} />
+      <ItemTypeContainer itemType={itemData.itemCategory} />
       <ItemPeriodContainer
-        startDate={itemData.startDate}
-        endDate={itemData.endDate}
+        startDate={itemData.rentalDate}
+        endDate={itemData.returnDate}
       />
-      <ItemImageContainer itemImage={itemData.imageUrl} />
+      <ItemImageContainer itemImage={itemData.picture} />
       <ButtonContainer>
         <BackButton />
       </ButtonContainer>
