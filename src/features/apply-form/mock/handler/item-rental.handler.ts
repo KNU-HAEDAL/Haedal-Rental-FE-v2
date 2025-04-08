@@ -16,13 +16,19 @@ export const itemRentalHandler = [
     const picture = formData.get('picture');
 
     if (!name || !itemCategory || !rentalDate || !returnDate || !picture) {
-      return new HttpResponse('Invalid data: Missing fields', { status: 400 });
+      return HttpResponse.json(
+        { message: 'Invalid data: Missing fields' },
+        { status: 400 },
+      );
     }
 
     if (typeof name !== 'string' || name.length === 0) {
-      return new HttpResponse('Invalid data: Name must be a non-empty string', {
-        status: 400,
-      });
+      return HttpResponse.json(
+        { message: 'Invalid data: Name must be a non-empty string' },
+        {
+          status: 400,
+        },
+      );
     }
 
     try {
@@ -30,16 +36,21 @@ export const itemRentalHandler = [
       Date.parse(returnDate.toString());
     } catch (error) {
       console.error(error);
-      return new HttpResponse(
-        'Invalid data: rentalDate or returnDate is not a valid date',
+      return HttpResponse.json(
+        {
+          message: 'Invalid data: rentalDate or returnDate is not a valid date',
+        },
         { status: 400 },
       );
     }
 
     if (!(picture instanceof File)) {
-      return new HttpResponse('Uploaded picture is not a File', {
-        status: 400,
-      });
+      return HttpResponse.json(
+        { massage: 'Uploaded picture is not a File' },
+        {
+          status: 400,
+        },
+      );
     }
     const itemCategoryValue = itemCategory.toString();
     if (
@@ -47,7 +58,10 @@ export const itemRentalHandler = [
         itemCategoryValue,
       )
     ) {
-      return new HttpResponse('Invalid item category', { status: 400 });
+      return HttpResponse.json(
+        { message: 'Invalid item category' },
+        { status: 400 },
+      );
     }
     const newItem: RentalItemRequest = {
       name: name.toString(),

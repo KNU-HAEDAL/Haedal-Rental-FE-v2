@@ -1,11 +1,11 @@
 import {
-  adminItemListHandler,
-  itemListHandler,
+  adminItemsHandler,
+  itemDetailHandler,
   itemRentalHandler,
 } from '@/features';
 
 export const handlers = [
-  ...itemListHandler,
+  ...adminItemsHandler,
   ...itemRentalHandler,
-  ...adminItemListHandler,
+  ...itemDetailHandler,
 ];

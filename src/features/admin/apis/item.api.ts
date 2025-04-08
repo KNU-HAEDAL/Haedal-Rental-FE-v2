@@ -4,7 +4,9 @@ import {
   AddItemRequest,
   DeleteItemRequest,
   GetItemDetailRequest,
+  GetItemDetailResponse,
   GetItemListParams,
+  GetItemListResponse,
 } from './item.type';
 
 export const ADD_ITEM_PATH = '/admin/item';
@@ -30,15 +32,20 @@ export const GET_ITEM_DETAIL_PATH = ({ itemId }: GetItemDetailRequest) =>
   `/admin/itemDetail/${itemId}`;
 
 export const getItemDetailAPI = async ({ itemId }: GetItemDetailRequest) => {
-  const response = await fetchInstance.get(GET_ITEM_DETAIL_PATH({ itemId }));
+  const response = await fetchInstance.get<GetItemDetailResponse>(
+    GET_ITEM_DETAIL_PATH({ itemId }),
+  );
   return response.data;
 };
 
 export const GET_ITEM_LIST_PATH = '/admin/itemList';
 
 export const getItemListAPI = async ({ itemStatus }: GetItemListParams) => {
-  const response = await fetchInstance.get(GET_ITEM_LIST_PATH, {
-    params: { itemStatus },
-  });
+  const response = await fetchInstance.get<GetItemListResponse>(
+    GET_ITEM_LIST_PATH,
+    {
+      params: { itemStatus },
+    },
+  );
   return response.data;
 };

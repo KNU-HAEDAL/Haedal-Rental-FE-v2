@@ -13,6 +13,7 @@ const badgeVariants = cva(
         available: 'bg-moon text-foreground [a&]:hover:bg-moon/90',
         unavailable:
           'bg-sun text-white [a&]:hover:bg-sun/90 focus-visible:ring-sun/20 dark:focus-visible:ring-sun/40 dark:bg-sun/70',
+        wait: 'bg-haedal text-white [a&]:hover:bg-haedal/90',
         outline:
           'text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground',
       },

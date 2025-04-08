@@ -4,4 +4,6 @@ export type ItemStatus =
   | 'RENTAL_AVAILABLE'
   | 'RENTING'
   | 'RENTAL_OVERDUE'
-  | 'RENTAL_WAITING';
+  | 'RENTAL_WAITING'
+  | 'OVERDUE'
+  | '';
