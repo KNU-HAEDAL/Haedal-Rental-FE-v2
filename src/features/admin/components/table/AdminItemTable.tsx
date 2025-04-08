@@ -51,10 +51,7 @@ export const AdminItemTable = ({ adminHeaderData, adminBodyData }: Props) => {
             <td className='px-3 py-2'>{categoryFormat(item.itemCategory)}</td>
             <td>{item.itemName}</td>
             <td>
-              <Badge
-                className='w-full border-none px-0.5'
-                variant={statusVariantMap[item.itemStatus]}
-              >
+              <Badge variant={statusVariantMap[item.itemStatus]}>
                 {statusFormat(item.itemStatus)}
               </Badge>
             </td>
