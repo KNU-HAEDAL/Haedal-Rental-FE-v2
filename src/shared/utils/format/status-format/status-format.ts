@@ -13,12 +13,12 @@ export const statusFormat = (status: string) => {
 
 export const statusVariantMap: Record<
   ItemStatus,
-  'available' | 'unavailable' | 'outline' | 'wait'
+  'available' | 'unavailable' | 'overdue'
 > = {
   RENTAL_AVAILABLE: 'available',
   RENTING: 'unavailable',
-  RENTAL_OVERDUE: 'unavailable',
-  OVERDUE: 'unavailable',
-  RENTAL_WAITING: 'wait',
+  RENTAL_OVERDUE: 'overdue',
+  OVERDUE: 'overdue',
+  RENTAL_WAITING: 'unavailable',
   '': 'available',
 };

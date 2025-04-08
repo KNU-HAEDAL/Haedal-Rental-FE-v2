@@ -46,7 +46,7 @@ export const MyRentalTable = ({ headerData, bodyData }: Props) => {
               <td>{item.name}</td>
               <td>{item.dueDate}</td>
               <td>
-                <Badge variant={item.isOverdue ? 'unavailable' : 'available'}>
+                <Badge variant={item.isOverdue ? 'overdue' : 'unavailable'}>
                   {item.isOverdue ? '기한 초과' : '이용 중'}
                 </Badge>
               </td>
