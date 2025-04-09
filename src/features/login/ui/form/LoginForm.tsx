@@ -24,6 +24,22 @@ type FormData = {
 };
 
 export const LoginForm = () => {
+  const navigate = useNavigate();
+
+  const form = useForm<FormData>({
+    mode: 'onChange',
+    defaultValues: {
+      id: '',
+      password: '',
+    },
+  });
+  const { control, handleSubmit, formState } = form;
+
+  const inputFields = [
+    { name: 'id', label: '아이디', type: 'text' },
+    { name: 'password', label: '비밀번호', type: 'password' },
+  ];
+
   const { mutate: loginData } = useMutation({
     mutationFn: loginApi,
     onSuccess: (data) => {
@@ -33,6 +49,13 @@ export const LoginForm = () => {
       console.log(error);
     },
   });
+
+  const onSubmit = (data: FormData) => {
+    loginData({
+      id: data.id,
+      password: data.password,
+    });
+  };
 
   const onSuccess = (data: {
     accessToken: string;
@@ -46,30 +69,6 @@ export const LoginForm = () => {
     authStorage.role.set(data.role);
 
     if (data.accessToken && data.refreshToken) navigate(RouterPath.ROOT);
-  };
-
-  const form = useForm<FormData>({
-    mode: 'onChange',
-    defaultValues: {
-      id: '',
-      password: '',
-    },
-  });
-
-  const { control, handleSubmit, formState } = form;
-
-  const navigate = useNavigate();
-
-  const inputFields = [
-    { name: 'id', label: '아이디', type: 'text' },
-    { name: 'password', label: '비밀번호', type: 'password' },
-  ];
-
-  const onSubmit = (data: FormData) => {
-    loginData({
-      id: data.id,
-      password: data.password,
-    });
   };
 
   return (
