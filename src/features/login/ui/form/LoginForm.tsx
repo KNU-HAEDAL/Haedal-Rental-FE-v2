@@ -34,12 +34,18 @@ export const LoginForm = () => {
     },
   });
 
-  const onSuccess = (data: { accessToken: string; refreshToken: string }) => {
-    navigate(RouterPath.ROOT);
-
+  const onSuccess = (data: {
+    accessToken: string;
+    refreshToken: string;
+    userName: string;
+    role: string;
+  }) => {
     authStorage.accessToken.set(data.accessToken);
     authStorage.refreshToken.set(data.refreshToken);
-    console.log(data);
+    authStorage.userName.set(data.userName);
+    authStorage.role.set(data.role);
+
+    navigate(RouterPath.ROOT);
   };
 
   const form = useForm<FormData>({

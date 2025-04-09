@@ -2,6 +2,7 @@ type StorageKey = {
   accessToken?: string;
   refreshToken?: string;
   userName?: string;
+  role?: string;
 };
 
 const initStorage = <T extends keyof StorageKey>(key: T, storage?: Storage) => {
@@ -34,4 +35,5 @@ export const authStorage = {
   accessToken: initStorage('accessToken', localStorage),
   refreshToken: initStorage('refreshToken', localStorage),
   userName: initStorage('userName', localStorage),
+  role: initStorage('role', localStorage),
 };
