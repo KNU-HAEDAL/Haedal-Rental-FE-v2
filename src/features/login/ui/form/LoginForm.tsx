@@ -45,7 +45,7 @@ export const LoginForm = () => {
     authStorage.userName.set(data.userName);
     authStorage.role.set(data.role);
 
-    navigate(RouterPath.ROOT);
+    if (data.accessToken && data.refreshToken) navigate(RouterPath.ROOT);
   };
 
   const form = useForm<FormData>({
