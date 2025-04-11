@@ -96,7 +96,7 @@ export const LoginForm = () => {
             />
           ))}
         </ul>
-        <div className='w-full px-8'>
+        <div className='flex w-full flex-col items-start gap-2 px-8'>
           <Button
             type='submit'
             disabled={!formState.isValid}
@@ -105,7 +105,9 @@ export const LoginForm = () => {
           >
             로그인
           </Button>
-          <FormMessage>{formState.errors.root?.message}</FormMessage>
+          <FormMessage className='text-xs'>
+            {formState.errors.root?.message}
+          </FormMessage>
         </div>
       </form>
     </Form>
