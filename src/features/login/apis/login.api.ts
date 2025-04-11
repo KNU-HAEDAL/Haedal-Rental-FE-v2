@@ -15,8 +15,12 @@ export const loginApi = async ({
 
   const accessToken = response.headers['authorization']?.replace('Bearer ', '');
   const refreshToken = response.headers['refresh-token'];
-  const userName = response.data.userName;
-  const role = response.data.role;
+  const userName = response.data.userName || '사용자';
+  const role = response.data.role || 'ROLE_USER';
+
+  if (!accessToken || !refreshToken) {
+    throw new Error('로그인 실패. 재시도해주세요.');
+  }
 
   return { accessToken, refreshToken, userName, role };
 };

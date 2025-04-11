@@ -33,7 +33,7 @@ export const LoginForm = () => {
       password: '',
     },
   });
-  const { control, handleSubmit, formState } = form;
+  const { control, handleSubmit, formState, setError } = form;
 
   const inputFields = [
     { name: 'id', label: '아이디', type: 'text' },
@@ -46,7 +46,10 @@ export const LoginForm = () => {
       onSuccess(data);
     },
     onError: (error) => {
-      console.log(error);
+      setError('root', {
+        type: 'manual',
+        message: error.message,
+      });
     },
   });
 
@@ -102,6 +105,7 @@ export const LoginForm = () => {
           >
             로그인
           </Button>
+          <FormMessage>{formState.errors.root?.message}</FormMessage>
         </div>
       </form>
     </Form>
