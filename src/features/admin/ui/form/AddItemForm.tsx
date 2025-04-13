@@ -24,7 +24,7 @@ export const AddItemForm = () => {
     mode: 'onChange',
     defaultValues: {
       name: '',
-      type: 'book',
+      type: 'BOOK',
       approved: undefined,
     },
   });
