@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { useMutation } from '@tanstack/react-query';
+import { toast } from 'sonner';
 
 import {
   Button,
@@ -37,6 +38,8 @@ export const LoginForm = () => {
   const onSuccess = (data: LoginResponse) => {
     authStorage.accessToken.set(data.accessToken);
     authStorage.refreshToken.set(data.refreshToken);
+
+    toast.success('로그인 성공');
 
     navigate(RouterPath.ROOT);
   };
