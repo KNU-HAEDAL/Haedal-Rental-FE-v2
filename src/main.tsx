@@ -10,7 +10,9 @@ async function enableMocking() {
   }
   const { worker } = await import('./shared/mocks/browser.ts');
 
-  return worker.start();
+  return worker.start({
+    onUnhandledRequest: 'bypass', // msw 핸들러가 없는 요청은 실제 서버로 전송
+  });
 }
 
 enableMocking().then(() => {
