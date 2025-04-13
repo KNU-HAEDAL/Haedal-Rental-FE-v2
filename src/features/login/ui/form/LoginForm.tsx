@@ -16,7 +16,7 @@ import {
   authStorage,
 } from '@/shared';
 
-import { loginApi } from '../../apis/login.api';
+import { LoginResponse, loginApi } from '../../apis';
 
 type FormData = {
   id: string;
@@ -34,12 +34,11 @@ export const LoginForm = () => {
     },
   });
 
-  const onSuccess = (data: { accessToken: string; refreshToken: string }) => {
-    navigate(RouterPath.ROOT);
-
+  const onSuccess = (data: LoginResponse) => {
     authStorage.accessToken.set(data.accessToken);
     authStorage.refreshToken.set(data.refreshToken);
-    console.log(data);
+
+    navigate(RouterPath.ROOT);
   };
 
   const form = useForm<FormData>({
