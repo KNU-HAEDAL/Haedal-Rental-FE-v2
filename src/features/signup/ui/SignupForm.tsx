@@ -1,8 +1,10 @@
 import { useForm } from 'react-hook-form';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation } from '@tanstack/react-query';
+import { toast } from 'sonner';
 
-import { type SignupFormData, signupFormSchema } from '@/features';
+import { type SignupFormData, signupAPI, signupFormSchema } from '@/features';
 import {
   Button,
   Form,
@@ -21,8 +23,7 @@ const inputFields = [
     type: 'text',
     button: '중복 확인',
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-      console.log('아이디 중복 확인'); // Todo: API 요청
+      e.preventDefault(); // TODO: API 요청
     },
     guide: '영문(소문자)와 숫자 6~12자리로 입력해주세요.',
   },
@@ -41,12 +42,22 @@ const inputFields = [
     button: '중복 확인',
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
-      console.log('핸드폰 번호 중복 확인'); // Todo: API 요청
+      console.log('핸드폰 번호 중복 확인'); // TODO: API 요청
     },
   },
 ];
 
 export const SignupForm = () => {
+  const { mutate: signupData } = useMutation({
+    mutationFn: signupAPI,
+    onSuccess: () => {
+      toast.success('회원가입이 완료되었습니다.');
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
+
   const form = useForm<SignupFormData>({
     resolver: zodResolver(signupFormSchema),
     mode: 'onChange',
@@ -63,7 +74,15 @@ export const SignupForm = () => {
   const onSubmit = (data: SignupFormData) => {
     // Todo: API 요청
     console.log(data);
+    signupData({
+      id: data.id,
+      password: data.password,
+      name: data.name,
+      phoneNumber: data.phone,
+    });
   };
+
+  // const onSuccess = (data: { accessToken: string; refreshToken: string }) => {};
 
   return (
     <Form {...form}>
