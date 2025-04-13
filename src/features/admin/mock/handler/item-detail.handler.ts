@@ -3,7 +3,7 @@ import { HttpResponse, http } from 'msw';
 import { BASE_URL } from '@/shared';
 
 import { GET_ITEM_DETAIL_PATH } from '../../apis';
-import { ITEM_DETAIL_MOCK } from '../data';
+import { ADMIN_ITEM_DETAIL_MOCK } from '../data';
 
 export const itemDetailHandler = [
   http.get(
@@ -18,7 +18,7 @@ export const itemDetailHandler = [
         );
       }
 
-      const itemDetail = ITEM_DETAIL_MOCK.find(
+      const itemDetail = ADMIN_ITEM_DETAIL_MOCK.find(
         (item) => item.itemId === itemId,
       );
 
