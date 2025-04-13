@@ -5,13 +5,13 @@ import { SignupRequest } from './signup.type';
 export const SIGNUP_PATH = '/api/auth/signup';
 
 export const signupAPI = async ({
-  email,
+  id,
   password,
   name,
   phoneNumber,
 }: SignupRequest) => {
   const response = await fetchInstance.post(SIGNUP_PATH, {
-    email,
+    id,
     password,
     name,
     phoneNumber,
