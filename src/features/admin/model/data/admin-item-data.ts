@@ -12,7 +12,7 @@ export const ADMIN_ITEM_HEADERS = [
     value: 'status',
   },
   {
-    text: '대여일',
+    text: '반납 기한',
     value: 'date',
   },
   {
