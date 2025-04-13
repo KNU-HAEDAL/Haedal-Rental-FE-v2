@@ -1,2 +1,2 @@
-export * from './items';
-export * from './item-detail';
+export * from './admin-items';
+export * from './admin-item-detail';

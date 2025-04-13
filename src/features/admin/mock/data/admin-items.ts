@@ -1,6 +1,6 @@
 import { GetItemListResponse } from '../../apis';
 
-export const ITEMS_MOCK: GetItemListResponse[] = [
+export const ADMIN_ITEMS_MOCK: GetItemListResponse[] = [
   {
     itemCategory: 'BOOK',
     itemName: '자바스크립트 딥 다이브',
