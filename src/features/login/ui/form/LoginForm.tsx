@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { useMutation } from '@tanstack/react-query';
+import { toast } from 'sonner';
 
 import {
   Button,
@@ -16,7 +17,7 @@ import {
   authStorage,
 } from '@/shared';
 
-import { loginApi } from '../../apis/login.api';
+import { LoginResponse, loginApi } from '../../apis';
 
 type FormData = {
   id: string;
@@ -34,12 +35,13 @@ export const LoginForm = () => {
     },
   });
 
-  const onSuccess = (data: { accessToken: string; refreshToken: string }) => {
-    navigate(RouterPath.ROOT);
-
+  const onSuccess = (data: LoginResponse) => {
     authStorage.accessToken.set(data.accessToken);
     authStorage.refreshToken.set(data.refreshToken);
-    console.log(data);
+
+    toast.success('로그인 성공');
+
+    navigate(RouterPath.ROOT);
   };
 
   const form = useForm<FormData>({

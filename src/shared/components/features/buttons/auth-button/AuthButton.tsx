@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { toast } from 'sonner';
+
 import { Button, authStorage } from '@/shared';
 
 export const AuthButton = () => {
-  // TODO: 로그인 UI 완성 시 해당 로직 수정
   const [isLogin, setIsLogin] = useState(false);
   const name = '김해달';
 
@@ -16,6 +17,8 @@ export const AuthButton = () => {
   }, []);
 
   const onClickLogout = () => {
+    toast.success('로그아웃 되었습니다.');
+
     setIsLogin(false);
     authStorage.accessToken.set(undefined);
     authStorage.refreshToken.set(undefined);
