@@ -55,12 +55,10 @@ export const AdminItemTable = ({ adminHeaderData, adminBodyData }: Props) => {
                 {statusFormat(item.itemStatus)}
               </Badge>
             </td>
-            <td className='text-sm font-medium'>
+            <td>
               {renderItemInfo(item.itemStatus, formatDate(item.returnDate))}
             </td>
-            <td className='text-sm font-medium'>
-              {renderItemInfo(item.itemStatus, item.rentalMemberName)}
-            </td>
+            <td>{renderItemInfo(item.itemStatus, item.rentalMemberName)}</td>
           </tr>
         ))}
       </tbody>
