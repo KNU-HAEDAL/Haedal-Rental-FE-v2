@@ -23,8 +23,8 @@ export const multipartInstance = initInstance({
 fetchInstance.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     const accessToken = authStorage.accessToken.get();
-    if (accessToken !== undefined) {
-      config.headers['Content-Type'] = 'application/json';
+
+    if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
     return config;
