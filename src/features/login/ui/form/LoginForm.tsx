@@ -72,7 +72,7 @@ export const LoginForm = () => {
     <Form {...form}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='flex flex-col gap-8 px-6 sm:px-8'
+        className='flex w-full flex-col gap-8 px-6 sm:px-8'
       >
         <ul className='flex flex-col gap-3'>
           {inputFields.map(({ name, label, type }) => (
