@@ -51,19 +51,14 @@ export const AdminItemTable = ({ adminHeaderData, adminBodyData }: Props) => {
             <td className='px-3 py-2'>{categoryFormat(item.itemCategory)}</td>
             <td>{item.itemName}</td>
             <td>
-              <Badge
-                className='w-full border-none px-0.5'
-                variant={statusVariantMap[item.itemStatus]}
-              >
+              <Badge variant={statusVariantMap[item.itemStatus]}>
                 {statusFormat(item.itemStatus)}
               </Badge>
             </td>
-            <td className='text-sm font-medium'>
+            <td>
               {renderItemInfo(item.itemStatus, formatDate(item.returnDate))}
             </td>
-            <td className='text-sm font-medium'>
-              {renderItemInfo(item.itemStatus, item.rentalMemberName)}
-            </td>
+            <td>{renderItemInfo(item.itemStatus, item.rentalMemberName)}</td>
           </tr>
         ))}
       </tbody>

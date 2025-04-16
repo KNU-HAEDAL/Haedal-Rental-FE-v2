@@ -14,11 +14,15 @@ import { ButtonContainer, ContentsContainer, PageWrapper } from '@/widgets';
 export const RentedItemDetailPage = () => {
   const { itemId } = useParams();
 
-  const { data: itemData, isPending } = useGetItemDetail({
+  const {
+    data: itemData,
+    isPending,
+    isError,
+  } = useGetItemDetail({
     itemId: itemId ?? '',
   });
 
-  if (!itemData) {
+  if (!itemData || isError) {
     return <div>에러 발생</div>;
   }
 

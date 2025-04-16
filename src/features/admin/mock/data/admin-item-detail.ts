@@ -1,6 +1,6 @@
 import { GetItemDetailResponse } from '../../apis';
 
-export const ITEM_DETAIL_MOCK: GetItemDetailResponse[] = [
+export const ADMIN_ITEM_DETAIL_MOCK: GetItemDetailResponse[] = [
   {
     rentalMemberName: '김해달',
     rentalMemberPhoneNumber: '010-1234-5678',
