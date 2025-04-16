@@ -70,8 +70,11 @@ export const LoginForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-8'>
-        <ul className='flex flex-col gap-3 px-8'>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className='flex flex-col gap-8 px-6 sm:px-8'
+      >
+        <ul className='flex flex-col gap-3'>
           {inputFields.map(({ name, label, type }) => (
             <FormField
               key={name}
@@ -90,7 +93,7 @@ export const LoginForm = () => {
             />
           ))}
         </ul>
-        <div className='w-full px-8'>
+        <div className='w-full'>
           <Button
             type='submit'
             disabled={!formState.isValid}
