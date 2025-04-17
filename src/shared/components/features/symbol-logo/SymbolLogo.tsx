@@ -7,7 +7,11 @@ import { RouterPath } from '@/shared';
 export const SymbolLogo = () => {
   return (
     <Link to={RouterPath.MAIN} className='mt-2'>
-      <img src={Logo} alt='logo' className='h-auto w-[230px] cursor-pointer' />
+      <img
+        src={Logo}
+        alt='logo'
+        className='h-auto w-[159px] cursor-pointer sm:w-[230px]'
+      />
     </Link>
   );
 };
