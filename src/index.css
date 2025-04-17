@@ -12,6 +12,8 @@
 
 :root {
   --layout-width: 550px;
+  --pc-width: 550px;
+  --mobile-width: 375px;
   --moon: #ffd050;
   --sun: #e06260;
   --haedal: #0f1729;
@@ -78,6 +80,8 @@
 
 @theme inline {
   --width-layout: var(--layout-width);
+  --width-pc: var(--pc-width);
+  --width-mobile: var(--mobile-width);
   --font-family: var(--font-NotoSans);
   --color-moon: var(--moon);
   --color-sun: var(--sun);
