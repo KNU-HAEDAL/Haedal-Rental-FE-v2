@@ -116,7 +116,7 @@ export const ItemTable = <T extends Record<string, unknown>>({
                 {headers.map(({ value }) => (
                   <td
                     key={value + index}
-                    className='cursor-pointer px-3 py-2 text-center'
+                    className='inner-x cursor-pointer py-2 text-center'
                   >
                     {renderCell
                       ? renderCell(value as keyof T, item)
@@ -129,7 +129,7 @@ export const ItemTable = <T extends Record<string, unknown>>({
         </tbody>
       </table>
       {items.length === 0 && (
-        <p className='px-3 py-2 text-center text-base'>물품이 없습니다.</p>
+        <p className='inner-x py-2 text-center text-base'>물품이 없습니다.</p>
       )}
     </>
   );

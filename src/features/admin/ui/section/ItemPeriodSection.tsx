@@ -13,7 +13,7 @@ export const ItemPeriodSection = ({ startDate, endDate }: Props) => {
   const returnDate = getAfterDays(7);
 
   return (
-    <ItemBox className='gap-1 border py-5'>
+    <ItemBox className='inner-y gap-1 border'>
       <span className='flex w-full'>
         물품 대여 기간을 선택해주세요. 최대 대여 기간은&nbsp;
         <p className='font-bold'>일주일</p>

@@ -6,7 +6,7 @@ export const NavButtonSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className='grid w-full grid-cols-2 place-content-center place-items-center gap-3 px-3'>
+    <section className='inner-x grid w-full grid-cols-2 place-content-center place-items-center gap-3'>
       {NAVIGATE_BUTTONS_DATA.map((data) => (
         <button
           key={data.key}

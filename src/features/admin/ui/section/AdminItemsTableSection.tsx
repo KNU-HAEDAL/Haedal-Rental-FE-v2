@@ -30,7 +30,7 @@ export const AdminItemsTableSection = () => {
 
   return (
     <>
-      <div className='w-full px-3'>
+      <div className='inner-x w-full'>
         <div className='flex w-full justify-between'>
           <div className='flex gap-2'>
             <Button
