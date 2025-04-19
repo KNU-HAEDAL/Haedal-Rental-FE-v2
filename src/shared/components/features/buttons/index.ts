@@ -1,2 +1,1 @@
-export * from './auth-button';
-export * from './back-button';
+export * from './BackButton';
