@@ -16,7 +16,7 @@ export const PageWrapper = ({ children }: Props) => {
   return (
     <main
       className={cn(
-        'flex h-screen w-screen flex-col items-center justify-start text-center',
+        'flex h-screen w-full flex-col items-center justify-start text-center',
         isAuthPage && 'bg-haedal text-white',
       )}
     >
