@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 
 import { Button, RouterPath, authStorage } from '@/shared';
 
-export const AuthButton = () => {
+export const AuthButtonContainer = () => {
   const [isLogin, setIsLogin] = useState(false);
   const name = '김해달';
 
@@ -25,7 +25,7 @@ export const AuthButton = () => {
   };
 
   return (
-    <section className='flex w-full justify-end gap-2 px-3 py-3 sm:px-0'>
+    <section className='flex w-full justify-end gap-2 py-3'>
       {isLogin ? (
         <div className='flex w-full items-center justify-between'>
           <p className='font-bold'>{name} 님 반갑습니다.</p>
