@@ -6,7 +6,7 @@ type Props = {
 
 export const ItemImageSection = ({ itemImage }: Props) => {
   return (
-    <ItemBox className='gap-3 border py-5'>
+    <ItemBox className='inner-y gap-3 border'>
       <p>대여 물품을 사진으로 찍어서 업로드해주세요.</p>
       <span className='flex w-full justify-center text-center'>
         {itemImage ? (

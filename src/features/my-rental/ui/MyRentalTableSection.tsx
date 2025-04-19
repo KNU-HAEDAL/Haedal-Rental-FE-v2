@@ -23,11 +23,11 @@ export const MyRentalTableSection = ({
           <Spinner />
         </div>
       ) : (
-        <div className='w-full px-3'>
+        <div className='inner-x w-full'>
           {columnData ? (
             <MyRentalTable headerData={headerData} bodyData={bodyData} />
           ) : (
-            <p className='py-5 font-bold'>대여 중인 물품이 없습니다.</p>
+            <p className='inner-y font-bold'>대여 중인 물품이 없습니다.</p>
           )}
         </div>
       )}

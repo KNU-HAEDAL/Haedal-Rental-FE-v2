@@ -48,7 +48,9 @@ export const AdminItemTable = ({ adminHeaderData, adminBodyData }: Props) => {
             })}
             onClick={() => goToRentedItemDetail(item.itemId)}
           >
-            <td className='px-3 py-2'>{categoryFormat(item.itemCategory)}</td>
+            <td className='inner-x py-2'>
+              {categoryFormat(item.itemCategory)}
+            </td>
             <td>{item.itemName}</td>
             <td>
               <Badge variant={statusVariantMap[item.itemStatus]}>

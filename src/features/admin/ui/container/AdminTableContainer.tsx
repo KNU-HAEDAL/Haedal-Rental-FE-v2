@@ -32,7 +32,7 @@ export const AdminTableContainer = () => {
   return (
     <>
       <p>{NAVIGATE_BUTTONS_DATA[3].description}</p>
-      <div className='w-full px-3'>
+      <div className='inner-x w-full'>
         <div className='flex w-full justify-between'>
           <div className='flex gap-2'>
             <Button variant='moonTag'>대여 가능</Button>

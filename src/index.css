@@ -11,7 +11,6 @@
 }
 
 :root {
-  --layout-width: 550px;
   --moon: #ffd050;
   --sun: #e06260;
   --haedal: #0f1729;
@@ -77,7 +76,6 @@
 }
 
 @theme inline {
-  --width-layout: var(--layout-width);
   --font-family: var(--font-NotoSans);
   --color-moon: var(--moon);
   --color-sun: var(--sun);
@@ -115,15 +113,36 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@layer utilities {
+  .last-container {
+    @apply pb-6;
+  }
+  .inner-x {
+    @apply px-3;
+  }
+  .inner-y {
+    @apply py-5;
+  }
+  .inner-gap-y {
+    @apply gap-y-5;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50 break-keep;
   }
   html,
   body {
-    @apply text-foreground font-NotoSans flex min-h-screen w-full items-center justify-center;
+    @apply font-NotoSans flex min-h-screen w-screen items-center justify-center;
+  }
+  body.page-auth {
+    @apply bg-haedal text-white;
+  }
+  body.page-main {
+    @apply bg-background text-foreground;
   }
   #root {
-    @apply mx-auto flex w-full flex-col;
+    @apply mx-auto flex w-full flex-col px-[16px] sm:w-[600px];
   }
 }

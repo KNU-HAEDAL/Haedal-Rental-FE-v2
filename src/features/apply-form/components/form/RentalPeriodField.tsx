@@ -52,7 +52,7 @@ export const RentalPeriodField = () => {
       control={form.control}
       name='rentalStartDate'
       render={({ field }) => (
-        <FormItem className='flex w-full flex-col gap-2 border px-3 py-5 text-start'>
+        <FormItem className='inner-x inner-y flex w-full flex-col gap-2 border text-start'>
           <div className='text-base/7'>
             <p>물품 대여 기간을 선택해주세요.</p>
             <p>

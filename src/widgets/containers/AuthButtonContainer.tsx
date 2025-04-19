@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { toast } from 'sonner';
 
-import { Button, authStorage } from '@/shared';
+import { Button, RouterPath, authStorage } from '@/shared';
 
-export const AuthButton = () => {
+export const AuthButtonContainer = () => {
   const [isLogin, setIsLogin] = useState(false);
   const name = '김해달';
 
@@ -25,7 +25,7 @@ export const AuthButton = () => {
   };
 
   return (
-    <section className='w-layout flex justify-end gap-2 py-3'>
+    <div className='flex w-full justify-end gap-2 py-3'>
       {isLogin ? (
         <div className='flex w-full items-center justify-between'>
           <p className='font-bold'>{name} 님 반갑습니다.</p>
@@ -35,14 +35,14 @@ export const AuthButton = () => {
         </div>
       ) : (
         <>
-          <Link to='/signup'>
+          <Link to={RouterPath.SIGNUP}>
             <Button variant='secondary'>회원가입</Button>
           </Link>
-          <Link to='/login'>
+          <Link to={RouterPath.LOGIN}>
             <Button variant='primary'>로그인</Button>
           </Link>
         </>
       )}
-    </section>
+    </div>
   );
 };

@@ -45,8 +45,8 @@ export const ItemsTableSection = () => {
   };
 
   return (
-    <div className='flex w-full flex-col justify-center gap-5'>
-      <div className='flex w-full justify-between px-3'>
+    <div className='inner-gap-y flex w-full flex-col justify-center'>
+      <div className='inner-x flex w-full justify-between'>
         <div className='flex gap-2'>
           {ITEM_TYPE.map((item) => (
             <Button
@@ -70,7 +70,7 @@ export const ItemsTableSection = () => {
           대여 가능
         </Button>
       </div>
-      <div className='overflow-hidden px-3'>
+      <div className='inner-x overflow-hidden'>
         <ItemTable
           headers={ITEM_HEADERS}
           items={filteredItems}

@@ -46,7 +46,7 @@ export const AddItemForm = () => {
       <Form {...form}>
         <form
           onSubmit={(e) => e.preventDefault()}
-          className='flex w-full flex-col px-3 text-start'
+          className='inner-x flex w-full flex-col text-start'
         >
           <div className='flex flex-col gap-8 py-3'>
             <ItemField name='name' label='대여 물품의 이름을 작성해주세요.'>

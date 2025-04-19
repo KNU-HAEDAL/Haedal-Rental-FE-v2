@@ -6,7 +6,7 @@ type Props = {
 
 export const ItemNameSection = ({ itemName }: Props) => {
   return (
-    <ItemBox className='gap-3 border py-5'>
+    <ItemBox className='inner-y gap-3 border'>
       <p>대여 물품의 이름을 작성해주세요.</p>
       <span className='border-b'>
         <p className='py-1'>{itemName}</p>
