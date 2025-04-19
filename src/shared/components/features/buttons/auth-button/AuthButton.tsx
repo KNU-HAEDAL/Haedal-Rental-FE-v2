@@ -25,7 +25,7 @@ export const AuthButton = () => {
   };
 
   return (
-    <section className='sm:w-pc w-mobile flex justify-end gap-2 px-3 py-3 sm:px-0'>
+    <section className='flex w-full justify-end gap-2 px-3 py-3 sm:px-0'>
       {isLogin ? (
         <div className='flex w-full items-center justify-between'>
           <p className='font-bold'>{name} 님 반갑습니다.</p>

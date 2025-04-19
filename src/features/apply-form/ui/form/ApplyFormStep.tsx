@@ -76,7 +76,7 @@ export const ApplyFormStep = ({ step, setStep }: Props) => {
     <Form {...form}>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className='w-layout mb-3 flex flex-col gap-5'
+        className='mb-3 flex w-full flex-col gap-5'
       >
         <ContentsContainer title={NAVIGATE_BUTTONS_DATA[1].title}>
           <ItemNameField />
