@@ -113,6 +113,12 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@layer utilities {
+  .last-container {
+    @apply pb-6;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50 break-keep;

@@ -4,7 +4,7 @@ type Props = {
 
 export const ButtonContainer = ({ children }: Props) => {
   return (
-    <div className='flex w-full items-center justify-center gap-3 pb-6'>
+    <div className='last-container flex w-full items-center justify-center gap-3'>
       {children}
     </div>
   );
